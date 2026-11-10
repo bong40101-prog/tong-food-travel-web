@@ -360,5 +360,16 @@
     "rights_status": "unverified",
     "file": "bonkuraya-dotonbori-c1ab0da760eb.png",
     "alt": "본쿠라야 도톤보리점"
+  },
+  "otafuku-asakusa-d32580fc361c": {
+    "title": "사진 원본",
+    "license": "재사용 허락 미확인 · 소유자 게시 승인",
+    "changes": "지도 사진 뷰어 캡처",
+    "source": "https://www.google.com/maps/@35.7177144,139.7915186,3a,75y,90t/data=!3m8!1e2!3m6!1sCIABIhBYVO0m9KY1_X_O_RntQ6WS!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgrass-cs%2FAABkmLetT-CMWR7emjx49WsaHMmSRgO1pxaWjDirLdSKGoSCcio0sr2R1jyhIMQkNWgNlVsT4Y4BhIIuIQKFaas-9QvQ3DcOXfz3jf6__i9Tf5K12lJoyAeDLrbCLEGrbMXScw3z2Chzc3NYWZs%3Dw114-h86-k-no!7i4032!8i3024?hl=ko&entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D",
+    "author": "Google 지도 원본 기여자 (원본 링크 참조)",
+    "licenseUrl": "https://www.google.com/help/terms_maps/",
+    "rights_status": "unverified",
+    "file": "otafuku-asakusa-d32580fc361c.png",
+    "alt": "아사쿠사 오뎅 오타후쿠"
   }
 }
