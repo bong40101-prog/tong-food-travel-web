@@ -415,5 +415,16 @@
     "rights_status": "unverified",
     "file": "alchon-hozenji-c6a7c56fe8b2.png",
     "alt": "살롱 드 테 알숑 호젠지 본점"
+  },
+  "naha-momosuke-suisan-91b2a1c962c7": {
+    "title": "사진 원본",
+    "license": "재사용 허락 미확인 · 소유자 게시 승인",
+    "changes": "지도 사진 뷰어 캡처",
+    "source": "https://www.google.com/maps/search/?api=1&query=%E6%B5%B7%E9%AE%AE%E9%85%92%E5%A0%B4+%E3%82%82%E3%82%82%E3%81%99%E3%81%91%E6%B0%B4%E7%94%A3+%E6%B2%96%E7%B8%84%E7%9C%8C%E9%82%A3%E8%A6%87%E5%B8%82%E7%89%A7%E5%BF%973-2-48-4+%E7%89%A7%E5%BF%97%E4%B8%8B%E7%94%BA%E5%B1%8B%E5%8F%B0%E6%9D%91&hl=ko",
+    "author": "Google 지도 원본 기여자 (원본 링크 참조)",
+    "licenseUrl": "https://www.google.com/help/terms_maps/",
+    "rights_status": "unverified",
+    "file": "naha-momosuke-suisan-91b2a1c962c7.png",
+    "alt": "모모스케 수산"
   }
 }
