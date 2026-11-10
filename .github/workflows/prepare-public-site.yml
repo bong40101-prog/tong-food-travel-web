@@ -1,0 +1,44 @@
+name: Prepare the clean public site
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/prepare-public-site.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Copy only the verified current release
+        env:
+          SOURCE_COMMIT: 'bc64a1c2d77ccdb28b693090a8993664a95746c7'
+        run: |
+          set -euo pipefail
+          source_repo="$RUNNER_TEMP/food-release-source"
+          snapshot="$RUNNER_TEMP/food-release-files"
+          mkdir -p "$source_repo" "$snapshot"
+          git -C "$source_repo" init -q
+          git -C "$source_repo" fetch --quiet --depth 1 https://github.com/bong40101-prog/tong-food-travel.git "$SOURCE_COMMIT"
+          test "$(git -C "$source_repo" rev-parse FETCH_HEAD)" = "$SOURCE_COMMIT"
+          git -C "$source_repo" archive FETCH_HEAD | tar -x -C "$snapshot"
+          rm "$snapshot/CNAME"
+          python3 - "$snapshot" <<'PY'
+          import pathlib, re, sys
+          root = pathlib.Path(sys.argv[1])
+          allowed = re.compile(r'^(?:[.]nojekyll|README[.]md|index[.]html|sources[.]html|sitemap[.]xml|assets/(?:[^/]+|images/[^/]+)|data/countries[.]json|scripts/check[.]test[.]mjs)$')
+          paths = [p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()]
+          assert 'index.html' in paths and 'data/countries.json' in paths and 'assets/food-api.mjs' in paths
+          assert all(allowed.fullmatch(p) for p in paths)
+          assert all(not p.startswith('data/') or p == 'data/countries.json' for p in paths)
+          assert 'search-limit-dialog' in (root/'index.html').read_text()
+          assert 'https://food.tongapp.co.kr/' in (root/'sitemap.xml').read_text()
+          PY
+          cp -a "$snapshot/." "$GITHUB_WORKSPACE/"
+          git add -- .nojekyll README.md assets data index.html scripts sitemap.xml sources.html
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Publish a clean snapshot of the public site files'
+          git push origin HEAD:main
