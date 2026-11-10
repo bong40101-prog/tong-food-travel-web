@@ -123,7 +123,6 @@
     { "id": "meat", "name": "고기·가츠" },
     { "id": "rice", "name": "덮밥·정식" },
     { "id": "noodles", "name": "우동·소바·면 요리" },
-    { "id": "street", "name": "길거리 음식" },
     { "id": "dessert", "name": "카페·디저트" },
     { "id": "curry", "name": "카레" },
     { "id": "izakaya", "name": "이자카야" },
