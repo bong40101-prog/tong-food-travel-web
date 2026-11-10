@@ -30,6 +30,10 @@ button { color: inherit; }
 .skip-link:focus { position: fixed; top: 10px; left: 10px; z-index: 10; color: white; background: var(--green); padding: 9px 12px; }
 .shell { width: min(1430px, calc(100% - 88px)); margin-inline: auto; }
 
+.release-notice { background: var(--green-soft); color: var(--green); border-bottom: 1px solid #d5e3d6; }
+.release-notice .shell { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 5px 10px; margin-block: 0; padding-block: 8px; text-align: center; font-size: clamp(.875rem, 2.5vw, .975rem); font-weight: 750; word-break: keep-all; }
+.release-notice-label { flex: none; border-radius: 999px; padding: 2px 9px; background: var(--green); color: var(--paper); font-size: .6875rem; font-weight: 800; }
+
 .header { background: var(--paper); border-bottom: 1px solid var(--line); }
 .header-inner { display: grid; grid-template-columns: auto minmax(230px, 570px) auto; justify-content: space-between; align-items: center; min-height: 77px; gap: 23px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 900; font-size: 19px; letter-spacing: -.065em; white-space: nowrap; }
