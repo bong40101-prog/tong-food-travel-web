@@ -1,0 +1,133 @@
+{
+  "defaultCountry": "JP",
+  "continents": [
+    { "id": "asia", "name": "아시아" },
+    { "id": "europe", "name": "유럽" },
+    { "id": "americas", "name": "미주" }
+  ],
+  "countries": [
+    {
+      "id": "KR",
+      "name": "대한민국",
+      "continent": "asia",
+      "currency": "KRW",
+      "keywords": [
+        "한국",
+        "국내",
+        "Korea",
+        "South Korea",
+        "KOR"
+      ],
+      "regions": [
+        {
+          "id": "seoul",
+          "name": "서울",
+          "keywords": [
+            "수도권",
+            "Seoul"
+          ]
+        },
+        {
+          "id": "incheon",
+          "name": "인천",
+          "keywords": [
+            "수도권",
+            "소래포구",
+            "Incheon"
+          ]
+        },
+        {
+          "id": "busan",
+          "name": "부산",
+          "keywords": [
+            "Busan"
+          ]
+        },
+        {
+          "id": "jeju",
+          "name": "제주",
+          "keywords": [
+            "제주도",
+            "서귀포",
+            "모슬포",
+            "Jeju"
+          ]
+        },
+        {
+          "id": "gangwon",
+          "name": "강원",
+          "keywords": [
+            "강원도",
+            "강원특별자치도",
+            "고성"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "JP",
+      "name": "일본",
+      "continent": "asia",
+      "currency": "JPY",
+      "keywords": ["Japan", "日本", "JP"],
+      "regions": [
+        { "id": "hokkaido", "name": "홋카이도", "keywords": ["북해도", "北海道", "Hokkaido"] },
+        { "id": "tohoku", "name": "도호쿠", "keywords": ["동북", "東北", "Tohoku"] },
+        { "id": "kanto", "name": "간토", "keywords": ["관동", "칸토", "関東", "Kanto"] },
+        { "id": "chubu", "name": "주부", "keywords": ["중부", "츄부", "中部", "Chubu"] },
+        { "id": "kansai", "name": "간사이", "keywords": ["관서", "칸사이", "긴키", "近畿", "関西", "Kansai"] },
+        { "id": "chugoku", "name": "주고쿠", "keywords": ["츄고쿠", "中国地方", "Chugoku"] },
+        { "id": "shikoku", "name": "시코쿠", "keywords": ["四国", "Shikoku"] },
+        { "id": "kyushu", "name": "규슈·오키나와", "searchName": "규슈", "keywords": ["큐슈", "九州", "Kyushu"] }
+      ]
+    },
+    {
+      "id": "CN",
+      "name": "중국",
+      "continent": "asia",
+      "currency": "CNY",
+      "keywords": ["China", "中国", "中國", "중화인민공화국"]
+    },
+    {
+      "id": "VN",
+      "name": "베트남",
+      "continent": "asia",
+      "currency": "VND",
+      "keywords": ["Vietnam", "Việt Nam", "越南"]
+    },
+    {
+      "id": "FR",
+      "name": "프랑스",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": ["France", "불란서"]
+    },
+    {
+      "id": "DE",
+      "name": "독일",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": ["Germany", "Deutschland"]
+    },
+    {
+      "id": "NL",
+      "name": "네덜란드",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": ["Netherlands", "Nederland", "Holland", "홀란드"]
+    }
+  ],
+  "categories": [
+    { "id": "ramen", "name": "라멘" },
+    { "id": "sushi", "name": "스시·해산물" },
+    { "id": "meat", "name": "고기·가츠" },
+    { "id": "rice", "name": "덮밥·정식" },
+    { "id": "noodles", "name": "우동·소바·면 요리" },
+    { "id": "street", "name": "길거리 음식" },
+    { "id": "dessert", "name": "카페·디저트" },
+    { "id": "curry", "name": "카레" },
+    { "id": "izakaya", "name": "이자카야" },
+    { "id": "other", "name": "그 외 음식점" },
+    { "id": "attraction", "name": "여행지" }
+  ]
+}
