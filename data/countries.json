@@ -1,9 +1,18 @@
 {
   "defaultCountry": "JP",
   "continents": [
-    { "id": "asia", "name": "아시아" },
-    { "id": "europe", "name": "유럽" },
-    { "id": "americas", "name": "미주" }
+    {
+      "id": "asia",
+      "name": "아시아"
+    },
+    {
+      "id": "europe",
+      "name": "유럽"
+    },
+    {
+      "id": "americas",
+      "name": "미주"
+    }
   ],
   "countries": [
     {
@@ -69,16 +78,89 @@
       "name": "일본",
       "continent": "asia",
       "currency": "JPY",
-      "keywords": ["Japan", "日本", "JP"],
+      "keywords": [
+        "Japan",
+        "日本",
+        "JP"
+      ],
       "regions": [
-        { "id": "hokkaido", "name": "홋카이도", "keywords": ["북해도", "北海道", "Hokkaido"] },
-        { "id": "tohoku", "name": "도호쿠", "keywords": ["동북", "東北", "Tohoku"] },
-        { "id": "kanto", "name": "간토", "keywords": ["관동", "칸토", "関東", "Kanto"] },
-        { "id": "chubu", "name": "주부", "keywords": ["중부", "츄부", "中部", "Chubu"] },
-        { "id": "kansai", "name": "간사이", "keywords": ["관서", "칸사이", "긴키", "近畿", "関西", "Kansai"] },
-        { "id": "chugoku", "name": "주고쿠", "keywords": ["츄고쿠", "中国地方", "Chugoku"] },
-        { "id": "shikoku", "name": "시코쿠", "keywords": ["四国", "Shikoku"] },
-        { "id": "kyushu", "name": "규슈·오키나와", "searchName": "규슈", "keywords": ["큐슈", "九州", "Kyushu"] }
+        {
+          "id": "hokkaido",
+          "name": "홋카이도",
+          "keywords": [
+            "북해도",
+            "北海道",
+            "Hokkaido"
+          ]
+        },
+        {
+          "id": "tohoku",
+          "name": "도호쿠",
+          "keywords": [
+            "동북",
+            "東北",
+            "Tohoku"
+          ]
+        },
+        {
+          "id": "kanto",
+          "name": "간토",
+          "keywords": [
+            "관동",
+            "칸토",
+            "関東",
+            "Kanto"
+          ]
+        },
+        {
+          "id": "chubu",
+          "name": "주부",
+          "keywords": [
+            "중부",
+            "츄부",
+            "中部",
+            "Chubu"
+          ]
+        },
+        {
+          "id": "kansai",
+          "name": "간사이",
+          "keywords": [
+            "관서",
+            "칸사이",
+            "긴키",
+            "近畿",
+            "関西",
+            "Kansai"
+          ]
+        },
+        {
+          "id": "chugoku",
+          "name": "주고쿠",
+          "keywords": [
+            "츄고쿠",
+            "中国地方",
+            "Chugoku"
+          ]
+        },
+        {
+          "id": "shikoku",
+          "name": "시코쿠",
+          "keywords": [
+            "四国",
+            "Shikoku"
+          ]
+        },
+        {
+          "id": "kyushu",
+          "name": "규슈·오키나와",
+          "searchName": "규슈",
+          "keywords": [
+            "큐슈",
+            "九州",
+            "Kyushu"
+          ]
+        }
       ]
     },
     {
@@ -86,47 +168,143 @@
       "name": "중국",
       "continent": "asia",
       "currency": "CNY",
-      "keywords": ["China", "中国", "中國", "중화인민공화국"]
+      "keywords": [
+        "China",
+        "中国",
+        "中國",
+        "중화인민공화국"
+      ]
     },
     {
       "id": "VN",
       "name": "베트남",
       "continent": "asia",
       "currency": "VND",
-      "keywords": ["Vietnam", "Việt Nam", "越南"]
+      "keywords": [
+        "Vietnam",
+        "Việt Nam",
+        "越南"
+      ]
     },
     {
       "id": "FR",
       "name": "프랑스",
       "continent": "europe",
       "currency": "EUR",
-      "keywords": ["France", "불란서"]
+      "keywords": [
+        "France",
+        "불란서"
+      ]
     },
     {
       "id": "DE",
       "name": "독일",
       "continent": "europe",
       "currency": "EUR",
-      "keywords": ["Germany", "Deutschland"]
+      "keywords": [
+        "Germany",
+        "Deutschland"
+      ]
     },
     {
       "id": "NL",
       "name": "네덜란드",
       "continent": "europe",
       "currency": "EUR",
-      "keywords": ["Netherlands", "Nederland", "Holland", "홀란드"]
+      "keywords": [
+        "Netherlands",
+        "Nederland",
+        "Holland",
+        "홀란드"
+      ]
+    },
+    {
+      "id": "SG",
+      "name": "싱가포르",
+      "continent": "asia",
+      "currency": "SGD",
+      "keywords": [
+        "Singapore",
+        "新加坡",
+        "싱가폴"
+      ]
+    },
+    {
+      "id": "US",
+      "name": "미국",
+      "continent": "americas",
+      "currency": "USD",
+      "keywords": [
+        "United States",
+        "USA",
+        "미합중국"
+      ]
+    },
+    {
+      "id": "IT",
+      "name": "이탈리아",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": [
+        "Italia",
+        "Italy",
+        "이태리"
+      ]
+    },
+    {
+      "id": "CA",
+      "name": "캐나다",
+      "continent": "americas",
+      "currency": "CAD",
+      "keywords": [
+        "Canada"
+      ]
     }
   ],
   "categories": [
-    { "id": "ramen", "name": "라멘" },
-    { "id": "sushi", "name": "스시·해산물" },
-    { "id": "meat", "name": "고기·가츠" },
-    { "id": "rice", "name": "덮밥·정식" },
-    { "id": "noodles", "name": "우동·소바·면 요리" },
-    { "id": "dessert", "name": "카페·디저트" },
-    { "id": "curry", "name": "카레" },
-    { "id": "izakaya", "name": "이자카야" },
-    { "id": "other", "name": "그 외 음식점" },
-    { "id": "attraction", "name": "여행지" }
+    {
+      "id": "ramen",
+      "name": "라멘"
+    },
+    {
+      "id": "sushi",
+      "name": "스시·해산물"
+    },
+    {
+      "id": "meat",
+      "name": "고기·가츠"
+    },
+    {
+      "id": "rice",
+      "name": "덮밥·정식"
+    },
+    {
+      "id": "noodles",
+      "name": "우동·소바·면 요리"
+    },
+    {
+      "id": "street",
+      "name": "길거리 음식"
+    },
+    {
+      "id": "dessert",
+      "name": "카페·디저트"
+    },
+    {
+      "id": "curry",
+      "name": "카레"
+    },
+    {
+      "id": "izakaya",
+      "name": "이자카야"
+    },
+    {
+      "id": "other",
+      "name": "그 외 음식점"
+    },
+    {
+      "id": "attraction",
+      "name": "여행지"
+    }
   ]
 }
