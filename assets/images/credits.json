@@ -371,5 +371,16 @@
     "rights_status": "unverified",
     "file": "otafuku-asakusa-d32580fc361c.png",
     "alt": "아사쿠사 오뎅 오타후쿠"
+  },
+  "ogyouza-nakasu-388675b734eb": {
+    "title": "사진 원본",
+    "license": "재사용 허락 미확인 · 소유자 게시 승인",
+    "changes": "지도 사진 뷰어 캡처",
+    "source": "https://www.google.com/maps/@33.5918636,130.4073124,3a,78.3y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgICCvsicrAE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgrass-cs%2FAABkmLdqXfkDJX6vTc-JlyrTyxyFDa5kANcWAPbArdw4zHK6qiJao8jjria4ySD9m__qINCoKjmsia7nL1MNhq29i8_NTfvpPSRMZt4qgJsU-FJsOkktVAeXQEER_YCDD2QOK29uOy4H6g%3Dw126-h86-k-no!7i1006!8i684?hl=ko&entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D",
+    "author": "Google 지도 원본 기여자 (원본 링크 참조)",
+    "licenseUrl": "https://www.google.com/help/terms_maps/",
+    "rights_status": "unverified",
+    "file": "ogyouza-nakasu-388675b734eb.png",
+    "alt": "오교자 나카스"
   }
 }
