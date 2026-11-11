@@ -1,3 +1,4 @@
+import { attachWon, refreshRates } from './exchange.mjs';
 import { mapUrl, timestamp, videoUrl } from './filters.mjs?v=20261110-video-policy';
 import { requestFoodApi } from './food-api.mjs';
 
@@ -172,6 +173,7 @@ function renderCard(place) {
   $('.menu-label', card).textContent = place.category === 'attraction' ? '관람 정보' : '대표 메뉴';
   $('.menu-name', card).textContent = place.menu;
   $('.price', card).textContent = formatPrice(place.price, place.country.currency);
+  attachWon($('.price-block', card), place);
   const priceSource = $('.price-source', card);
   if (place.price) {
     priceSource.href = place.price.source;
@@ -450,3 +452,6 @@ async function start() {
 
 start();
 
+
+
+refreshRates();
