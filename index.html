@@ -8,7 +8,7 @@
   <title>통도락여행 | 유튜버 맛집·여행지 지도</title>
   <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/styles.css?v=20261110-play-store">
-  <script type="module" src="./assets/app.js?v=20261110-search-limit"></script>
+  <script type="module" src="./assets/app.js?v=20261111-benefits-fx"></script>
   <meta name="description" content="유튜버가 방문한 국내외 맛집과 여행지를 찾아보세요. 대표 메뉴와 가격, 위치, 구글지도, 유튜브 영상을 한곳에서 확인하는 통도락여행.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://food.tongapp.co.kr/">
@@ -19,6 +19,7 @@
   <meta property="og:description" content="유튜버가 방문한 국내외 맛집과 여행지를 찾아보세요. 대표 메뉴와 가격, 위치, 구글지도, 유튜브 영상을 한곳에서 확인하는 통도락여행.">
   <meta property="og:url" content="https://food.tongapp.co.kr/">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "통도락여행", "alternateName": "통식도락", "url": "https://food.tongapp.co.kr/", "description": "유튜버가 방문한 국내외 맛집과 여행지를 찾아보세요. 대표 메뉴와 가격, 위치, 구글지도, 유튜브 영상을 한곳에서 확인하는 통도락여행.", "inLanguage": "ko-KR"}</script>
+<link rel="stylesheet" href="./assets/benefits.css">
 </head>
 <body>
   <a class="skip-link" href="#places">장소 목록으로 건너뛰기</a>
@@ -106,13 +107,13 @@
     </section>
     <aside class="sidebar" aria-label="개발자 블로그와 피클 AI">
       <div class="sidebar-inner">
-        <section aria-labelledby="blog-title">
+        <section aria-labelledby="blog-title" data-promotion>
           <p class="side-kicker">🟩 DEVELOPER’S JOURNAL</p>
           <h2 id="blog-title">통도락여행 개발자 블로그</h2>
           <p>통도락여행이 도움이 되셨다면 블로그 방문과 공감 한 번 부탁드립니다! ❤️</p>
           <a class="side-link" href="https://blog.naver.com/mkj2449" target="_blank" rel="noopener noreferrer">블로그 방문하기 <span aria-hidden="true">↗</span></a>
         </section>
-        <section class="pickle-panel" aria-labelledby="pickle-title">
+        <section data-promotion class="pickle-panel" aria-labelledby="pickle-title">
           <p class="side-kicker">🤖 AI ASSISTANT</p>
           <h2 id="pickle-title">손발 달린 AI 개인 비서 '피클'</h2>
           <ol class="pickle-features">
@@ -128,10 +129,15 @@
     </aside></div>
   </main>
 
-  <footer class="footer">
+  <section id="benefits-account" class="shell" aria-labelledby="benefits-heading">
+<h2 id="benefits-heading">계정·광고 제거</h2><p>등록된 Google 계정으로 로그인하면 앱과 홈페이지에서 광고 제거 혜택을 이용할 수 있어요. 검색과 저장은 로그인 없이 이용하세요.</p>
+<div id="benefits-google"></div><p id="benefits-status" role="status"></p><button id="benefits-logout" hidden>로그아웃</button> <button id="benefits-delete" hidden>계정·혜택 삭제</button>
+<section id="benefits-admin" hidden><h3>관리자 · 혜택 이메일 등록</h3><form id="benefits-add"><label>Google 계정 이메일 <input id="benefits-email" type="email" required maxlength="254"></label><button type="submit">등록</button></form><ul id="benefits-members"></ul></section>
+<p><a href="./privacy.html">개인정보처리방침</a> · <a href="./account-delete.html">계정 삭제 안내</a></p></section>
+<footer class="footer">
     <div class="shell footer-inner">
       <div><strong>통도락여행</strong><p>유튜버가 방문한 국내외 맛집과 여행지를 찾아보세요. 대표 메뉴와 가격, 위치, 구글지도, 유튜브 영상을 한곳에서 확인하는 통도락여행.</p></div>
-      <p>가격은 카드에 표시된 출처와 기준일의 정보예요. <a href="./sources.html">정보·사진 출처</a> · <a href="./privacy.html">개인정보처리방침</a></p>
+      <p>가격은 카드에 표시된 출처와 기준일의 정보예요. 원화는 결제 수수료를 제외한 참고 금액입니다. <a href="https://frankfurter.dev/" target="_blank" rel="noopener noreferrer">환율 제공: Frankfurter</a>. <a href="./sources.html">정보·사진 출처</a> · <a href="./privacy.html">개인정보처리방침</a></p>
     </div>
     <div class="shell visitor-footer">
       <strong id="daily-visitors" role="status" aria-live="polite">오늘 방문자 집계 중…</strong>
@@ -183,5 +189,6 @@
   </dialog>
   <script type="module" src="./assets/feedback.js?v=20261110-api-fallback"></script>
   <script type="module" src="./assets/visitors.js?v=20261110-api-fallback"></script>
+<script type="module" src="./assets/benefits.mjs"></script>
 </body>
 </html>
