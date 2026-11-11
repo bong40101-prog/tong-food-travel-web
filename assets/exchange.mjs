@@ -12,7 +12,7 @@ export function conversion(amount, currency, data = rows) {
 }
 function update(element) {
   const result = conversion(Number(element.dataset.amount), element.dataset.currency);
-  element.textContent = result ? `약 ${Math.round(result.value).toLocaleString('ko-KR')}원 · ${result.date} 환율${result.stale ? ' (이전 환율)' : ''}` : '원화 환산 정보 없음';
+  element.textContent = result ? `약 ${(Math.round(result.value / 100) * 100).toLocaleString('ko-KR')}원 · ${result.date} 환율${result.stale ? ' (이전 환율)' : ''}` : '원화 환산 정보 없음';
   element.title = 'Frankfurter 제공 참고 환율입니다. 결제·환전 수수료는 포함하지 않습니다.';
 }
 export function attachWon(parent, place) {
