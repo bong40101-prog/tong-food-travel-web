@@ -10,3 +10,8 @@
 #benefits-account input{max-width:100%;box-sizing:border-box;padding:.75rem;border:1px solid #e5e1d5;border-radius:10px;font-size:1rem;background:#f2f6ef}
 #benefits-members{overflow-wrap:anywhere;padding-left:1.2rem}
 #benefits-status{overflow-wrap:anywhere}
+
+.footer-price-info{min-width:0;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.footer .footer-price-info p{margin:0 0 .45rem}
+.footer-policy-links{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin-top:.75rem}
+.footer-policy-links a,.footer-price-info a{display:inline-block;white-space:nowrap}
