@@ -1,3 +1,6 @@
+import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
+import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs';
+const groupedCatalog = new GroupedCatalog();
 import { attachWon, refreshRates } from './exchange.mjs';
 import { mapUrl, timestamp, videoUrl } from './filters.mjs?v=20261110-video-policy';
 import { requestFoodApi } from './food-api.mjs';
@@ -20,18 +23,12 @@ let favorites = readFavorites();
 let catalog;
 let generation = 0;
 
-function readFavorites() {
-  const saved = new Set();
-  try {
-    for (let index = 0; index < localStorage.length; index++) {
-      const key = localStorage.key(index);
-      if (key?.startsWith(favoritePrefix)) saved.add(key);
-    }
-  } catch {
-    // Storage may be disabled. The catalog can still load.
-  }
-  return saved;
-}
+function readFavorites() { try { return favoriteKeys(); } catch { return new Set(); } }
+window.addEventListener('tong-account-changed',()=>{
+ favorites=readFavorites();
+ const hint=$('#favorite-hint');if(hint)hint.textContent=account()?'Google 계정에 찜이 동기화됩니다.':'로그인하지 않은 찜은 이 브라우저에만 저장됩니다.';
+ if(catalog && state.favoritesOnly)render();else cards.querySelectorAll('.favorite-button').forEach(updateFavoriteButton);
+});
 
 function favoriteKey(place) {
   return `${favoritePrefix}${place.country.id}/${place.id}`;
@@ -47,9 +44,7 @@ async function toggleFavorite(place, button) {
   const key = favoriteKey(place);
   let saved;
   try {
-    saved = localStorage.getItem(key) === null;
-    if (saved) localStorage.setItem(key, '1');
-    else localStorage.removeItem(key);
+    saved = toggleAccountFavorite(place);
   } catch {
     favoriteStatus.classList.remove('sr-only');
     favoriteStatus.textContent = '이 브라우저에서 즐겨찾기를 저장할 수 없어요.';
@@ -164,7 +159,7 @@ function renderCard(place) {
     credit.hidden = true;
     $('.card-photo', card).classList.add('card-photo-compact');
   }
-  $('.category', card).textContent = place.categoryName;
+  $('.category', card).textContent = foodName(place.category, place.country.id, place.categoryName);
   $('.location span', card).textContent = [place.region?.name ?? place.country.name, place.city, place.area].filter(Boolean).join(' · ');
   $('h3', card).textContent = place.name;
   const localName = $('.local-name', card);
@@ -241,8 +236,8 @@ function renderFilters(filters, query, hasFeatured) {
   city.value = state.city;
   city.disabled = filters.cities.length === 0;
 
-  const defaultLabel = !query && !state.region && !state.city && hasFeatured ? '대표 식당' : '전체';
-  const chips = [{ id: '', name: defaultLabel }, ...filters.categories].map(category => button(
+  const defaultLabel = '전체';
+  const chips = [{ id: '', name: defaultLabel }, ...choices(catalog.categories ?? filters.categories, state.country)].map(category => button(
     category.name, category.id === state.category, () => {
       state.category = category.id;
       render();
@@ -270,28 +265,14 @@ function warnSearchLimit(seconds) {
 }
 
 async function fetchPage(page, query, signal) {
-  const response = await requestFoodApi('tongfood-catalog', {
-    method: 'POST',
-    credentials: 'omit',
-    headers: { 'Content-Type': 'application/json' },
-    signal,
-    body: JSON.stringify({
-      country: state.country,
-      query,
-      region: state.region,
-      city: state.city,
-      category: state.category,
-      favorites: state.favoritesOnly ? [...favorites].map(key => key.slice(favoritePrefix.length)) : null,
-      page
-    })
-  });
-  if (!response.ok) {
-    const error = new Error('Catalog request failed');
-    error.status = response.status;
-    if (response.status === 429) error.retryAfter = Number(response.headers.get('Retry-After'));
-    throw error;
-  }
+ const input={country:state.country,query:query || (!state.region&&!state.city&&!state.category&&!state.favoritesOnly ? catalog.countries.find(c=>c.id===state.country)?.name || '' : ''),
+  region:state.region,city:state.city,category:state.category,favorites:state.favoritesOnly?[...favorites].map(key=>key.slice(favoritePrefix.length)):null};
+ async function fetcher(payload){
+  const response=await requestFoodApi('tongfood-catalog',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},signal,body:JSON.stringify(payload)});
+  if(!response.ok){const error=new Error('Catalog request failed');error.status=response.status;if(response.status===429)error.retryAfter=Number(response.headers.get('Retry-After'));throw error;}
   return response.json();
+ }
+ return ids(input.category).length>1 ? groupedCatalog.load(input,page,fetcher) : fetcher({...input,page});
 }
 
 async function render(page = 1) {
@@ -455,3 +436,4 @@ start();
 
 
 refreshRates();
+
