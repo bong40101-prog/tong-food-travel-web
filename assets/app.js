@@ -1,4 +1,5 @@
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
+import { attachRating } from './ratings.mjs?v=20261113-stars';
 import { locationLabel } from './location-label.mjs';
 import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs?v=20261112-store-menu';
 const groupedCatalog = new GroupedCatalog();
@@ -216,6 +217,7 @@ function renderCard(place) {
     $('.video-sources', card).append(item);
   }
   $('.map-link', card).href = mapUrl(place);
+  attachRating(card,place);
   return card;
 }
 
