@@ -2166,6 +2166,78 @@
       "name": "괌",
       "continent": "oceania",
       "currency": "USD"
+    },
+    {
+      "id": "LA",
+      "name": "라오스",
+      "continent": "asia",
+      "currency": "LAK",
+      "keywords": [
+        "LA"
+      ]
+    },
+    {
+      "id": "NP",
+      "name": "네팔",
+      "continent": "asia",
+      "currency": "NPR",
+      "keywords": [
+        "NP"
+      ]
+    },
+    {
+      "id": "JO",
+      "name": "요르단",
+      "continent": "asia",
+      "currency": "JOD",
+      "keywords": [
+        "JO"
+      ]
+    },
+    {
+      "id": "SA",
+      "name": "사우디아라비아",
+      "continent": "asia",
+      "currency": "SAR",
+      "keywords": [
+        "SA"
+      ]
+    },
+    {
+      "id": "AE",
+      "name": "아랍에미리트",
+      "continent": "asia",
+      "currency": "AED",
+      "keywords": [
+        "AE"
+      ]
+    },
+    {
+      "id": "IL",
+      "name": "이스라엘",
+      "continent": "asia",
+      "currency": "ILS",
+      "keywords": [
+        "IL"
+      ]
+    },
+    {
+      "id": "CU",
+      "name": "쿠바",
+      "continent": "americas",
+      "currency": "CUP",
+      "keywords": [
+        "CU"
+      ]
+    },
+    {
+      "id": "BO",
+      "name": "볼리비아",
+      "continent": "americas",
+      "currency": "BOB",
+      "keywords": [
+        "BO"
+      ]
     }
   ],
   "categories": [
