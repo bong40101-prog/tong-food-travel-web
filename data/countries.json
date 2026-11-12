@@ -265,6 +265,144 @@
         "中国",
         "中國",
         "중화인민공화국"
+      ],
+      "regions": [
+        {
+          "id": "chn-1180",
+          "name": "광둥성",
+          "keywords": [
+            "Guangdong",
+            "Guangdong"
+          ]
+        },
+        {
+          "id": "chn-1152",
+          "name": "광시 좡족 자치구",
+          "keywords": [
+            "Guangxi",
+            "Guangxi"
+          ]
+        },
+        {
+          "id": "chn-1838",
+          "name": "내몽골 자치구",
+          "keywords": [
+            "Inner Mongol",
+            "Inner Mongol"
+          ]
+        },
+        {
+          "id": "chn-1155",
+          "name": "베이징시",
+          "keywords": [
+            "Beijing",
+            "Beijing"
+          ]
+        },
+        {
+          "id": "chn-1814",
+          "name": "산둥성",
+          "keywords": [
+            "Shandong",
+            "Shandong"
+          ]
+        },
+        {
+          "id": "chn-1804",
+          "name": "산시성",
+          "keywords": [
+            "Shaanxi",
+            "Shaanxi"
+          ]
+        },
+        {
+          "id": "chn-1819",
+          "name": "상하이시",
+          "keywords": [
+            "Shanghai",
+            "Shanghai"
+          ]
+        },
+        {
+          "id": "chn-1756",
+          "name": "신장 위구르 자치구",
+          "keywords": [
+            "Xinjiang",
+            "Xinjiang"
+          ]
+        },
+        {
+          "id": "chn-1809",
+          "name": "쓰촨성",
+          "keywords": [
+            "Sichuan",
+            "Sichuan"
+          ]
+        },
+        {
+          "id": "chn-1810",
+          "name": "윈난성",
+          "keywords": [
+            "Yunnan",
+            "Yunnan"
+          ]
+        },
+        {
+          "id": "chn-1820",
+          "name": "저장성",
+          "keywords": [
+            "Zhejiang",
+            "Zhejiang"
+          ]
+        },
+        {
+          "id": "chn-1828",
+          "name": "지린성",
+          "keywords": [
+            "Jilin",
+            "Jilin"
+          ]
+        },
+        {
+          "id": "chn-1154",
+          "name": "충칭시",
+          "keywords": [
+            "Chongqing",
+            "Chongqing"
+          ]
+        },
+        {
+          "id": "chn-1775",
+          "name": "하이난성",
+          "keywords": [
+            "Hainan",
+            "Hainan"
+          ]
+        },
+        {
+          "id": "chn-1839",
+          "name": "헤이룽장성",
+          "keywords": [
+            "Heilongjiang",
+            "Heilongjiang"
+          ]
+        },
+        {
+          "id": "chn-1808",
+          "name": "후난성",
+          "keywords": [
+            "Hunan",
+            "Hunan"
+          ]
+        },
+        {
+          "id": "chn-1807",
+          "name": "후베이성",
+          "keywords": [
+            "Hubei",
+            "Hubei"
+          ]
+        }
       ]
     },
     {
@@ -276,6 +414,32 @@
         "Vietnam",
         "Việt Nam",
         "越南"
+      ],
+      "regions": [
+        {
+          "id": "vn-south",
+          "name": "남부",
+          "keywords": [
+            "Hồ Chí Minh city",
+            "south"
+          ]
+        },
+        {
+          "id": "vn-north",
+          "name": "북부",
+          "keywords": [
+            "Ha Noi",
+            "north"
+          ]
+        },
+        {
+          "id": "vn-central",
+          "name": "중부",
+          "keywords": [
+            "Lâm Đồng",
+            "central"
+          ]
+        }
       ]
     },
     {
@@ -286,6 +450,64 @@
       "keywords": [
         "France",
         "불란서"
+      ],
+      "regions": [
+        {
+          "id": "fr-grandest",
+          "name": "그랑테스트",
+          "keywords": [
+            "Bas-Rhin",
+            "Grand Est"
+          ]
+        },
+        {
+          "id": "fr-normandie",
+          "name": "노르망디",
+          "keywords": [
+            "Eure",
+            "Normandie"
+          ]
+        },
+        {
+          "id": "fr-nouvelleaquitaine",
+          "name": "누벨아키텐",
+          "keywords": [
+            "Gironde",
+            "Nouvelle-Aquitaine"
+          ]
+        },
+        {
+          "id": "fr-auvergnerhonealpes",
+          "name": "오베르뉴론알프",
+          "keywords": [
+            "Rhône",
+            "Auvergne-Rhône-Alpes"
+          ]
+        },
+        {
+          "id": "fr-occitanie",
+          "name": "옥시타니",
+          "keywords": [
+            "Aude",
+            "Occitanie"
+          ]
+        },
+        {
+          "id": "fr-iledefrance",
+          "name": "일드프랑스",
+          "keywords": [
+            "Paris",
+            "Île-de-France"
+          ]
+        },
+        {
+          "id": "fr-provencealpescotedazur",
+          "name": "프로방스알프코트다쥐르",
+          "keywords": [
+            "Bouches-du-Rhône",
+            "Provence-Alpes-Côte-d'Azur"
+          ]
+        }
       ]
     },
     {
@@ -296,6 +518,56 @@
       "keywords": [
         "Germany",
         "Deutschland"
+      ],
+      "regions": [
+        {
+          "id": "deu-1572",
+          "name": "노르트라인베스트팔렌",
+          "keywords": [
+            "Nordrhein-Westfalen",
+            "Nordrhein-Westfalen"
+          ]
+        },
+        {
+          "id": "deu-1573",
+          "name": "바덴뷔르템베르크",
+          "keywords": [
+            "Baden-Württemberg",
+            "Baden-Württemberg"
+          ]
+        },
+        {
+          "id": "deu-1591",
+          "name": "바이에른",
+          "keywords": [
+            "Bayern",
+            "Bayern"
+          ]
+        },
+        {
+          "id": "deu-1599",
+          "name": "베를린",
+          "keywords": [
+            "Berlin",
+            "Berlin"
+          ]
+        },
+        {
+          "id": "deu-1578",
+          "name": "함부르크",
+          "keywords": [
+            "Hamburg",
+            "Hamburg"
+          ]
+        },
+        {
+          "id": "deu-1574",
+          "name": "헤센",
+          "keywords": [
+            "Hessen",
+            "Hessen"
+          ]
+        }
       ]
     },
     {
@@ -308,6 +580,32 @@
         "Nederland",
         "Holland",
         "홀란드"
+      ],
+      "regions": [
+        {
+          "id": "nld-3486",
+          "name": "노르트홀란트",
+          "keywords": [
+            "Noord-Holland",
+            "Noord-Holland"
+          ]
+        },
+        {
+          "id": "nld-3484",
+          "name": "위트레흐트",
+          "keywords": [
+            "Utrecht",
+            "Utrecht"
+          ]
+        },
+        {
+          "id": "nld-3485",
+          "name": "자위트홀란트",
+          "keywords": [
+            "Zuid-Holland",
+            "Zuid-Holland"
+          ]
+        }
       ]
     },
     {
@@ -330,6 +628,36 @@
         "United States",
         "USA",
         "미합중국"
+      ],
+      "regions": [
+        {
+          "id": "south",
+          "name": "남부",
+          "keywords": [
+            "south"
+          ]
+        },
+        {
+          "id": "northeast",
+          "name": "북동부",
+          "keywords": [
+            "northeast"
+          ]
+        },
+        {
+          "id": "west",
+          "name": "서부",
+          "keywords": [
+            "west"
+          ]
+        },
+        {
+          "id": "midwest",
+          "name": "중서부",
+          "keywords": [
+            "midwest"
+          ]
+        }
       ]
     },
     {
@@ -341,6 +669,88 @@
         "Italia",
         "Italy",
         "이태리"
+      ],
+      "regions": [
+        {
+          "id": "it-lazio",
+          "name": "라치오",
+          "keywords": [
+            "Roma",
+            "Lazio"
+          ]
+        },
+        {
+          "id": "it-lombardia",
+          "name": "롬바르디아",
+          "keywords": [
+            "Milano",
+            "Lombardia"
+          ]
+        },
+        {
+          "id": "it-liguria",
+          "name": "리구리아",
+          "keywords": [
+            "Genova",
+            "Liguria"
+          ]
+        },
+        {
+          "id": "it-veneto",
+          "name": "베네토",
+          "keywords": [
+            "Venezia",
+            "Veneto"
+          ]
+        },
+        {
+          "id": "it-sicily",
+          "name": "시칠리아",
+          "keywords": [
+            "Palermo",
+            "Sicily"
+          ]
+        },
+        {
+          "id": "it-emiliaromagna",
+          "name": "에밀리아로마냐",
+          "keywords": [
+            "Bologna",
+            "Emilia-Romagna"
+          ]
+        },
+        {
+          "id": "it-campania",
+          "name": "캄파니아",
+          "keywords": [
+            "Napoli",
+            "Campania"
+          ]
+        },
+        {
+          "id": "it-toscana",
+          "name": "토스카나",
+          "keywords": [
+            "Firenze",
+            "Toscana"
+          ]
+        },
+        {
+          "id": "it-trentinoaltoadige",
+          "name": "트렌티노알토아디제",
+          "keywords": [
+            "Bozen",
+            "Trentino-Alto Adige"
+          ]
+        },
+        {
+          "id": "it-piemonte",
+          "name": "피에몬테",
+          "keywords": [
+            "Turin",
+            "Piemonte"
+          ]
+        }
       ]
     },
     {
@@ -350,6 +760,56 @@
       "currency": "CAD",
       "keywords": [
         "Canada"
+      ],
+      "regions": [
+        {
+          "id": "can-685",
+          "name": "노바스코샤",
+          "keywords": [
+            "Nova Scotia",
+            "Nova Scotia"
+          ]
+        },
+        {
+          "id": "can-630",
+          "name": "매니토바",
+          "keywords": [
+            "Manitoba",
+            "Manitoba"
+          ]
+        },
+        {
+          "id": "can-633",
+          "name": "브리티시컬럼비아",
+          "keywords": [
+            "British Columbia",
+            "British Columbia"
+          ]
+        },
+        {
+          "id": "can-632",
+          "name": "앨버타",
+          "keywords": [
+            "Alberta",
+            "Alberta"
+          ]
+        },
+        {
+          "id": "can-682",
+          "name": "온타리오",
+          "keywords": [
+            "Ontario",
+            "Ontario"
+          ]
+        },
+        {
+          "id": "can-683",
+          "name": "퀘벡",
+          "keywords": [
+            "Québec",
+            "Québec"
+          ]
+        }
       ]
     },
     {
@@ -359,6 +819,48 @@
       "currency": "EUR",
       "keywords": [
         "ES"
+      ],
+      "regions": [
+        {
+          "id": "es-madrid",
+          "name": "마드리드",
+          "keywords": [
+            "Madrid",
+            "Madrid"
+          ]
+        },
+        {
+          "id": "es-valenciana",
+          "name": "발렌시아",
+          "keywords": [
+            "Valencia",
+            "Valenciana"
+          ]
+        },
+        {
+          "id": "es-andalucia",
+          "name": "안달루시아",
+          "keywords": [
+            "Sevilla",
+            "Andalucía"
+          ]
+        },
+        {
+          "id": "es-canaryis",
+          "name": "카나리아 제도",
+          "keywords": [
+            "Santa Cruz de Tenerife",
+            "Canary Is."
+          ]
+        },
+        {
+          "id": "es-cataluna",
+          "name": "카탈루냐",
+          "keywords": [
+            "Barcelona",
+            "Cataluña"
+          ]
+        }
       ]
     },
     {
@@ -368,6 +870,24 @@
       "currency": "GBP",
       "keywords": [
         "GB"
+      ],
+      "regions": [
+        {
+          "id": "gb-scotland",
+          "name": "스코틀랜드",
+          "keywords": [
+            "Edinburgh",
+            "Scotland"
+          ]
+        },
+        {
+          "id": "gb-england",
+          "name": "잉글랜드",
+          "keywords": [
+            "Oxfordshire",
+            "England"
+          ]
+        }
       ]
     },
     {
@@ -377,6 +897,48 @@
       "currency": "CHF",
       "keywords": [
         "CH"
+      ],
+      "regions": [
+        {
+          "id": "che-163",
+          "name": "루체른",
+          "keywords": [
+            "Lucerne",
+            "Lucerne"
+          ]
+        },
+        {
+          "id": "che-165",
+          "name": "발레",
+          "keywords": [
+            "Valais",
+            "Valais"
+          ]
+        },
+        {
+          "id": "che-3424",
+          "name": "베른",
+          "keywords": [
+            "Bern",
+            "Bern"
+          ]
+        },
+        {
+          "id": "che-159",
+          "name": "제네바",
+          "keywords": [
+            "Genève",
+            "Genève"
+          ]
+        },
+        {
+          "id": "che-176",
+          "name": "취리히",
+          "keywords": [
+            "Zürich",
+            "Zürich"
+          ]
+        }
       ]
     },
     {
@@ -386,6 +948,40 @@
       "currency": "EUR",
       "keywords": [
         "AT"
+      ],
+      "regions": [
+        {
+          "id": "aut-2331",
+          "name": "빈",
+          "keywords": [
+            "Wien",
+            "Wien"
+          ]
+        },
+        {
+          "id": "aut-2326",
+          "name": "오버외스터라이히",
+          "keywords": [
+            "Oberösterreich",
+            "Oberösterreich"
+          ]
+        },
+        {
+          "id": "aut-2327",
+          "name": "잘츠부르크",
+          "keywords": [
+            "Salzburg",
+            "Salzburg"
+          ]
+        },
+        {
+          "id": "aut-2329",
+          "name": "티롤",
+          "keywords": [
+            "Tirol",
+            "Tirol"
+          ]
+        }
       ]
     },
     {
@@ -395,6 +991,40 @@
       "currency": "CZK",
       "keywords": [
         "CZ"
+      ],
+      "regions": [
+        {
+          "id": "cze-10370",
+          "name": "남모라바",
+          "keywords": [
+            "Jihomoravský",
+            "Jihomoravský"
+          ]
+        },
+        {
+          "id": "cze-1593",
+          "name": "남보헤미아",
+          "keywords": [
+            "Jihočeský",
+            "Jihočeský"
+          ]
+        },
+        {
+          "id": "cze-1590",
+          "name": "카를로비바리",
+          "keywords": [
+            "Karlovarský",
+            "Karlovarský"
+          ]
+        },
+        {
+          "id": "cze-1595",
+          "name": "프라하",
+          "keywords": [
+            "Prague",
+            "Prague"
+          ]
+        }
       ]
     },
     {
@@ -404,6 +1034,24 @@
       "currency": "EUR",
       "keywords": [
         "PT"
+      ],
+      "regions": [
+        {
+          "id": "prt-746",
+          "name": "리스보아현",
+          "keywords": [
+            "Lisboa",
+            "Lisboa"
+          ]
+        },
+        {
+          "id": "prt-754",
+          "name": "포르투현",
+          "keywords": [
+            "Porto",
+            "Porto"
+          ]
+        }
       ]
     },
     {
@@ -413,6 +1061,40 @@
       "currency": "EUR",
       "keywords": [
         "GR"
+      ],
+      "regions": [
+        {
+          "id": "grc-3013",
+          "name": "남에게",
+          "keywords": [
+            "Notio Aigaio",
+            "Notio Aigaio"
+          ]
+        },
+        {
+          "id": "grc-2884",
+          "name": "아티키",
+          "keywords": [
+            "Attiki",
+            "Attiki"
+          ]
+        },
+        {
+          "id": "grc-2990",
+          "name": "크레타",
+          "keywords": [
+            "Kriti",
+            "Kriti"
+          ]
+        },
+        {
+          "id": "grc-2900",
+          "name": "테살리아",
+          "keywords": [
+            "Thessalia",
+            "Thessalia"
+          ]
+        }
       ]
     },
     {
@@ -422,6 +1104,96 @@
       "currency": "TWD",
       "keywords": [
         "TW"
+      ],
+      "regions": [
+        {
+          "id": "twn-1156",
+          "name": "가오슝시",
+          "keywords": [
+            "Kaohsiung City",
+            "Kaohsiung City"
+          ]
+        },
+        {
+          "id": "twn-1167",
+          "name": "신베이시",
+          "keywords": [
+            "New Taipei City",
+            "New Taipei City"
+          ]
+        },
+        {
+          "id": "twn-1163",
+          "name": "이란현",
+          "keywords": [
+            "Yilan",
+            "Yilan"
+          ]
+        },
+        {
+          "id": "twn-3415",
+          "name": "진먼현",
+          "keywords": [
+            "Kinmen",
+            "Kinmen"
+          ]
+        },
+        {
+          "id": "twn-1168",
+          "name": "타오위안시",
+          "keywords": [
+            "Taoyuan",
+            "Taoyuan"
+          ]
+        },
+        {
+          "id": "twn-1160",
+          "name": "타이난시",
+          "keywords": [
+            "Tainan City",
+            "Tainan City"
+          ]
+        },
+        {
+          "id": "twn-1177",
+          "name": "타이둥현",
+          "keywords": [
+            "Taitung",
+            "Taitung"
+          ]
+        },
+        {
+          "id": "twn-1166",
+          "name": "타이베이시",
+          "keywords": [
+            "Taipei City",
+            "Taipei City"
+          ]
+        },
+        {
+          "id": "twn-1174",
+          "name": "타이중 시티",
+          "keywords": [
+            "Taichung City",
+            "Taichung City"
+          ]
+        },
+        {
+          "id": "twn-1158",
+          "name": "핑둥현",
+          "keywords": [
+            "Pingtung",
+            "Pingtung"
+          ]
+        },
+        {
+          "id": "twn-1172",
+          "name": "화롄현",
+          "keywords": [
+            "Hualien",
+            "Hualien"
+          ]
+        }
       ]
     },
     {
@@ -431,6 +1203,56 @@
       "currency": "THB",
       "keywords": [
         "TH"
+      ],
+      "regions": [
+        {
+          "id": "tha-416",
+          "name": "방콕",
+          "keywords": [
+            "Bangkok Metropolis",
+            "Bangkok Metropolis"
+          ]
+        },
+        {
+          "id": "tha-412",
+          "name": "아유타야",
+          "keywords": [
+            "Phra Nakhon Si Ayutthaya",
+            "Phra Nakhon Si Ayutthaya"
+          ]
+        },
+        {
+          "id": "tha-430",
+          "name": "촌부리",
+          "keywords": [
+            "Chon Buri",
+            "Chon Buri"
+          ]
+        },
+        {
+          "id": "tha-389",
+          "name": "치앙라이",
+          "keywords": [
+            "Chiang Rai",
+            "Chiang Rai"
+          ]
+        },
+        {
+          "id": "tha-390",
+          "name": "치앙마이",
+          "keywords": [
+            "Chiang Mai",
+            "Chiang Mai"
+          ]
+        },
+        {
+          "id": "tha-377",
+          "name": "푸껫",
+          "keywords": [
+            "Phuket",
+            "Phuket"
+          ]
+        }
       ]
     },
     {
@@ -440,6 +1262,24 @@
       "currency": "MYR",
       "keywords": [
         "MY"
+      ],
+      "regions": [
+        {
+          "id": "mys-1143",
+          "name": "조호르",
+          "keywords": [
+            "Johor",
+            "Johor"
+          ]
+        },
+        {
+          "id": "mys-4831",
+          "name": "쿠알라룸푸르",
+          "keywords": [
+            "Kuala Lumpur",
+            "Kuala Lumpur"
+          ]
+        }
       ]
     },
     {
@@ -449,6 +1289,56 @@
       "currency": "IDR",
       "keywords": [
         "ID"
+      ],
+      "regions": [
+        {
+          "id": "idn-1233",
+          "name": "동자와",
+          "keywords": [
+            "Jawa Timur",
+            "Jawa Timur"
+          ]
+        },
+        {
+          "id": "idn-1796",
+          "name": "리아우 제도",
+          "keywords": [
+            "Kepulauan Riau",
+            "Kepulauan Riau"
+          ]
+        },
+        {
+          "id": "idn-1232",
+          "name": "발리",
+          "keywords": [
+            "Bali",
+            "Bali"
+          ]
+        },
+        {
+          "id": "idn-513",
+          "name": "북술라웨시",
+          "keywords": [
+            "Sulawesi Utara",
+            "Sulawesi Utara"
+          ]
+        },
+        {
+          "id": "idn-1223",
+          "name": "자와바랏",
+          "keywords": [
+            "Jawa Barat",
+            "Jawa Barat"
+          ]
+        },
+        {
+          "id": "idn-1227",
+          "name": "자카르타",
+          "keywords": [
+            "Jakarta Raya",
+            "Jakarta Raya"
+          ]
+        }
       ]
     },
     {
@@ -458,6 +1348,40 @@
       "currency": "INR",
       "keywords": [
         "IN"
+      ],
+      "regions": [
+        {
+          "id": "ind-2428",
+          "name": "델리",
+          "keywords": [
+            "Delhi",
+            "Delhi"
+          ]
+        },
+        {
+          "id": "ind-2447",
+          "name": "마하라슈트라",
+          "keywords": [
+            "Maharashtra",
+            "Maharashtra"
+          ]
+        },
+        {
+          "id": "ind-3257",
+          "name": "서벵골",
+          "keywords": [
+            "West Bengal",
+            "West Bengal"
+          ]
+        },
+        {
+          "id": "ind-3253",
+          "name": "우타르프라데시",
+          "keywords": [
+            "Uttar Pradesh",
+            "Uttar Pradesh"
+          ]
+        }
       ]
     },
     {
@@ -467,6 +1391,24 @@
       "currency": "TRY",
       "keywords": [
         "TR"
+      ],
+      "regions": [
+        {
+          "id": "tur-2288",
+          "name": "네브셰히르",
+          "keywords": [
+            "Nevsehir",
+            "Nevsehir"
+          ]
+        },
+        {
+          "id": "tur-2265",
+          "name": "이스탄불",
+          "keywords": [
+            "Istanbul",
+            "Istanbul"
+          ]
+        }
       ]
     },
     {
@@ -476,6 +1418,32 @@
       "currency": "KHR",
       "keywords": [
         "KH"
+      ],
+      "regions": [
+        {
+          "id": "khm-1781",
+          "name": "시엠레아프",
+          "keywords": [
+            "Siemréab",
+            "Siemréab"
+          ]
+        },
+        {
+          "id": "khm-1797",
+          "name": "캄포트",
+          "keywords": [
+            "Kâmpôt",
+            "Kâmpôt"
+          ]
+        },
+        {
+          "id": "khm-1789",
+          "name": "프놈펜",
+          "keywords": [
+            "Phnom Penh",
+            "Phnom Penh"
+          ]
+        }
       ]
     },
     {
@@ -485,6 +1453,24 @@
       "currency": "PHP",
       "keywords": [
         "PH"
+      ],
+      "regions": [
+        {
+          "id": "ph-nationalcapitalregion",
+          "name": "메트로 마닐라",
+          "keywords": [
+            "Manila",
+            "National Capital Region"
+          ]
+        },
+        {
+          "id": "ph-centralvisayasregionvii",
+          "name": "중부 비사야",
+          "keywords": [
+            "Cebu",
+            "Central Visayas (Region VII)"
+          ]
+        }
       ]
     },
     {
@@ -494,6 +1480,16 @@
       "currency": "BDT",
       "keywords": [
         "BD"
+      ],
+      "regions": [
+        {
+          "id": "bgd-1806",
+          "name": "다카",
+          "keywords": [
+            "Dhaka",
+            "Dhaka"
+          ]
+        }
       ]
     },
     {
@@ -503,6 +1499,24 @@
       "currency": "EGP",
       "keywords": [
         "EG"
+      ],
+      "regions": [
+        {
+          "id": "egy-1540",
+          "name": "마트루",
+          "keywords": [
+            "Matruh",
+            "Matruh"
+          ]
+        },
+        {
+          "id": "egy-1533",
+          "name": "카이로",
+          "keywords": [
+            "Al Qahirah",
+            "Al Qahirah"
+          ]
+        }
       ]
     },
     {
@@ -512,6 +1526,16 @@
       "currency": "TZS",
       "keywords": [
         "TZ"
+      ],
+      "regions": [
+        {
+          "id": "tza-3378",
+          "name": "다르에스살람",
+          "keywords": [
+            "Dar-Es-Salaam",
+            "Dar-Es-Salaam"
+          ]
+        }
       ]
     },
     {
@@ -521,6 +1545,40 @@
       "currency": "MXN",
       "keywords": [
         "MX"
+      ],
+      "regions": [
+        {
+          "id": "mex-2727",
+          "name": "멕시코시티",
+          "keywords": [
+            "Distrito Federal",
+            "Distrito Federal"
+          ]
+        },
+        {
+          "id": "mex-2723",
+          "name": "오아하카",
+          "keywords": [
+            "Oaxaca",
+            "Oaxaca"
+          ]
+        },
+        {
+          "id": "mex-2735",
+          "name": "치아파스",
+          "keywords": [
+            "Chiapas",
+            "Chiapas"
+          ]
+        },
+        {
+          "id": "mex-2736",
+          "name": "킨타나로오",
+          "keywords": [
+            "Quintana Roo",
+            "Quintana Roo"
+          ]
+        }
       ]
     },
     {
@@ -530,6 +1588,16 @@
       "currency": "BRL",
       "keywords": [
         "BR"
+      ],
+      "regions": [
+        {
+          "id": "bra-1311",
+          "name": "상파울루",
+          "keywords": [
+            "São Paulo",
+            "São Paulo"
+          ]
+        }
       ]
     },
     {
@@ -539,6 +1607,40 @@
       "currency": "GEL",
       "keywords": [
         "GE"
+      ],
+      "regions": [
+        {
+          "id": "geo-3029",
+          "name": "사메그렐로제모스바네티",
+          "keywords": [
+            "Samegrelo-Zemo Svaneti",
+            "Samegrelo-Zemo Svaneti"
+          ]
+        },
+        {
+          "id": "geo-3039",
+          "name": "시다카르틀리",
+          "keywords": [
+            "Shida Kartli",
+            "Shida Kartli"
+          ]
+        },
+        {
+          "id": "geo-3030",
+          "name": "이메레티",
+          "keywords": [
+            "Imereti",
+            "Imereti"
+          ]
+        },
+        {
+          "id": "geo-3036",
+          "name": "트빌리시",
+          "keywords": [
+            "Tbilisi",
+            "Tbilisi"
+          ]
+        }
       ]
     },
     {
@@ -548,6 +1650,24 @@
       "currency": "MAD",
       "keywords": [
         "MA"
+      ],
+      "regions": [
+        {
+          "id": "ma-07",
+          "name": "마라케시사피",
+          "keywords": [
+            "Marrakech-Safi",
+            "Marrakech-Safi"
+          ]
+        },
+        {
+          "id": "ma-03",
+          "name": "페스메크네스",
+          "keywords": [
+            "Fez-Meknes",
+            "Fez-Meknes"
+          ]
+        }
       ]
     },
     {
@@ -557,6 +1677,24 @@
       "currency": "PKR",
       "keywords": [
         "PK"
+      ],
+      "regions": [
+        {
+          "id": "pak-1114",
+          "name": "신드",
+          "keywords": [
+            "Sind",
+            "Sind"
+          ]
+        },
+        {
+          "id": "pak-1110",
+          "name": "이슬라마바드 수도권",
+          "keywords": [
+            "F.C.T.",
+            "F.C.T."
+          ]
+        }
       ]
     },
     {
@@ -566,6 +1704,16 @@
       "currency": "LKR",
       "keywords": [
         "LK"
+      ],
+      "regions": [
+        {
+          "id": "lka-2470",
+          "name": "콜롬보 구",
+          "keywords": [
+            "Kŏḷamba",
+            "Kŏḷamba"
+          ]
+        }
       ]
     },
     {
@@ -575,6 +1723,16 @@
       "currency": "COP",
       "keywords": [
         "CO"
+      ],
+      "regions": [
+        {
+          "id": "col-1399",
+          "name": "보고타",
+          "keywords": [
+            "Bogota",
+            "Bogota"
+          ]
+        }
       ]
     },
     {
@@ -584,6 +1742,16 @@
       "currency": "ARS",
       "keywords": [
         "AR"
+      ],
+      "regions": [
+        {
+          "id": "arg-5493",
+          "name": "부에노스아이레스",
+          "keywords": [
+            "Ciudad de Buenos Aires",
+            "Ciudad de Buenos Aires"
+          ]
+        }
       ]
     },
     {
@@ -593,6 +1761,16 @@
       "currency": "ETB",
       "keywords": [
         "ET"
+      ],
+      "regions": [
+        {
+          "id": "eth-3133",
+          "name": "아디스아바바",
+          "keywords": [
+            "Addis Ababa",
+            "Addis Ababa"
+          ]
+        }
       ]
     },
     {
@@ -602,6 +1780,24 @@
       "currency": "KGS",
       "keywords": [
         "KG"
+      ],
+      "regions": [
+        {
+          "id": "kgz-1115",
+          "name": "비슈케크",
+          "keywords": [
+            "Bishkek",
+            "Bishkek"
+          ]
+        },
+        {
+          "id": "kgz-1117",
+          "name": "이식쿨",
+          "keywords": [
+            "Ysyk-Köl",
+            "Ysyk-Köl"
+          ]
+        }
       ]
     },
     {
@@ -611,6 +1807,56 @@
       "currency": "HKD",
       "keywords": [
         "HK"
+      ],
+      "regions": [
+        {
+          "id": "hkg-5162",
+          "name": "사이 쿵",
+          "keywords": [
+            "Sai Kung",
+            "Sai Kung"
+          ]
+        },
+        {
+          "id": "hkg-5159",
+          "name": "샴 수이 포",
+          "keywords": [
+            "Sham Shui Po",
+            "Sham Shui Po"
+          ]
+        },
+        {
+          "id": "hkg-5153",
+          "name": "센트럴 앤 웨스턴",
+          "keywords": [
+            "Central and Western",
+            "Central and Western"
+          ]
+        },
+        {
+          "id": "hkg-5157",
+          "name": "야우 침 몽",
+          "keywords": [
+            "Yau Tsim Mong",
+            "Yau Tsim Mong"
+          ]
+        },
+        {
+          "id": "hkg-5154",
+          "name": "완 차이",
+          "keywords": [
+            "Wan Chai",
+            "Wan Chai"
+          ]
+        },
+        {
+          "id": "hkg-5155",
+          "name": "이스턴",
+          "keywords": [
+            "Eastern",
+            "Eastern"
+          ]
+        }
       ]
     },
     {
@@ -620,6 +1866,16 @@
       "currency": "SEK",
       "keywords": [
         "SE"
+      ],
+      "regions": [
+        {
+          "id": "swe-194",
+          "name": "스톡홀름",
+          "keywords": [
+            "Stockholm",
+            "Stockholm"
+          ]
+        }
       ]
     },
     {
@@ -629,6 +1885,16 @@
       "currency": "ZAR",
       "keywords": [
         "ZA"
+      ],
+      "regions": [
+        {
+          "id": "zaf-1208",
+          "name": "하우텡",
+          "keywords": [
+            "Gauteng",
+            "Gauteng"
+          ]
+        }
       ]
     },
     {
@@ -638,6 +1904,16 @@
       "currency": "EUR",
       "keywords": [
         "BE"
+      ],
+      "regions": [
+        {
+          "id": "bel-3479",
+          "name": "베스트플란데런",
+          "keywords": [
+            "West Flanders",
+            "West Flanders"
+          ]
+        }
       ]
     },
     {
@@ -656,6 +1932,16 @@
       "currency": "AUD",
       "keywords": [
         "AU"
+      ],
+      "regions": [
+        {
+          "id": "aus-2654",
+          "name": "뉴사우스웨일스",
+          "keywords": [
+            "New South Wales",
+            "New South Wales"
+          ]
+        }
       ]
     },
     {
@@ -665,6 +1951,16 @@
       "currency": "HUF",
       "keywords": [
         "HU"
+      ],
+      "regions": [
+        {
+          "id": "hun-3160",
+          "name": "부다페스트",
+          "keywords": [
+            "Budapest",
+            "Budapest"
+          ]
+        }
       ]
     },
     {
@@ -674,6 +1970,32 @@
       "currency": "KZT",
       "keywords": [
         "KZ"
+      ],
+      "regions": [
+        {
+          "id": "kz-aba",
+          "name": "아바이주",
+          "keywords": [
+            "아바이주",
+            "아바이주"
+          ]
+        },
+        {
+          "id": "kaz-4829",
+          "name": "알마티",
+          "keywords": [
+            "Almaty City",
+            "Almaty City"
+          ]
+        },
+        {
+          "id": "kz-kar",
+          "name": "카라간다주",
+          "keywords": [
+            "카라간다주",
+            "카라간다주"
+          ]
+        }
       ]
     },
     {
@@ -683,6 +2005,24 @@
       "currency": "UZS",
       "keywords": [
         "UZ"
+      ],
+      "regions": [
+        {
+          "id": "uzb-358",
+          "name": "사마르칸트",
+          "keywords": [
+            "Samarkand",
+            "Samarkand"
+          ]
+        },
+        {
+          "id": "uzb-4828",
+          "name": "타슈켄트",
+          "keywords": [
+            "Tashkent",
+            "Tashkent"
+          ]
+        }
       ]
     },
     {
@@ -692,6 +2032,16 @@
       "currency": "TJS",
       "keywords": [
         "TJ"
+      ],
+      "regions": [
+        {
+          "id": "tjk-366",
+          "name": "고르노바다흐샨 자치",
+          "keywords": [
+            "Gorno-Badakhshan",
+            "Gorno-Badakhshan"
+          ]
+        }
       ]
     },
     {
@@ -701,6 +2051,24 @@
       "currency": "AZN",
       "keywords": [
         "AZ"
+      ],
+      "regions": [
+        {
+          "id": "aze-1726",
+          "name": "가흐 구",
+          "keywords": [
+            "Qax",
+            "Qax"
+          ]
+        },
+        {
+          "id": "aze-1689",
+          "name": "바쿠",
+          "keywords": [
+            "Bakı",
+            "Bakı"
+          ]
+        }
       ]
     },
     {
@@ -710,6 +2078,16 @@
       "currency": "RON",
       "keywords": [
         "RO"
+      ],
+      "regions": [
+        {
+          "id": "rou-305",
+          "name": "브라쇼브",
+          "keywords": [
+            "Brasov",
+            "Brasov"
+          ]
+        }
       ]
     },
     {
@@ -719,6 +2097,16 @@
       "currency": "EUR",
       "keywords": [
         "FI"
+      ],
+      "regions": [
+        {
+          "id": "fin-3176",
+          "name": "라피 지역",
+          "keywords": [
+            "Lapland",
+            "Lapland"
+          ]
+        }
       ]
     },
     {
@@ -728,6 +2116,24 @@
       "currency": "RUB",
       "keywords": [
         "RU"
+      ],
+      "regions": [
+        {
+          "id": "rus-2365",
+          "name": "모스크바",
+          "keywords": [
+            "Moskva",
+            "Moskva"
+          ]
+        },
+        {
+          "id": "rus-2611",
+          "name": "프리모르스키 지방",
+          "keywords": [
+            "Primor'ye",
+            "Primor'ye"
+          ]
+        }
       ]
     },
     {
@@ -737,6 +2143,16 @@
       "currency": "PEN",
       "keywords": [
         "PE"
+      ],
+      "regions": [
+        {
+          "id": "per-571",
+          "name": "쿠스코",
+          "keywords": [
+            "Cusco",
+            "Cusco"
+          ]
+        }
       ]
     },
     {
