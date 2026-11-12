@@ -1,6 +1,6 @@
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { locationLabel } from './location-label.mjs';
-import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs';
+import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs?v=20261112-store-menu';
 const groupedCatalog = new GroupedCatalog();
 import { attachWon, refreshRates } from './exchange.mjs';
 import { mapUrl, timestamp, videoUrl } from './filters.mjs?v=20261110-video-policy';
@@ -158,7 +158,7 @@ function renderCard(place) {
     credit.hidden = true;
     $('.card-photo', card).classList.add('card-photo-compact');
   }
-  $('.category', card).textContent = foodName(place.category, place.country.id, place.categoryName);
+  $('.category', card).textContent = place.storeType?.name || foodName(place.category, place.country.id, place.categoryName);
   $('.location span', card).textContent = locationLabel(place.region?.name ?? place.country.name, place.city, place.area);
   $('h3', card).textContent = place.name;
   const localName = $('.local-name', card);

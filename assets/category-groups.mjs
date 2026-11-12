@@ -1,4 +1,4 @@
-export const ids=id=>id==='noodle-group'?['ramen','noodles']:id==='other-group'?['street','other']:[id];
+export const ids=id=>id==='noodle-group'?['ramen','noodles']:id==='other-group'?['other']:[id];
 export function foodName(id,country,fallback=id){
  if(['ramen','noodles','noodle-group'].includes(id))return {JP:'라멘·면 요리',VN:'쌀국수·면 요리',IT:'파스타·면 요리',KR:'국수·면 요리',CN:'중국 면 요리',TH:'팟타이·면 요리'}[country]||'면 요리';
  return ({sushi:country==='JP'?'스시·해산물':'해산물',meat:country==='JP'?'고기·가츠':'고기 요리',rice:({JP:'덮밥·정식',VN:'껌·밥 요리',IT:'리소토·밥 요리'}[country]||'밥·정식'),izakaya:country==='JP'?'이자카야':'술집·바',dessert:'카페·디저트',street:'그 외 음식',other:'그 외 음식','other-group':'그 외 음식',curry:'카레',attraction:'여행지'})[id]||fallback;
