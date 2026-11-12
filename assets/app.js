@@ -1,3 +1,4 @@
+import {mountStayNearby} from './stay-nearby.mjs?v=20261113';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { attachRating } from './ratings.mjs?v=20261113-stars-app-only';
 import { locationLabel } from './location-label.mjs';
@@ -438,3 +439,5 @@ start();
 
 refreshRates();
 
+
+mountStayNearby(renderCard,()=>state.country);
