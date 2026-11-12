@@ -2681,5 +2681,17 @@
     "changes": "지도 사진 뷰어 캡처",
     "file": "paris-brasserie-vaudeville-1e1cf419474b.png",
     "alt": "브라세리 보드빌"
+  },
+  "shanghai-disneyland-pudong-9c6ee4bdc350": {
+    "title": "Enchanted Storybook Castle of Shanghai Disneyland",
+    "license": "CC BY-SA 3.0",
+    "changes": "원본 파일 사용 · 편집 없음",
+    "source": "https://commons.wikimedia.org/wiki/File:Enchanted_Storybook_Castle_of_Shanghai_Disneyland.jpg",
+    "author": "Fayhoo",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "rights_status": "licensed",
+    "date": "2016-04-30",
+    "file": "shanghai-disneyland-pudong-9c6ee4bdc350.jpg",
+    "alt": "상하이 디즈니랜드"
   }
 }
