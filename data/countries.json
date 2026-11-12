@@ -2238,6 +2238,18 @@
       "keywords": [
         "BO"
       ]
+    },
+    {
+      "id": "BS",
+      "name": "바하마",
+      "continent": "americas",
+      "currency": "BSD",
+      "keywords": [
+        "Bahamas",
+        "Nassau",
+        "나소"
+      ],
+      "regions": []
     }
   ],
   "categories": [
