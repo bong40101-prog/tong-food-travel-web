@@ -1,4 +1,9 @@
-import {catalogAuthorization} from './account-store.mjs';
+function catalogAuthorization() {
+  try {
+    const session = JSON.parse(localStorage.getItem('tongdorak:session:v1') || '{}');
+    return session.token && session.expiresAt > Date.now() ? {Authorization: `Bearer ${session.token}`} : {};
+  } catch { return {}; }
+}
 const primaryApi = 'https://stock.tongapp.co.kr/api/';
 const fallbackApi = 'https://korea-futures-cloudflare.pages.dev/api/';
 

@@ -4,7 +4,7 @@ import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs?v=
 const groupedCatalog = new GroupedCatalog();
 import { attachWon, refreshRates } from './exchange.mjs?v=20261112-price-order';
 import { mapUrl, timestamp, videoUrl } from './filters.mjs?v=20261110-video-policy';
-import { requestFoodApi } from './food-api.mjs?v=20261112-admin-auth';
+import { requestFoodApi } from './food-api.mjs?v=20261112-admin-auth2';
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const search = $('#search');
