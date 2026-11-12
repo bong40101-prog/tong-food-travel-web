@@ -1,4 +1,4 @@
-import {mountStayNearby} from './stay-nearby.mjs?v=20261113';
+import {mountStayNearby} from './stay-nearby.mjs?v=20261113-unified';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { attachRating } from './ratings.mjs?v=20261113-stars-app-only';
 import { locationLabel } from './location-label.mjs';
@@ -379,6 +379,11 @@ search.addEventListener('input', () => {
 
 $('#search-form').addEventListener('submit', event => {
   event.preventDefault();
+  clearTimeout(searchTimer);
+  if (/(호텔|숙소|센[츄추]리\s*아트|hotel|hostel|resort|ホテル|旅館)/i.test(search.value)) {
+    openStaySearch(search.value.trim());
+    return;
+  }
   if (catalog) render();
   $('#places').scrollIntoView({ block: 'start' });
 });
@@ -440,4 +445,4 @@ start();
 refreshRates();
 
 
-mountStayNearby(renderCard,()=>state.country);
+const openStaySearch=mountStayNearby(renderCard,()=>state.country);

@@ -3,11 +3,12 @@ const API='https://tongdorak-benefits.bong40101.workers.dev';
 const el=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n};
 function button(text,fn){const n=el('button',text);n.type='button';n.addEventListener('click',fn);return n}
 export function mountStayNearby(renderCard,country){
- const opener=button('숙소·장소 주변 맛집 찾기',open);opener.className='stay-open';document.getElementById('search-form').after(opener);
- function open(){
+ return open;
+ function open(query=''){
+  const opener=document.getElementById('search');
   const dialog=el('dialog');dialog.className='stay-dialog';const controller=new AbortController();
   const header=el('header'),title=el('h2','숙소·장소 주변 맛집');header.append(title,button('닫기',()=>dialog.close()));
-  const form=el('form'),label=el('label','숙소·장소 이름 또는 주소'),input=el('input');input.maxLength=160;input.placeholder='예: 호텔 센츄리 아트';label.append(input);
+  const form=el('form'),label=el('label','숙소·장소 이름 또는 주소'),input=el('input');input.value=query;input.maxLength=160;input.placeholder='예: 호텔 센츄리 아트';label.append(input);
   const submit=el('button','검색');submit.type='submit';form.append(label,submit);
   const attribution=el('p');for(const [name,url]of [['Powered by Geoapify','https://www.geoapify.com/'],['© OpenStreetMap contributors','https://www.openstreetmap.org/copyright']]){const a=el('a',name);a.href=url;a.target='_blank';a.rel='noopener';attribution.append(a,document.createTextNode(' '))}
   const status=el('p'),candidates=el('div'),results=el('div');status.setAttribute('role','status');
@@ -22,6 +23,7 @@ export function mountStayNearby(renderCard,country){
     status.textContent=data.candidates.length?'이름과 주소를 확인하고 선택하세요.':'찾지 못했어요. 영문 이름 또는 주소로 검색해 주세요.';
     for(const candidate of data.candidates){const b=button('',()=>run(()=>near(candidate,3,false,1)));b.className='stay-candidate';b.append(el('strong',candidate.name),el('span',candidate.address));candidates.append(b)}
   })});
+  if(query.trim().length>=2)form.requestSubmit();
   async function near(candidate,r,unknown,p){
     const data=await checked(await requestFoodApi('tongfood-catalog',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({country:candidate.country||'',query:'',region:'',city:'',category:'',favorites:null,page:p,fullList:true,nearby:{coordinates:candidate.coordinates,radius:r,missing:unknown}}),signal:controller.signal}));
     if(data.distanceType!=='straight_line')throw Error('주변 검색 연결 준비 중입니다. 잠시 후 다시 시도해 주세요.');if(!dialog.open)return;
