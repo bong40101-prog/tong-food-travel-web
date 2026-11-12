@@ -94,8 +94,6 @@ function setRegion(continent, country) {
   state.favoritesOnly = false;
   state.continent = continent;
   state.country = country;
-  state.query = '';
-  search.value = '';
   clearFilters();
   render();
 }
@@ -103,12 +101,12 @@ function setRegion(continent, country) {
 function renderRegion() {
   const continentSelect = $('#continent-select');
   const countrySelect = $('#country-select');
-  continentSelect.replaceChildren(...catalog.continents.map(c=>new Option(c.name,c.id)));
+  continentSelect.replaceChildren(new Option('모든 대륙',''),...catalog.continents.map(c=>new Option(c.name,c.id)));
   continentSelect.value=state.continent;
-  countrySelect.replaceChildren(...catalog.countries.filter(c=>c.continent===state.continent).map(c=>new Option(c.name,c.id)));
+  countrySelect.replaceChildren(new Option('모든 국가',''),...catalog.countries.filter(c=>!state.continent || c.continent===state.continent).map(c=>new Option(c.name,c.id)));
   countrySelect.value=state.country;
-  continentSelect.onchange=()=>{const c=catalog.countries.find(c=>c.continent===continentSelect.value);setRegion(continentSelect.value,c?.id||'');};
-  countrySelect.onchange=()=>{const c=catalog.countries.find(c=>c.id===countrySelect.value);if(c)setRegion(c.continent,c.id);};
+  continentSelect.onchange=()=>setRegion(continentSelect.value,'');
+  countrySelect.onchange=()=>{const c=catalog.countries.find(c=>c.id===countrySelect.value);setRegion(state.continent,c?.id||'');};
 }
 
 
@@ -264,7 +262,7 @@ function warnSearchLimit(seconds) {
 }
 
 async function fetchPage(page, query, signal) {
- const input={country:state.country,query,fullList:true,
+ const input={continent:state.continent,country:state.country,query,fullList:true,
   region:state.region,city:state.city,category:state.category,favorites:state.favoritesOnly?[...favorites].map(key=>key.slice(favoritePrefix.length)):null};
  async function fetcher(payload){
   const response=await requestFoodApi('tongfood-catalog',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},signal,body:JSON.stringify(payload)});
@@ -285,8 +283,8 @@ async function render(page = 1) {
   const currentContinent = catalog.continents.find(continent => continent.id === state.continent);
   const favoritesOnly = state.favoritesOnly;
   favoritesToggle.setAttribute('aria-pressed', String(favoritesOnly));
-  $('#result-eyebrow').textContent = favoritesOnly ? '저장한 장소' : query ? '모든 등록 국가' : [currentContinent?.name, currentCountry?.name].filter(Boolean).join(' / ');
-  $('#places-title').textContent = favoritesOnly ? '내 즐겨찾기' : query ? '통합 검색 결과' : currentCountry ? `${currentCountry.name} 맛집과 여행지` : `${currentContinent.name} 맛집과 여행지`;
+  $('#result-eyebrow').textContent = favoritesOnly ? '저장한 장소' : [currentContinent?.name || '모든 대륙', currentCountry?.name || '모든 국가'].join(' / ');
+  $('#places-title').textContent = favoritesOnly ? '내 즐겨찾기' : query ? `${currentCountry?.name || currentContinent?.name || '전체'} 검색 결과` : currentCountry ? `${currentCountry.name} 맛집과 여행지` : `${currentContinent?.name || '전체'} 맛집과 여행지`;
   $('#favorite-hint').hidden = !favoritesOnly;
   if (!append) {
     renderRegion();
@@ -320,7 +318,7 @@ async function render(page = 1) {
       if (favoritesOnly && results.scopeTotal === 0) {
         showEmpty('저장한 장소가 없어요', '식당이나 여행지 카드의 별을 눌러 저장해 보세요.', '장소 둘러보기');
       } else if (!query && !currentCountry) {
-        showEmpty('아직 등록된 장소가 없어요', '상단 검색창에서는 현재 등록된 모든 국가를 검색할 수 있어요.', '일본 둘러보기');
+        showEmpty('아직 등록된 장소가 없어요', '선택한 지역을 바꾸거나 모든 대륙·모든 국가를 선택해 보세요.', '일본 둘러보기');
       } else {
         showEmpty('조건에 맞는 장소가 없어요', '검색어나 음식 종류, 도시를 바꿔 보세요.', '검색과 필터 초기화');
       }
@@ -367,7 +365,7 @@ window.addEventListener('storage', event => {
 
 search.addEventListener('input', () => {
   if (!catalog) return;
-  if (Boolean(state.query.trim()) !== Boolean(search.value.trim())) clearFilters();
+
   state.query = search.value;
   clearTimeout(searchTimer);
   generation++;
