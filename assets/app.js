@@ -408,9 +408,10 @@ $('#reset').addEventListener('click', () => {
     render();
     return;
   }
-  const current = catalog.countries.find(country => country.id === state.country)
-    ?? catalog.countries.find(country => country.id === catalog.defaultCountry);
-  setRegion(current.continent, current.id);
+  state.query = '';
+  search.value = '';
+  clearFilters();
+  render();
 });
 
 async function start() {
