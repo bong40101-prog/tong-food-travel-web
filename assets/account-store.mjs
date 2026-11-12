@@ -6,6 +6,7 @@ function read(key){try{return JSON.parse(localStorage.getItem(key)||'{}')}catch{
 function write(key,value){localStorage.setItem(key,JSON.stringify(value))}
 if(!session.token || session.expiresAt<=Date.now()){session={};localStorage.removeItem(SESSION)}
 export function account(){return session.email||''}
+export function catalogAuthorization(){return session.token && session.expiresAt>Date.now() ? {Authorization:`Bearer ${session.token}`} : {}}
 export function isAdmin(){return Boolean(session.admin)}
 const key=kind=>`tongdorak:${kind}:${account()}`;
 function changed(){window.dispatchEvent(new Event('tong-account-changed'))}

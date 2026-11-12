@@ -19,7 +19,7 @@ export function attachWon(parent, place) {
   if (!Number.isFinite(place.price?.amount) || place.price.amount <= 0 || place.country.currency === 'KRW') return;
   const line = document.createElement('small');
   line.className = 'won-price'; line.dataset.amount = place.price.amount; line.dataset.currency = place.country.currency;
-  update(line); parent.append(line);
+  update(line); parent.insertBefore(line, parent.querySelector('.price-source'));
 }
 export async function refreshRates() {
   try {

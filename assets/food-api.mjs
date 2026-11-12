@@ -1,3 +1,4 @@
+import {catalogAuthorization} from './account-store.mjs';
 const primaryApi = 'https://stock.tongapp.co.kr/api/';
 const fallbackApi = 'https://korea-futures-cloudflare.pages.dev/api/';
 
@@ -10,7 +11,11 @@ export async function requestFoodApi(route, {signal, ...options} = {}, timeoutMs
     const timeout = setTimeout(() => controller.abort(new DOMException('Request timed out', 'TimeoutError')), timeoutMs);
     try {
       if (controller.signal.aborted) throw controller.signal.reason;
-      return await fetch(base + route, {...options, signal: controller.signal});
+      const headers = new Headers(options.headers);
+      if (route === 'tongfood-catalog') {
+        for (const [key, value] of Object.entries(catalogAuthorization())) headers.set(key, value);
+      }
+      return await fetch(base + route, {...options, headers, signal: controller.signal});
     } finally {
       clearTimeout(timeout);
       signal?.removeEventListener('abort', cancel);
