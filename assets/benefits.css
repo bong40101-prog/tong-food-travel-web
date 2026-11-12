@@ -22,3 +22,5 @@
 .tong-community-dialog p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7}
 .tong-community-dialog button{display:block;min-height:44px;padding:10px 16px;margin:8px 0;border:1px solid #e5e1d5;border-radius:10px;background:#e5eee5;color:#1b4437}
 .tong-community-dialog input,.tong-community-dialog textarea,.tong-community-dialog select{display:block;width:100%;box-sizing:border-box;margin:10px 0;font:inherit;padding:12px}
+
+#destination-maps{margin:20px 0}#destination-maps h2{font-size:1.2rem}.destination-map-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:12px;max-width:760px}.destination-map-tile{aspect-ratio:1;padding:8px;border:1px solid #e5e1d5;border-radius:18px;background:#f2f6ef;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;font:inherit;min-width:0}.destination-map-tile svg{width:100%;height:78px}.destination-map-tile span{text-align:center;font-size:.9rem}#destination-maps>p,#destination-maps>a{font-size:.75rem;color:#5e6d63}#destination-maps>button{margin-left:12px;min-height:44px}
