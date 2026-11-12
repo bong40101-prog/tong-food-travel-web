@@ -13,21 +13,24 @@ const rank=place=>{const n=['박범 ParkBeom','김제법','유우키'].findIndex
 export class GroupedCatalog {
  async load(input,page,fetcher){
   const key=JSON.stringify(input);
-  if(page===1||this.key!==key||this.last+1!==page){this.key=key;this.last=0;this.streams=ids(input.category).map(category=>({category,buffer:[],next:1,total:0}));}
+  const reset=page===1||this.key!==key||this.last+1!==page;
+  const streams=reset?ids(input.category).map(category=>({category,buffer:[],next:1,total:0})):this.streams.map(s=>({...s,buffer:[...s.buffer]}));
+  let loaded=reset?0:this.last,baseResult=this.base;
   let result;
-  while(this.last<page){
+  while(loaded<page){
    const places=[];let base;
    while(places.length<18){
-    for(const stream of this.streams)if(!stream.buffer.length&&stream.next){
-     base=await fetcher({...input,category:stream.category,page:stream.next});stream.buffer.push(...base.places);stream.next=base.nextPage;stream.total=base.total;this.base=base;
+    for(const stream of streams)if(!stream.buffer.length&&stream.next){
+     base=await fetcher({...input,category:stream.category,page:stream.next});stream.buffer.push(...base.places);stream.next=base.nextPage;stream.total=base.total;baseResult=base;
     }
-    const stream=this.streams.filter(s=>s.buffer.length).sort((a,b)=>rank(a.buffer[0])-rank(b.buffer[0]))[0];
+    const stream=streams.filter(s=>s.buffer.length).sort((a,b)=>rank(a.buffer[0])-rank(b.buffer[0]))[0];
     if(!stream)break;places.push(stream.buffer.shift());
    }
-   this.last++;
-   result={...this.base,places,total:this.streams.reduce((sum,s)=>sum+s.total,0),featured:false,hasFeatured:false,
-    filters:{...this.base.filters,category:input.category},nextPage:this.streams.some(s=>s.next||s.buffer.length)?this.last+1:null};
+   loaded++;
+   result={...baseResult,places,total:streams.reduce((sum,s)=>sum+s.total,0),featured:false,hasFeatured:false,
+    filters:{...baseResult.filters,category:input.category},nextPage:streams.some(s=>s.next||s.buffer.length)?loaded+1:null};
   }
+  this.key=key;this.last=loaded;this.streams=streams;this.base=baseResult;
   return result;
  }
 }
