@@ -33,3 +33,12 @@
 #destination-maps{display:block;width:100%;clear:both}#destination-maps[hidden]{display:none}
 .destination-map-grid.expanded{max-height:340px;overflow-y:auto;overscroll-behavior:contain;padding-right:6px}
 .filter-row{align-items:flex-start;clear:both}.filters{flex:1}
+
+#account-dialog{width:min(640px,calc(100vw - 32px));max-height:85dvh;box-sizing:border-box;overflow:auto;border:1px solid #e5e1d5;border-radius:18px;padding:18px;background:#fffdf8;color:#1f2e28}
+#account-dialog::backdrop{background:rgba(31,46,40,.4)}
+#account-dialog>form{text-align:right}
+#account-dialog>form button{border:1px solid #e5e1d5;border-radius:10px;background:#e5eee5;color:#1b4437;min-height:44px;padding:8px 16px;cursor:pointer}
+#account-dialog #benefits-account{width:100%;margin:0}
+#account-dialog #benefits-account>summary{display:none}
+#account-dialog .benefits-panel{border:0;padding:0}
+#account-dialog input{min-width:0}

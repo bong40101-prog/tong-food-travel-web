@@ -19,7 +19,7 @@
   <meta property="og:description" content="유튜버가 방문한 국내외 맛집과 여행지를 찾아보세요. 대표 메뉴와 가격, 위치, 구글지도, 유튜브 영상을 한곳에서 확인하는 통도락여행.">
   <meta property="og:url" content="https://food.tongapp.co.kr/">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "통도락여행", "alternateName": "통식도락", "url": "https://food.tongapp.co.kr/", "description": "유튜버가 방문한 국내외 맛집과 여행지를 찾아보세요. 대표 메뉴와 가격, 위치, 구글지도, 유튜브 영상을 한곳에서 확인하는 통도락여행.", "inLanguage": "ko-KR"}</script>
-<link rel="stylesheet" href="./assets/benefits.css?v=20261112-no-web-maps">
+<link rel="stylesheet" href="./assets/benefits.css?v=20261112-header-login">
 </head>
 <body>
   <a class="skip-link" href="#places">장소 목록으로 건너뛰기</a>
@@ -53,7 +53,7 @@
         <input type="search" id="search" maxlength="120" placeholder="가게·도시·음식·유튜버 통합 검색" autocomplete="off">
         <button type="submit">검색</button>
       </form>
-      <nav class="site-links" aria-label="관련 사이트 및 문의"><button id="feedback-open" type="button" aria-haspopup="dialog">오류 제보 및 건의</button><a href="https://bong40101-prog.github.io/tong-sky-data/" target="_blank" rel="noopener noreferrer">통스카이 ↗</a><a href="https://korea-futures-cloudflare.pages.dev/" target="_blank" rel="noopener noreferrer">롱숏레이더 ↗</a></nav>
+      <nav class="site-links" aria-label="관련 사이트 및 문의"><button id="account-open" type="button" aria-haspopup="dialog" aria-controls="account-dialog">로그인</button><button id="feedback-open" type="button" aria-haspopup="dialog">오류 제보 및 건의</button><a href="https://bong40101-prog.github.io/tong-sky-data/" target="_blank" rel="noopener noreferrer">통스카이 ↗</a><a href="https://korea-futures-cloudflare.pages.dev/" target="_blank" rel="noopener noreferrer">롱숏레이더 ↗</a></nav>
     </div>
   </header>
 
@@ -130,6 +130,7 @@
     </aside></div>
   </main>
 
+  <dialog id="account-dialog" aria-label="내 계정"><form method="dialog"><button type="submit" autofocus>닫기</button></form></dialog>
   <details id="benefits-account" class="shell">
 <summary>계정 설정</summary>
 <div class="benefits-panel">
@@ -200,7 +201,7 @@
   </dialog>
   <script type="module" src="./assets/feedback.js?v=20261110-api-fallback"></script>
   <script type="module" src="./assets/visitors.js?v=20261110-api-fallback"></script>
-<script type="module" src="./assets/benefits.mjs?v=20261112-no-web-maps"></script>
+<script type="module" src="./assets/benefits.mjs?v=20261112-header-login"></script>
 </body>
 </html>
 

@@ -32,3 +32,15 @@ async function restore(){try{const me=await resume();if(!me)return;document.quer
  notice(`${me.email} · 로그인 유지 중`);if(me.admin)await members();
 }catch(e){notice(e.message)}}
 if($('benefits-google')){restore();setupCommunity($('benefits-account'));}
+
+const accountButton=$('account-open'), accountDialog=$('account-dialog'), accountPanel=$('benefits-account');
+if(accountButton && accountDialog && accountPanel){
+ const anchor=document.createComment('account settings');
+ accountPanel.before(anchor);
+ const update=()=>{accountButton.textContent=account()?'내 계정':'로그인';};
+ accountButton.addEventListener('click',()=>{
+  accountPanel.open=true;accountDialog.append(accountPanel);accountDialog.showModal();
+ });
+ accountDialog.addEventListener('close',()=>{anchor.after(accountPanel);accountPanel.open=false;accountButton.focus();});
+ window.addEventListener('tong-account-changed',update);update();
+}
