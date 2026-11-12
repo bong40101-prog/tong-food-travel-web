@@ -1,5 +1,5 @@
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
-import { attachRating } from './ratings.mjs?v=20261113-stars';
+import { attachRating } from './ratings.mjs?v=20261113-stars-app-only';
 import { locationLabel } from './location-label.mjs';
 import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs?v=20261112-store-menu';
 const groupedCatalog = new GroupedCatalog();
