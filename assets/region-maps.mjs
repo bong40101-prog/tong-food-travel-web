@@ -18,7 +18,7 @@ let generation=0;
 export async function renderDestinationMaps(country,cities,choose){
  const current=++generation;
  let section=document.getElementById('destination-maps');
- if(!section){section=document.createElement('section');section.id='destination-maps';document.getElementById('filters').before(section);}
+ if(!section){section=document.createElement('section');section.id='destination-maps';document.getElementById('filters').closest('.filter-row').before(section);}
  section.replaceChildren();section.hidden=!country;if(!country)return;
  const heading=document.createElement('h2');heading.textContent='어디로 떠나볼까요?';section.append(heading);
  const isCity=!country.regions?.length;const entries=isCity?cities.map(name=>({id:name,name})):country.regions;
@@ -37,7 +37,7 @@ export async function renderDestinationMaps(country,cities,choose){
    button.onclick=()=>choose(item.id,isCity);return button;
   }));more.textContent=expanded?'접기':'전체 보기';
  }
- more.onclick=()=>{expanded=!expanded;draw()};draw();
+ more.onclick=()=>{expanded=!expanded;grid.classList.toggle('expanded',expanded);more.setAttribute('aria-expanded',String(expanded));draw()};draw();
  if(!map)try{
   const response=await fetch(`https://tongdorak-benefits.bong40101.workers.dev/maps/${country.id}.json`);
   if(!response.ok)throw Error();map=await response.json();cache.set(country.id,map);if(current===generation)draw();

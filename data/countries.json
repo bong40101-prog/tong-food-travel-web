@@ -738,6 +738,18 @@
       "keywords": [
         "PE"
       ]
+    },
+    {
+      "id": "VA",
+      "name": "바티칸",
+      "continent": "europe",
+      "currency": "EUR"
+    },
+    {
+      "id": "GU",
+      "name": "괌",
+      "continent": "oceania",
+      "currency": "USD"
     }
   ],
   "categories": [

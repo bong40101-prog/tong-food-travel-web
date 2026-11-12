@@ -101,16 +101,14 @@ function setRegion(continent, country) {
 }
 
 function renderRegion() {
-  const regions = catalog.continents.map(region => button(region.name, region.id === state.continent, () => {
-    const first = catalog.countries.find(country => country.continent === region.id);
-    setRegion(region.id, first?.id ?? '');
-  }));
-  $('#continents').replaceChildren(...regions);
-
-  const countries = catalog.countries.filter(country => country.continent === state.continent);
-  $('#countries').replaceChildren(...countries.map(country => button(country.name, country.id === state.country, () => {
-    setRegion(country.continent, country.id);
-  })));
+  const continentSelect = $('#continent-select');
+  const countrySelect = $('#country-select');
+  continentSelect.replaceChildren(...catalog.continents.map(c=>new Option(c.name,c.id)));
+  continentSelect.value=state.continent;
+  countrySelect.replaceChildren(...catalog.countries.filter(c=>c.continent===state.continent).map(c=>new Option(c.name,c.id)));
+  countrySelect.value=state.country;
+  continentSelect.onchange=()=>{const c=catalog.countries.find(c=>c.continent===continentSelect.value);setRegion(continentSelect.value,c?.id||'');};
+  countrySelect.onchange=()=>{const c=catalog.countries.find(c=>c.id===countrySelect.value);if(c)setRegion(c.continent,c.id);};
 }
 
 
@@ -267,7 +265,7 @@ function warnSearchLimit(seconds) {
 }
 
 async function fetchPage(page, query, signal) {
- const input={country:state.country,query:query || (!state.region&&!state.city&&!state.category&&!state.favoritesOnly ? catalog.countries.find(c=>c.id===state.country)?.name || '' : ''),
+ const input={country:state.country,query,fullList:true,
   region:state.region,city:state.city,category:state.category,favorites:state.favoritesOnly?[...favorites].map(key=>key.slice(favoritePrefix.length)):null};
  async function fetcher(payload){
   const response=await requestFoodApi('tongfood-catalog',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},signal,body:JSON.stringify(payload)});
@@ -293,6 +291,8 @@ async function render(page = 1) {
   $('#favorite-hint').hidden = !favoritesOnly;
   if (!append) {
     renderRegion();
+    const oldMaps=$('#destination-maps');if(oldMaps)oldMaps.hidden=true;
+    city.replaceChildren(new Option('도시 불러오는 중…',''));city.disabled=true;
     nextPage = null;
     more.hidden = true;
   }
