@@ -1,4 +1,3 @@
-import { renderDestinationMaps } from './region-maps.mjs';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs';
 const groupedCatalog = new GroupedCatalog();
@@ -243,7 +242,6 @@ function renderFilters(filters, query, hasFeatured) {
     }
   ));
   $('#filters').replaceChildren(...chips);
-  renderDestinationMaps(catalog.countries.find(c=>c.id===state.country),filters.cities,(id,isCity)=>{state.region=isCity?'':id;state.city=isCity?id:'';state.query='';search.value='';state.category='';render();});
 }
 
 function showEmpty(title, text, resetLabel) {
@@ -291,7 +289,6 @@ async function render(page = 1) {
   $('#favorite-hint').hidden = !favoritesOnly;
   if (!append) {
     renderRegion();
-    const oldMaps=$('#destination-maps');if(oldMaps)oldMaps.hidden=true;
     city.replaceChildren(new Option('도시 불러오는 중…',''));city.disabled=true;
     nextPage = null;
     more.hidden = true;
