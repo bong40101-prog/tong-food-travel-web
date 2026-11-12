@@ -12,6 +12,14 @@
     {
       "id": "americas",
       "name": "미주"
+    },
+    {
+      "id": "africa",
+      "name": "아프리카"
+    },
+    {
+      "id": "oceania",
+      "name": "오세아니아"
     }
   ],
   "countries": [
@@ -69,6 +77,90 @@
             "강원도",
             "강원특별자치도",
             "고성"
+          ]
+        },
+        {
+          "id": "gyeonggi",
+          "name": "경기",
+          "keywords": [
+            "경기"
+          ]
+        },
+        {
+          "id": "chungbuk",
+          "name": "충북",
+          "keywords": [
+            "충북"
+          ]
+        },
+        {
+          "id": "chungnam",
+          "name": "충남",
+          "keywords": [
+            "충남"
+          ]
+        },
+        {
+          "id": "daejeon",
+          "name": "대전",
+          "keywords": [
+            "대전"
+          ]
+        },
+        {
+          "id": "sejong",
+          "name": "세종",
+          "keywords": [
+            "세종"
+          ]
+        },
+        {
+          "id": "jeonbuk",
+          "name": "전북",
+          "keywords": [
+            "전북"
+          ]
+        },
+        {
+          "id": "jeonnam",
+          "name": "전남",
+          "keywords": [
+            "전남"
+          ]
+        },
+        {
+          "id": "gwangju",
+          "name": "광주",
+          "keywords": [
+            "광주"
+          ]
+        },
+        {
+          "id": "gyeongbuk",
+          "name": "경북",
+          "keywords": [
+            "경북"
+          ]
+        },
+        {
+          "id": "gyeongnam",
+          "name": "경남",
+          "keywords": [
+            "경남"
+          ]
+        },
+        {
+          "id": "daegu",
+          "name": "대구",
+          "keywords": [
+            "대구"
+          ]
+        },
+        {
+          "id": "ulsan",
+          "name": "울산",
+          "keywords": [
+            "울산"
           ]
         }
       ]
@@ -259,6 +351,393 @@
       "keywords": [
         "Canada"
       ]
+    },
+    {
+      "id": "ES",
+      "name": "스페인",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": [
+        "ES"
+      ]
+    },
+    {
+      "id": "GB",
+      "name": "영국",
+      "continent": "europe",
+      "currency": "GBP",
+      "keywords": [
+        "GB"
+      ]
+    },
+    {
+      "id": "CH",
+      "name": "스위스",
+      "continent": "europe",
+      "currency": "CHF",
+      "keywords": [
+        "CH"
+      ]
+    },
+    {
+      "id": "AT",
+      "name": "오스트리아",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": [
+        "AT"
+      ]
+    },
+    {
+      "id": "CZ",
+      "name": "체코",
+      "continent": "europe",
+      "currency": "CZK",
+      "keywords": [
+        "CZ"
+      ]
+    },
+    {
+      "id": "PT",
+      "name": "포르투갈",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": [
+        "PT"
+      ]
+    },
+    {
+      "id": "GR",
+      "name": "그리스",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": [
+        "GR"
+      ]
+    },
+    {
+      "id": "TW",
+      "name": "대만",
+      "continent": "asia",
+      "currency": "TWD",
+      "keywords": [
+        "TW"
+      ]
+    },
+    {
+      "id": "TH",
+      "name": "태국",
+      "continent": "asia",
+      "currency": "THB",
+      "keywords": [
+        "TH"
+      ]
+    },
+    {
+      "id": "MY",
+      "name": "말레이시아",
+      "continent": "asia",
+      "currency": "MYR",
+      "keywords": [
+        "MY"
+      ]
+    },
+    {
+      "id": "ID",
+      "name": "인도네시아",
+      "continent": "asia",
+      "currency": "IDR",
+      "keywords": [
+        "ID"
+      ]
+    },
+    {
+      "id": "IN",
+      "name": "인도",
+      "continent": "asia",
+      "currency": "INR",
+      "keywords": [
+        "IN"
+      ]
+    },
+    {
+      "id": "TR",
+      "name": "튀르키예",
+      "continent": "asia",
+      "currency": "TRY",
+      "keywords": [
+        "TR"
+      ]
+    },
+    {
+      "id": "KH",
+      "name": "캄보디아",
+      "continent": "asia",
+      "currency": "KHR",
+      "keywords": [
+        "KH"
+      ]
+    },
+    {
+      "id": "PH",
+      "name": "필리핀",
+      "continent": "asia",
+      "currency": "PHP",
+      "keywords": [
+        "PH"
+      ]
+    },
+    {
+      "id": "BD",
+      "name": "방글라데시",
+      "continent": "asia",
+      "currency": "BDT",
+      "keywords": [
+        "BD"
+      ]
+    },
+    {
+      "id": "EG",
+      "name": "이집트",
+      "continent": "africa",
+      "currency": "EGP",
+      "keywords": [
+        "EG"
+      ]
+    },
+    {
+      "id": "TZ",
+      "name": "탄자니아",
+      "continent": "africa",
+      "currency": "TZS",
+      "keywords": [
+        "TZ"
+      ]
+    },
+    {
+      "id": "MX",
+      "name": "멕시코",
+      "continent": "americas",
+      "currency": "MXN",
+      "keywords": [
+        "MX"
+      ]
+    },
+    {
+      "id": "BR",
+      "name": "브라질",
+      "continent": "americas",
+      "currency": "BRL",
+      "keywords": [
+        "BR"
+      ]
+    },
+    {
+      "id": "GE",
+      "name": "조지아",
+      "continent": "asia",
+      "currency": "GEL",
+      "keywords": [
+        "GE"
+      ]
+    },
+    {
+      "id": "MA",
+      "name": "모로코",
+      "continent": "africa",
+      "currency": "MAD",
+      "keywords": [
+        "MA"
+      ]
+    },
+    {
+      "id": "PK",
+      "name": "파키스탄",
+      "continent": "asia",
+      "currency": "PKR",
+      "keywords": [
+        "PK"
+      ]
+    },
+    {
+      "id": "LK",
+      "name": "스리랑카",
+      "continent": "asia",
+      "currency": "LKR",
+      "keywords": [
+        "LK"
+      ]
+    },
+    {
+      "id": "CO",
+      "name": "콜롬비아",
+      "continent": "americas",
+      "currency": "COP",
+      "keywords": [
+        "CO"
+      ]
+    },
+    {
+      "id": "AR",
+      "name": "아르헨티나",
+      "continent": "americas",
+      "currency": "ARS",
+      "keywords": [
+        "AR"
+      ]
+    },
+    {
+      "id": "ET",
+      "name": "에티오피아",
+      "continent": "africa",
+      "currency": "ETB",
+      "keywords": [
+        "ET"
+      ]
+    },
+    {
+      "id": "KG",
+      "name": "키르기스스탄",
+      "continent": "asia",
+      "currency": "KGS",
+      "keywords": [
+        "KG"
+      ]
+    },
+    {
+      "id": "HK",
+      "name": "홍콩",
+      "continent": "asia",
+      "currency": "HKD",
+      "keywords": [
+        "HK"
+      ]
+    },
+    {
+      "id": "SE",
+      "name": "스웨덴",
+      "continent": "europe",
+      "currency": "SEK",
+      "keywords": [
+        "SE"
+      ]
+    },
+    {
+      "id": "ZA",
+      "name": "남아공",
+      "continent": "africa",
+      "currency": "ZAR",
+      "keywords": [
+        "ZA"
+      ]
+    },
+    {
+      "id": "BE",
+      "name": "벨기에",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": [
+        "BE"
+      ]
+    },
+    {
+      "id": "MO",
+      "name": "마카오",
+      "continent": "asia",
+      "currency": "MOP",
+      "keywords": [
+        "MO"
+      ]
+    },
+    {
+      "id": "AU",
+      "name": "호주",
+      "continent": "oceania",
+      "currency": "AUD",
+      "keywords": [
+        "AU"
+      ]
+    },
+    {
+      "id": "HU",
+      "name": "헝가리",
+      "continent": "europe",
+      "currency": "HUF",
+      "keywords": [
+        "HU"
+      ]
+    },
+    {
+      "id": "KZ",
+      "name": "카자흐스탄",
+      "continent": "asia",
+      "currency": "KZT",
+      "keywords": [
+        "KZ"
+      ]
+    },
+    {
+      "id": "UZ",
+      "name": "우즈베키스탄",
+      "continent": "asia",
+      "currency": "UZS",
+      "keywords": [
+        "UZ"
+      ]
+    },
+    {
+      "id": "TJ",
+      "name": "타지키스탄",
+      "continent": "asia",
+      "currency": "TJS",
+      "keywords": [
+        "TJ"
+      ]
+    },
+    {
+      "id": "AZ",
+      "name": "아제르바이잔",
+      "continent": "asia",
+      "currency": "AZN",
+      "keywords": [
+        "AZ"
+      ]
+    },
+    {
+      "id": "RO",
+      "name": "루마니아",
+      "continent": "europe",
+      "currency": "RON",
+      "keywords": [
+        "RO"
+      ]
+    },
+    {
+      "id": "FI",
+      "name": "핀란드",
+      "continent": "europe",
+      "currency": "EUR",
+      "keywords": [
+        "FI"
+      ]
+    },
+    {
+      "id": "RU",
+      "name": "러시아",
+      "continent": "europe",
+      "currency": "RUB",
+      "keywords": [
+        "RU"
+      ]
+    },
+    {
+      "id": "PE",
+      "name": "페루",
+      "continent": "americas",
+      "currency": "PEN",
+      "keywords": [
+        "PE"
+      ]
     }
   ],
   "categories": [
@@ -281,10 +760,6 @@
     {
       "id": "noodles",
       "name": "우동·소바·면 요리"
-    },
-    {
-      "id": "street",
-      "name": "길거리 음식"
     },
     {
       "id": "dessert",
