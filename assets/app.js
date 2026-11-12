@@ -268,7 +268,7 @@ async function fetchPage(page, query, signal) {
   region:state.region,city:state.city,category:state.category,favorites:state.favoritesOnly?[...favorites].map(key=>key.slice(favoritePrefix.length)):null};
  async function fetcher(payload){
   const response=await requestFoodApi('tongfood-catalog',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},signal,body:JSON.stringify(payload)});
-  if(!response.ok){const error=new Error('Catalog request failed');error.status=response.status;if(response.status===429)error.retryAfter=Number(response.headers.get('Retry-After'));throw error;}
+  if(!response.ok){const details=await response.json().catch(()=>({}));if(details.adminCheck)console.warn('Catalog authentication:',details.adminCheck);const error=new Error('Catalog request failed');error.status=response.status;if(response.status===429)error.retryAfter=Number(response.headers.get('Retry-After'));throw error;}
   return response.json();
  }
  return ids(input.category).length>1 ? groupedCatalog.load(input,page,fetcher) : fetcher({...input,page});
