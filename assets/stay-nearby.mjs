@@ -16,12 +16,13 @@ export function mountStayNearby(renderCard,country){
   const submit=el('button','검색');submit.type='submit';form.append(label,submit);form.hidden=true;
   const attribution=el('p');for(const [name,url]of [['Google Maps','https://maps.google.com/']]){const a=el('a',name);a.href=url;a.target='_blank';a.rel='noopener';attribution.append(a,document.createTextNode(' '))}
   const status=el('p'),candidates=el('div'),results=el('div');status.setAttribute('role','status');
-  dialog.append(header,el('p','이름·주소를 검색하고 후보를 선택하세요. 휴대폰 현재 위치는 사용하지 않습니다.'),form,el('p','입력한 검색어와 선택한 국가가 Google에 전송됩니다.'),attribution,status,candidates,results);const host=document.getElementById('places');
+  dialog.append(header,form,status,candidates,results,el('p','휴대폰 현재 위치는 사용하지 않습니다. 검색어와 선택한 국가가 Google에 전송됩니다.'),attribution);const host=document.getElementById('places');
   const siblings=[...host.children].filter(n=>n.matches('.filter-row,.browse-hint,.cards,.pagination,.empty'));
   const previous=siblings.map(n=>n.hidden);siblings.forEach(n=>n.hidden=true);
   host.classList.add('stay-active');host.append(dialog);
   cleanup=()=>{controller.abort();dialog.remove();host.classList.remove('stay-active');siblings.forEach((n,i)=>n.hidden=previous[i]);cleanup=()=>{}};
   let busy=false,selected=null,radius=3,missing=false,page=1;
+  const mapCache=new Map();const release=cleanup;cleanup=()=>{for(const url of mapCache.values())URL.revokeObjectURL(url);mapCache.clear();release()};
   dialog.scrollIntoView({block:'start',behavior:'smooth'});
   async function run(fn){if(busy)return;busy=true;status.textContent='불러오는 중…';submit.disabled=true;try{await fn()}catch(e){if(dialog.isConnected)status.textContent=e.message||'연결을 확인하고 다시 시도해 주세요.'}finally{busy=false;submit.disabled=false}}
   async function checked(response){if(response.status===429){const err=await response.json().catch(()=>({}));throw Error(err.error==='monthly_limit'?'이번 달 장소 검색 4,500회를 모두 사용했어요. 다음 달에 다시 이용해 주세요.':`검색 한도에 도달했어요. ${response.headers.get('Retry-After')||60}초 후 다시 시도해 주세요.`);}if(!response.ok)throw Error('검색하지 못했어요. 잠시 후 다시 시도해 주세요.');return response.json()}
@@ -40,8 +41,25 @@ export function mountStayNearby(renderCard,country){
     const filters=el('div');filters.className='stay-controls';for(const km of [1,3,5]){const b=button(km+'km',()=>run(()=>near(selected,km,false,1)));b.setAttribute('aria-pressed',String(radius===km));filters.append(b)}
     filters.append(button('가까운 순',()=>run(()=>near(selected,radius,false,1))),button(`좌표 없음 ${data.missingCount}곳`,()=>run(()=>near(selected,radius,true,1))));
     results.append(filters,el('p','직선거리 기준 · 실제 도보·차량 이동거리와 다릅니다.'),el('p',missing?'선택한 장소의 국가 전체 · 좌표가 없어 거리를 확인할 수 없는 음식점':`반경 ${radius}km · ${data.total}곳`));
+    if(!missing&&data.places.length) {
+      const mapBox=el('figure');mapBox.className='stay-map';const mapStatus=el('p','지도를 불러오는 중…');mapBox.append(mapStatus);results.append(mapBox);
+      const keys=data.places.map(place=>place.country.id+'/'+place.id);
+      const cacheKey=JSON.stringify([candidate.coordinates,keys]);
+      try {
+        let objectUrl=mapCache.get(cacheKey);
+        if(!objectUrl){
+          const response=await fetch(API+'/stay-map',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({coordinates:candidate.coordinates,keys}),signal:controller.signal});
+          if(!response.ok)throw Error(response.status===429?'이번 달 지도·장소 검색 한도에 도달했어요.':'지도를 불러오지 못했어요. 아래 맛집 목록은 이용할 수 있어요.');
+          objectUrl=URL.createObjectURL(await response.blob());mapCache.set(cacheKey,objectUrl);
+        }
+        if(!dialog.isConnected)return;
+        const image=el('img');image.src=objectUrl;image.alt=candidate.name+'(파란 H)와 주변 등록 맛집(초록 번호) 지도';image.width=1280;image.height=800;
+        const mapLink=el('a');const u=new URL('https://www.google.com/maps/search/');u.searchParams.set('api','1');u.searchParams.set('query',candidate.name+' '+candidate.address);if(candidate.id)u.searchParams.set('query_place_id',candidate.id);mapLink.href=u.href;mapLink.target='_blank';mapLink.rel='noopener';mapLink.append(image);
+        mapBox.replaceChildren(mapLink,el('figcaption','파란 H: 선택한 호텔 · 초록 번호: 아래 맛집 순서 · 지도를 누르면 Google 지도에서 호텔을 엽니다.'));
+      } catch(e) {if(dialog.isConnected)mapStatus.textContent=e.message||'지도를 불러오지 못했어요.';}
+    }
     if(!data.places.length)results.append(el('p','표시할 음식점이 없습니다. 좌표 없는 음식점 목록도 확인해 주세요.'));
-    const cards=el('div');cards.className='stay-cards';for(const place of data.places){const wrap=el('section');if(!missing)wrap.append(el('strong',`직선거리 ${place.distanceMeters.toLocaleString('ko-KR')}m`));wrap.append(renderCard(place));cards.append(wrap)}results.append(cards);
+    const cards=el('div');cards.className='stay-cards';for(const [i,place] of data.places.entries()){const wrap=el('section');if(!missing)wrap.append(el('strong',`${'123456789ABCDEFGHI'[i]} · 직선거리 ${place.distanceMeters.toLocaleString('ko-KR')}m`));wrap.append(renderCard(place));cards.append(wrap)}results.append(cards);
     const nav=el('div');if(page>1)nav.append(button('이전',()=>run(()=>near(selected,radius,missing,page-1))));if(data.nextPage)nav.append(button('다음',()=>run(()=>near(selected,radius,missing,data.nextPage))));results.append(nav);
   }
  }
