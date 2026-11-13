@@ -19,8 +19,8 @@ export function mountStayNearby(renderCard,country){
   dialog.append(header,el('p','이름·주소를 검색하고 후보를 선택하세요. 휴대폰 현재 위치는 사용하지 않습니다.'),form,el('p','입력한 검색어와 선택한 국가가 Geoapify에 전송됩니다.'),attribution,status,candidates,results);const host=document.getElementById('places');
   const siblings=[...host.children].filter(n=>n.matches('.filter-row,.browse-hint,.cards,.pagination,.empty'));
   const previous=siblings.map(n=>n.hidden);siblings.forEach(n=>n.hidden=true);
-  host.append(dialog);
-  cleanup=()=>{controller.abort();dialog.remove();siblings.forEach((n,i)=>n.hidden=previous[i]);cleanup=()=>{}};
+  host.classList.add('stay-active');host.append(dialog);
+  cleanup=()=>{controller.abort();dialog.remove();host.classList.remove('stay-active');siblings.forEach((n,i)=>n.hidden=previous[i]);cleanup=()=>{}};
   let busy=false,selected=null,radius=3,missing=false,page=1;
   dialog.scrollIntoView({block:'start',behavior:'smooth'});
   async function run(fn){if(busy)return;busy=true;status.textContent='불러오는 중…';submit.disabled=true;try{await fn()}catch(e){if(dialog.isConnected)status.textContent=e.message||'연결을 확인하고 다시 시도해 주세요.'}finally{busy=false;submit.disabled=false}}

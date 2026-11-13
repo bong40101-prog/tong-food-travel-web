@@ -1,4 +1,4 @@
-import {mountStayNearby} from './stay-nearby.mjs?v=20261113-inline';
+import {mountStayNearby} from './stay-nearby.mjs?v=20261113-inline2';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { attachRating } from './ratings.mjs?v=20261113-stars-app-only';
 import { locationLabel } from './location-label.mjs';
@@ -387,6 +387,7 @@ $('#search-form').addEventListener('submit', event => {
   event.preventDefault();
   clearTimeout(searchTimer);
   if (/(호텔|숙소|센[츄추]리\s*아트|hotel|hostel|resort|ホテル|旅館)/i.test(search.value)) {
+    generation++; pendingRequest?.abort();
     openStaySearch(search.value.trim());
     return;
   }
