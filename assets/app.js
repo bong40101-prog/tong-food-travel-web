@@ -374,6 +374,12 @@ search.addEventListener('input', () => {
   generation++;
   pendingRequest?.abort();
   more.hidden = true;
+  if (/(호텔|숙소|센[츄추]리\s*아트|hotel|hostel|resort|ホテル|旅館)/i.test(search.value)) {
+    cards.replaceChildren(); cards.setAttribute('aria-busy','false');
+    $('#count').textContent='';
+    showEmpty('호텔·숙소 후보 검색', '검색 버튼이나 Enter를 누르면 이름과 주소가 있는 후보를 보여드려요.', '호텔·숙소 검색');
+    return;
+  }
   searchTimer = setTimeout(render, 280);
 });
 
@@ -401,6 +407,7 @@ region.addEventListener('change', () => {
 });
 
 $('#reset').addEventListener('click', () => {
+  if ($('#reset').textContent === '호텔·숙소 검색') { openStaySearch(search.value.trim()); return; }
   if (!catalog) {
     start();
     return;
