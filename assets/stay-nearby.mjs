@@ -9,7 +9,7 @@ export function mountStayNearby(renderCard,country){
  document.getElementById('search').addEventListener('input',()=>cleanup(),{capture:true});
  document.querySelector('.scope').addEventListener('change',()=>cleanup(),{capture:true});
  return open;
- function open(query=''){
+ function open(query='',combined=false){
   cleanup();
   const opener=document.getElementById('search');
   const dialog=el('section');dialog.className='stay-dialog stay-inline';const controller=new AbortController();
@@ -20,8 +20,8 @@ export function mountStayNearby(renderCard,country){
   const status=el('p'),candidates=el('div'),results=el('div');status.setAttribute('role','status');
   dialog.append(header,form,status,candidates,results,el('p','휴대폰 현재 위치는 사용하지 않습니다. 검색어와 선택한 국가가 Google에 전송됩니다.'),attribution);const host=document.getElementById('places');
   const siblings=[...host.children].filter(n=>n.matches('.filter-row,.browse-hint,.cards,.pagination,.empty'));
-  const previous=siblings.map(n=>n.hidden);siblings.forEach(n=>n.hidden=true);
-  host.classList.add('stay-active');host.append(dialog);
+  const previous=siblings.map(n=>n.hidden);if(!combined)siblings.forEach(n=>n.hidden=true);
+  if(!combined)host.classList.add('stay-active');host.insertBefore(dialog,host.querySelector('.cards'));
   cleanup=()=>{controller.abort();dialog.remove();host.classList.remove('stay-active');siblings.forEach((n,i)=>n.hidden=previous[i]);cleanup=()=>{}};
   let busy=false,selected=null,radius=3,missing=false,page=1;
   const mapCache=new Map();const release=cleanup;cleanup=()=>{for(const url of mapCache.values())URL.revokeObjectURL(url);mapCache.clear();release()};

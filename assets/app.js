@@ -1,4 +1,4 @@
-import {mountStayNearby} from './stay-nearby.mjs?v=20261113-fast2';
+import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { attachRating } from './ratings.mjs?v=20261113-stars-app-only';
 import { locationLabel } from './location-label.mjs';
@@ -374,7 +374,7 @@ search.addEventListener('input', () => {
   generation++;
   pendingRequest?.abort();
   more.hidden = true;
-  if (/(호텔|숙소|센[츄추]리\s*아트|hotel|hostel|resort|ホテル|旅館)/i.test(search.value)) {
+  if ($('#search-kind').value === 'hotel') {
     cards.replaceChildren(); cards.setAttribute('aria-busy','false');
     $('#count').textContent='';
     showEmpty('호텔·숙소 후보 검색', '검색 버튼이나 Enter를 누르면 이름과 주소가 있는 후보를 보여드려요.', '호텔·숙소 검색');
@@ -383,16 +383,14 @@ search.addEventListener('input', () => {
   searchTimer = setTimeout(render, 280);
 });
 
+$('#search-kind').addEventListener('change',()=>{search.dispatchEvent(new Event('input',{bubbles:true}));});
 $('#search-form').addEventListener('submit', event => {
-  event.preventDefault();
-  clearTimeout(searchTimer);
-  if (/(호텔|숙소|센[츄추]리\s*아트|hotel|hostel|resort|ホテル|旅館)/i.test(search.value)) {
-    generation++; pendingRequest?.abort();
-    openStaySearch(search.value.trim());
-    return;
-  }
-  if (catalog) render();
-  $('#places').scrollIntoView({ block: 'start' });
+  event.preventDefault(); clearTimeout(searchTimer);
+  const kind=$('#search-kind').value;
+  if(kind==='hotel'){generation++;pendingRequest?.abort();openStaySearch(search.value.trim());return;}
+  if(catalog)render();
+  if(kind==='all'&&search.value.trim().length>=2)openStaySearch(search.value.trim(),true);
+  $('#places').scrollIntoView({block:'start'});
 });
 
 city.addEventListener('change', () => {
