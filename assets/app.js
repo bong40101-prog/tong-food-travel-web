@@ -1,4 +1,4 @@
-import {mountStayNearby} from './stay-nearby.mjs?v=20261113-unified';
+import {mountStayNearby} from './stay-nearby.mjs?v=20261113-inline';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { attachRating } from './ratings.mjs?v=20261113-stars-app-only';
 import { locationLabel } from './location-label.mjs';
