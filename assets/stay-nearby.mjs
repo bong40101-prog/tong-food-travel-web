@@ -14,9 +14,9 @@ export function mountStayNearby(renderCard,country){
   const header=el('header'),title=el('h2','숙소·장소 주변 맛집');header.append(title);
   const form=el('form'),label=el('label','숙소·장소 이름 또는 주소'),input=el('input');input.value=query;input.maxLength=160;input.placeholder='예: 호텔 센츄리 아트';label.append(input);
   const submit=el('button','검색');submit.type='submit';form.append(label,submit);form.hidden=true;
-  const attribution=el('p');for(const [name,url]of [['Powered by Geoapify','https://www.geoapify.com/'],['© OpenStreetMap contributors','https://www.openstreetmap.org/copyright']]){const a=el('a',name);a.href=url;a.target='_blank';a.rel='noopener';attribution.append(a,document.createTextNode(' '))}
+  const attribution=el('p');for(const [name,url]of [['Google Maps','https://maps.google.com/']]){const a=el('a',name);a.href=url;a.target='_blank';a.rel='noopener';attribution.append(a,document.createTextNode(' '))}
   const status=el('p'),candidates=el('div'),results=el('div');status.setAttribute('role','status');
-  dialog.append(header,el('p','이름·주소를 검색하고 후보를 선택하세요. 휴대폰 현재 위치는 사용하지 않습니다.'),form,el('p','입력한 검색어와 선택한 국가가 Geoapify에 전송됩니다.'),attribution,status,candidates,results);const host=document.getElementById('places');
+  dialog.append(header,el('p','이름·주소를 검색하고 후보를 선택하세요. 휴대폰 현재 위치는 사용하지 않습니다.'),form,el('p','입력한 검색어와 선택한 국가가 Google에 전송됩니다.'),attribution,status,candidates,results);const host=document.getElementById('places');
   const siblings=[...host.children].filter(n=>n.matches('.filter-row,.browse-hint,.cards,.pagination,.empty'));
   const previous=siblings.map(n=>n.hidden);siblings.forEach(n=>n.hidden=true);
   host.classList.add('stay-active');host.append(dialog);
@@ -24,12 +24,12 @@ export function mountStayNearby(renderCard,country){
   let busy=false,selected=null,radius=3,missing=false,page=1;
   dialog.scrollIntoView({block:'start',behavior:'smooth'});
   async function run(fn){if(busy)return;busy=true;status.textContent='불러오는 중…';submit.disabled=true;try{await fn()}catch(e){if(dialog.isConnected)status.textContent=e.message||'연결을 확인하고 다시 시도해 주세요.'}finally{busy=false;submit.disabled=false}}
-  async function checked(response){if(response.status===429)throw Error(`검색 한도에 도달했어요. ${response.headers.get('Retry-After')||60}초 후 다시 시도해 주세요.`);if(!response.ok)throw Error('검색하지 못했어요. 잠시 후 다시 시도해 주세요.');return response.json()}
+  async function checked(response){if(response.status===429){const err=await response.json().catch(()=>({}));throw Error(err.error==='monthly_limit'?'이번 달 장소 검색 4,500회를 모두 사용했어요. 다음 달에 다시 이용해 주세요.':`검색 한도에 도달했어요. ${response.headers.get('Retry-After')||60}초 후 다시 시도해 주세요.`);}if(!response.ok)throw Error('검색하지 못했어요. 잠시 후 다시 시도해 주세요.');return response.json()}
   form.addEventListener('submit',event=>{event.preventDefault();if(input.value.trim().length<2){status.textContent='검색어를 두 글자 이상 입력해 주세요.';return}run(async()=>{
     const data=await checked(await fetch(API+'/place-search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:input.value.trim(),country:country()}),signal:controller.signal}));
     if(!dialog.isConnected)return;candidates.replaceChildren();results.replaceChildren();selected=null;
     status.textContent=data.candidates.length?'이름과 주소를 확인하고 선택하세요.':'찾지 못했어요. 영문 이름 또는 주소로 검색해 주세요.';
-    for(const candidate of data.candidates){const b=button('',()=>run(()=>near(candidate,3,false,1)));b.className='stay-candidate';b.append(el('strong',candidate.name),el('span',candidate.address));candidates.append(b)}
+    for(const candidate of data.candidates){const b=button('',()=>run(()=>near(candidate,3,false,1)));b.className='stay-candidate';b.append(el('strong',candidate.name),el('span',candidate.address));candidates.append(b);for(const a of candidate.attributions||[]){if(a.provider){const credit=el('span',a.provider);candidates.append(credit)}}}
   })});
   if(query.trim().length>=2)form.requestSubmit();
   async function near(candidate,r,unknown,p){
