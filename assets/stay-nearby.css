@@ -4,3 +4,5 @@
 .stay-active > .filter-row,.stay-active > .browse-hint,.stay-active > .cards,.stay-active > .pagination,.stay-active > .empty{display:none!important}
 
 .stay-map{margin:16px 0;background:#fffdf8;border:1px solid #e5e1d5;border-radius:16px;overflow:hidden}.stay-map img{display:block;width:100%;height:auto;max-height:540px;object-fit:contain}.stay-map figcaption,.stay-map>p{padding:10px 14px;font-size:13px;color:#5e6d63}
+
+.stay-result-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.stay-result-info{flex:1 1 300px;min-width:0}.stay-result-info h3{margin:0 0 8px}.stay-result-info p{margin:0;overflow-wrap:anywhere}.stay-result-top .stay-controls{justify-content:flex-end;gap:8px;flex:0 1 auto}.stay-distance-summary{display:flex;gap:6px 12px;flex-wrap:wrap;align-items:baseline}.stay-map:has(>p){min-height:100px}@media(max-width:700px){.stay-result-top .stay-controls{justify-content:flex-start;width:100%}.stay-result-top{gap:12px}}
