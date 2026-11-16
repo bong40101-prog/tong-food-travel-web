@@ -1,6 +1,6 @@
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
-import { attachRating } from './ratings.mjs?v=20261113-stars-app-only';
+import { attachRating } from './ratings.mjs?v=20261116-rated-first';
 import { locationLabel } from './location-label.mjs';
 import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs?v=20261112-store-menu';
 const groupedCatalog = new GroupedCatalog();
