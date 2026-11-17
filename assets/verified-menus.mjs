@@ -238,5 +238,125 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/additional400-jp-309": [
+    {
+      "name": "면 추가 (카에다마)",
+      "price": {
+        "amount": 210,
+        "source": "https://ichiran.com/shop/tokyo/shimokitazawa/",
+        "label": "공식 지점 메뉴 · 심야 할증 별도",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "추가 차슈 4장",
+      "price": {
+        "amount": 290,
+        "source": "https://ichiran.com/shop/tokyo/shimokitazawa/",
+        "label": "공식 지점 메뉴 · 심야 할증 별도",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/kanto-sheet-001": [
+    {
+      "name": "면 추가 (카에다마)",
+      "price": {
+        "amount": 210,
+        "source": "https://ichiran.com/shop/tokyo/shibuya/",
+        "label": "공식 지점 메뉴 · 심야 할증 별도",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "추가 차슈 4장",
+      "price": {
+        "amount": 290,
+        "source": "https://ichiran.com/shop/tokyo/shibuya/",
+        "label": "공식 지점 메뉴 · 심야 할증 별도",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/import-jp-af066d765f1fd2f6": [
+    {
+      "name": "면 추가 (카에다마)",
+      "price": {
+        "amount": 210,
+        "source": "https://ichiran.com/shop/hokkaido/sapporo-susukino/",
+        "label": "공식 지점 메뉴 · 심야 할증 별도",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "추가 차슈 4장",
+      "price": {
+        "amount": 290,
+        "source": "https://ichiran.com/shop/hokkaido/sapporo-susukino/",
+        "label": "공식 지점 메뉴 · 심야 할증 별도",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/import-jp-e6ff83fbc61738b3": [
+    {
+      "name": "면 추가 (카에다마)",
+      "price": {
+        "amount": 210,
+        "source": "https://ichiran.com/shop/kyushu/mori/",
+        "label": "공식 지점 메뉴 · 심야 할증 별도",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "추가 차슈 4장",
+      "price": {
+        "amount": 260,
+        "source": "https://ichiran.com/shop/kyushu/mori/",
+        "label": "공식 지점 메뉴 · 심야 할증 별도",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/kyoto-inoda": [
+    {
+      "name": "달걀 샌드위치",
+      "price": {
+        "amount": 940,
+        "source": "https://www.inoda-coffee.co.jp/shop/honten/honten_menu/",
+        "label": "본점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "푸딩",
+      "price": {
+        "amount": 590,
+        "source": "https://www.inoda-coffee.co.jp/shop/honten/honten_menu/",
+        "label": "본점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/nishimura-coffee-kitanozaka": [
+    {
+      "name": "와규 함박스테이크 (2층 레스토랑)",
+      "price": {
+        "amount": 2500,
+        "source": "https://kobe-nishimura.jp/shop/menu_kitanozaka.html",
+        "label": "공식 2층 레스토랑 단품 메뉴",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "해산물 그라탱 (2층 레스토랑)",
+      "price": {
+        "amount": 2500,
+        "source": "https://kobe-nishimura.jp/shop/menu_kitanozaka.html",
+        "label": "공식 2층 레스토랑 단품 메뉴",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
