@@ -438,5 +438,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/import-jp-0e8dd4d2a1522c29": [
+    {
+      "name": "게와 채소 비스크 수프",
+      "price": {
+        "amount": 840,
+        "source": "https://www.bthjapan.com/pdf/hakone/2f-cafe-menu261001.pdf",
+        "label": "2층 카페 매장 식사 · 세금 포함 · 2026-10 메뉴",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "계절 케이크 1개",
+      "price": {
+        "amount": 770,
+        "source": "https://www.bthjapan.com/pdf/hakone/2f-cafe-menu261001.pdf",
+        "label": "2층 카페 매장 식사 · 세금 포함 · 2026-10 메뉴",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
