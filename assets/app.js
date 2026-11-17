@@ -1,3 +1,5 @@
+import { verifiedMenus } from './verified-menus.mjs?v=20261117';
+import { attachAdditionalMenus } from './menu-layout.mjs?v=20261117';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { attachRating } from './ratings.mjs?v=20261116-rated-first';
@@ -119,6 +121,7 @@ function formatPrice(price, currency) {
 }
 
 function renderCard(place) {
+  if (!place.additionalMenus?.length && verifiedMenus[`${place.country.id}/${place.id}`]) place = {...place, additionalMenus: verifiedMenus[`${place.country.id}/${place.id}`]};
   const card = $('#card-template').content.firstElementChild.cloneNode(true);
   const favorite = $('.favorite-button', card);
   favorite.dataset.favoriteKey = favoriteKey(place);
@@ -182,6 +185,7 @@ function renderCard(place) {
   } else {
     priceSource.hidden = true;
   }
+  attachAdditionalMenus(card, place, formatPrice, attachWon);
   const note = $('.note', card);
   note.textContent = place.note ?? '';
   note.hidden = !place.note;

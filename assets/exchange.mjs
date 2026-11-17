@@ -12,14 +12,14 @@ export function conversion(amount, currency, data = rows) {
 }
 function update(element) {
   const result = conversion(Number(element.dataset.amount), element.dataset.currency);
-  element.textContent = result ? `약 ${(Math.round(result.value / 100) * 100).toLocaleString('ko-KR')}원 · ${result.date} 환율${result.stale ? ' (이전 환율)' : ''}` : '원화 환산 정보 없음';
-  element.title = 'Frankfurter 제공 참고 환율입니다. 결제·환전 수수료는 포함하지 않습니다.';
+  element.textContent = result ? `(약 ${(Math.round(result.value / 100) * 100).toLocaleString('ko-KR')}원)` : '원화 환산 정보 없음';
+  element.title = result ? `${result.date} 환율 기준${result.stale ? ' · 이전 환율' : ''} · 결제·환전 수수료 제외` : '원화 환산 정보 없음';
 }
 export function attachWon(parent, place) {
   if (!Number.isFinite(place.price?.amount) || place.price.amount <= 0 || place.country.currency === 'KRW') return;
   const line = document.createElement('small');
   line.className = 'won-price'; line.dataset.amount = place.price.amount; line.dataset.currency = place.country.currency;
-  update(line); parent.insertBefore(line, parent.querySelector('.price-source'));
+  update(line); parent.querySelector('.price').after(line);
 }
 export async function refreshRates() {
   try {
