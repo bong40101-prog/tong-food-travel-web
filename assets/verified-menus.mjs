@@ -698,5 +698,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/shinpuku-saikan-main": [
+    {
+      "name": "야키메시 (볶음밥)",
+      "price": {
+        "amount": 600,
+        "source": "https://shinpukusaikan.net/menu.html",
+        "label": "공식 본점 게시 메뉴 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "차슈 접시",
+      "price": {
+        "amount": 800,
+        "source": "https://shinpukusaikan.net/menu.html",
+        "label": "공식 본점 게시 메뉴 가격",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
