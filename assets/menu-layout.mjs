@@ -1,3 +1,16 @@
+import {representativeMenuNames,verifiedMenus} from './verified-menus.mjs?v=20261117-bilingual';
+export function bilingualMenuName(name, localName) {
+  const korean=String(name||'').trim(), local=String(localName||'').trim();
+  if (!local || korean===local) return korean;
+  // Existing original-language suffixes must not be appended a second time.
+  const existing=korean.match(/\s*\(([^()]*)\)\s*$/);
+  if (existing && /[ぁ-ヿ一-鿿]/.test(existing[1])) return korean;
+  return `${korean} (${local})`;
+}
+export function representativeMenuName(place) {
+  const fallback=representativeMenuNames[`${place.country?.id}/${place.id}`];
+  return bilingualMenuName(place.menu,place.menuLocalName || (fallback?.name===place.menu ? fallback.localName : ''));
+}
 export function additionalMenus(place) {
   const seen = new Set([String(place.menu || '').trim()]);
   return (Array.isArray(place.additionalMenus) ? place.additionalMenus : []).filter(menu => {
@@ -10,10 +23,12 @@ export function attachAdditionalMenus(card, place, formatPrice, attachWon) {
   card.querySelectorAll('.price-source').forEach(source => source.remove());
   if (place.category === 'attraction') return;
   let previous = card.querySelector('.menu-line');
+  previous.querySelector('.menu-name').textContent=representativeMenuName(place);
   additionalMenus(place).forEach(menu => {
     const row = document.createElement('div'); row.className = 'menu-line additional-menu';
     const description = document.createElement('div');
-    const name = document.createElement('strong'); name.className = 'menu-name'; name.textContent = menu.name;
+    const fallback=verifiedMenus[`${place.country?.id}/${place.id}`]?.find(item=>item.name===menu.name);
+    const name = document.createElement('strong'); name.className = 'menu-name'; name.textContent = bilingualMenuName(menu.name,menu.localName||fallback?.localName);
     description.append(name);
     const prices = document.createElement('div'); prices.className = 'price-block';
     const local = document.createElement('strong'); local.className = 'price'; local.textContent = formatPrice(menu.price, place.country.currency);
