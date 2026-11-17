@@ -1218,5 +1218,45 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/misen-yaba": [
+    {
+      "name": "타이완 라멘",
+      "price": {
+        "amount": 850,
+        "source": "https://misenyaba.owst.jp/foods",
+        "label": "야바점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "청채 볶음",
+      "price": {
+        "amount": 830,
+        "source": "https://misenyaba.owst.jp/foods",
+        "label": "야바점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/ikkaku-takamatsu": [
+    {
+      "name": "오야도리(성계 뼈붙이 닭구이)",
+      "price": {
+        "amount": 1230,
+        "source": "https://www.ikkaku.co.jp/takamatsu/menu.html",
+        "label": "다카마쓰점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "토리하무(닭고기 햄)",
+      "price": {
+        "amount": 587,
+        "source": "https://www.ikkaku.co.jp/takamatsu/menu.html",
+        "label": "다카마쓰점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
