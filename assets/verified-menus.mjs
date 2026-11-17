@@ -1338,5 +1338,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/ramen-tengai-nagara": [
+    {
+      "name": "교자 1개(매장 식사 한정)",
+      "price": {
+        "amount": 30,
+        "source": "https://www.nagaraten.com/menu",
+        "label": "나가라점 공식 메뉴 게시 가격 · 교자는 매장 식사 한정",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "가라아게 6개",
+      "price": {
+        "amount": 800,
+        "source": "https://www.nagaraten.com/menu",
+        "label": "나가라점 공식 메뉴 게시 가격 · 교자는 매장 식사 한정",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
