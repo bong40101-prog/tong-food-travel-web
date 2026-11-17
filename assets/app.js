@@ -1,5 +1,5 @@
-import { verifiedMenus } from './verified-menus.mjs?v=20261117';
-import { attachAdditionalMenus } from './menu-layout.mjs?v=20261117-singleline';
+import { verifiedMenus } from './verified-menus.mjs?v=20261117-bilingual';
+import { attachAdditionalMenus } from './menu-layout.mjs?v=20261117-bilingual';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
 import { attachRating } from './ratings.mjs?v=20261116-rated-first';
