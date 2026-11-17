@@ -678,5 +678,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/import-jp-28331b17d3fefe15": [
+    {
+      "name": "말차 바바루아 파르페",
+      "price": {
+        "amount": 1700,
+        "source": "https://www.giwon-komori.com/?mode=f2",
+        "label": "공식 매장 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "안미쓰",
+      "price": {
+        "amount": 1400,
+        "source": "https://www.giwon-komori.com/?mode=f2",
+        "label": "공식 매장 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
