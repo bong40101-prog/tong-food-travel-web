@@ -18,7 +18,7 @@ view.body.replaceChildren(el('h3','통도락 이용자 별점'),el('p',ratingLab
 const filters=el('div',null,'rating-actions'),list=el('div');let selected='all';
 function show(){list.replaceChildren();for(const r of (data.reviews||[]).filter(r=>r.reviewer_role==='operator')){const section=el('section');section.append(el('h3','운영자 평가'),el('p',`★ ${r.rating} · 이용자 평균 제외`));if(r.comment)section.append(el('p',r.comment));list.append(section)}for(const r of data.reviews||[]){if(r.reviewer_role==='operator')continue;if(selected!=='all'&&r.review_method!==selected)continue;list.append(el('p',`★ ${r.rating} · ${r.reviewer_role==='operator'?'운영자 평가 (이용자 평균 제외)':r.review_method==='onsite'?'현장 평가':'일반 평가'}`));if(r.comment)list.append(el('p',r.comment))}if(!list.childNodes.length)list.append(el('p','표시할 평가가 없어요.'));for(const b of filters.children)b.setAttribute('aria-pressed',String(b.dataset.type===selected))}
 for(const [id,label] of [['all','전체'],['onsite','현장 평가'],['general','일반 평가']]){const b=button(label,()=>{selected=id;show()});b.dataset.type=id;filters.append(b)}
-view.body.append(filters,list,el('p','최근 평가 최대 50개 표시 · 평균과 인원은 공개 이용자 평가 기준 (운영자 제외)'));show();
+view.body.append(filters,list,el('p','최근 평가 최대 50개 표시 · 평균과 인원은 공개 이용자 평가 기준 (운영자 제외)'));show();appendGoogleRating(view.body,view.key);
 }catch(e){if(opened===view)view.body.replaceChildren(el('p',e.message),button('다시 시도',renderRating))}}
 window.addEventListener('tong-account-changed',()=>{if(opened)renderRating();setupAdmin()});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){summaries();if(opened)renderRating()}});
@@ -53,4 +53,6 @@ function appendGoogleRating(body,key){
   }catch{status.textContent='불러오지 못했어요. 다시 시도해 주세요.';action.disabled=false}
  });section.append(el('h3','Google Maps 별점'),status,action,links);body.append(section);
 }
+
+
 
