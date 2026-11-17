@@ -1702,6 +1702,30 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/oyama-kitte-hakata": [
+    {
+      "name": "부드러운 소 내장 폰즈무침",
+      "localName": "柔らか牛すもつ",
+      "localNameType": "source",
+      "price": {
+        "amount": 968,
+        "source": "https://www.motu-ooyama.com/shop/kittehakata/",
+        "label": "KITTE 하카타 9층점 공식 메뉴 · 세금 포함 · 15시 이후 별도 좌석료 400엔",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "소 볼살 가라아게",
+      "localName": "牛ホホのから揚げ",
+      "localNameType": "source",
+      "price": {
+        "amount": 979,
+        "source": "https://www.motu-ooyama.com/shop/kittehakata/",
+        "label": "KITTE 하카타 9층점 공식 메뉴 · 세금 포함 · 15시 이후 별도 좌석료 400엔",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
 export const representativeMenuNames = {
@@ -2065,5 +2089,10 @@ export const representativeMenuNames = {
       "label": "시조 폰토초점 공식 2026년 11월 메뉴 · 세금 포함",
       "date": "2026-11-17"
     }
+  },
+  "JP/oyama-kitte-hakata": {
+    "name": "미소 모츠나베 1인분",
+    "localName": "博多もつ鍋 みそ味（一人前）",
+    "localNameType": "source"
   }
 };
