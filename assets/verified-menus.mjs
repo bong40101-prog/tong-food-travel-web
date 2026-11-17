@@ -638,5 +638,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/maisen-aoyama-honten": [
+    {
+      "name": "아마이 유와쿠 돼지고기 샤부샤부 코스 (예약 필수)",
+      "price": {
+        "amount": 4800,
+        "source": "https://mai-sen.com/shop/shop-9960/",
+        "label": "공식 아오야마 본점 게시 가격 · 2일 전 14시까지 예약 · 음료 별도",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "노다테 연회 코스 (11·12월·예약 필수)",
+      "price": {
+        "amount": 6000,
+        "source": "https://mai-sen.com/shop/shop-9960/",
+        "label": "공식 아오야마 본점 11·12월 코스 · 2일 전 14시까지 예약 · 음료 별도",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
