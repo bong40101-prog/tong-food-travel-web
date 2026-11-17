@@ -718,5 +718,45 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/sukiyaki-kimura": [
+    {
+      "name": "스키야키 상급",
+      "price": {
+        "amount": 3300,
+        "source": "https://www.kimura-sukiyakiten-kyoto.com/",
+        "label": "공식 매장 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "연회 세트 (밥·절임 포함, 6인 이상·예약 필수)",
+      "price": {
+        "amount": 3600,
+        "source": "https://www.kimura-sukiyakiten-kyoto.com/",
+        "label": "공식 매장 메뉴 · 세금 포함 · 1인 가격 · 6~100명 예약 필요",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/kiki-arashiyama": [
+    {
+      "name": "잉글리시 브렉퍼스트 (토스트·음료 1잔, 09~11시)",
+      "price": {
+        "amount": 2600,
+        "source": "https://www.tablecheck.com/ja/shops/kiki-arashiyama/reserve",
+        "label": "공식 예약 메뉴 · 세금 포함 · 기본 구성 · 스콘·티프리 변경 추가금",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "크리스마스 캐럴 애프터눈티 (11/1~12/25)",
+      "price": {
+        "amount": 6210,
+        "source": "https://www.tablecheck.com/ja/shops/kiki-arashiyama/reserve",
+        "label": "공식 예약 메뉴 · 세금 포함 · 1인 가격 · 티프리 포함 · 2일 전 18시까지 예약",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
