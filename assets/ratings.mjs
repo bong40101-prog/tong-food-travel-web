@@ -18,7 +18,7 @@ view.body.replaceChildren(el('h3','통도락 이용자 별점'),el('p',ratingLab
 const filters=el('div',null,'rating-actions'),list=el('div');let selected='all';
 function show(){list.replaceChildren();for(const r of (data.reviews||[]).filter(r=>r.reviewer_role==='operator')){const section=el('section');section.append(el('h3','운영자 평가'),el('p',`★ ${r.rating} · 이용자 평균 제외`));if(r.comment)section.append(el('p',r.comment));list.append(section)}for(const r of data.reviews||[]){if(r.reviewer_role==='operator')continue;if(selected!=='all'&&r.review_method!==selected)continue;list.append(el('p',`★ ${r.rating} · ${r.reviewer_role==='operator'?'운영자 평가 (이용자 평균 제외)':r.review_method==='onsite'?'현장 평가':'일반 평가'}`));if(r.comment)list.append(el('p',r.comment))}if(!list.childNodes.length)list.append(el('p','표시할 평가가 없어요.'));for(const b of filters.children)b.setAttribute('aria-pressed',String(b.dataset.type===selected))}
 for(const [id,label] of [['all','전체'],['onsite','현장 평가'],['general','일반 평가']]){const b=button(label,()=>{selected=id;show()});b.dataset.type=id;filters.append(b)}
-view.body.append(filters,list,el('p','최근 평가 최대 50개 표시 · 평균과 인원은 공개 이용자 평가 기준 (운영자 제외)'));show();appendGoogleRating(view.body,view.key);
+view.body.append(filters,list,el('p','최근 평가 최대 50개 표시 · 평균과 인원은 공개 이용자 평가 기준 (운영자 제외)'));show();appendGoogleRating(view.body,view.key,view);
 }catch(e){if(opened===view)view.body.replaceChildren(el('p',e.message),button('다시 시도',renderRating))}}
 window.addEventListener('tong-account-changed',()=>{if(opened)renderRating();setupAdmin()});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){summaries();if(opened)renderRating()}});
@@ -38,21 +38,19 @@ async function openAdmin(){if(!isAdmin())return;const {dialog,body}=modal('운�
  const nav=el('div',null,'rating-actions');if(page>1)nav.append(button('이전',()=>{page--;load()}));if(d.nextPage)nav.append(button('다음',()=>{page=d.nextPage;load()}));body.append(nav);
  body.append(el('h3','처리 내역 (최근 100건)'));for(const h of d.history)body.append(el('p',`${new Date(h.created_at).toLocaleString('ko-KR')} · ${h.place_key} · ${h.action==='hide'?'숨김':'복원'} · ${h.reason} · ${h.evidence}`));
  }catch(e){body.replaceChildren(el('p',e.message),button('다시 시도',load))}}await load()}
-function appendGoogleRating(body,key){
+function appendGoogleRating(body,key,view){
  const section=el('section',null,'google-rating-section'),status=el('p','통도락 이용자 평가와 별도로 표시합니다.'),links=el('div');status.setAttribute('aria-live','polite');
- const action=button('Google 별점 보기',async()=>{
-  action.disabled=true;status.textContent='불러오는 중…';links.replaceChildren();
+ const action=button('다시 시도',async()=>{
+  action.disabled=true;action.hidden=true;status.textContent='불러오는 중…';links.replaceChildren();
   try{
-   const r=await publicCall('/google-rating?place='+encodeURIComponent(key));if(!section.isConnected)return;
+   const r=await (view.googleRatingPromise ||= publicCall('/google-rating?place='+encodeURIComponent(key)));if(!section.isConnected)return;
+   if(r.status==='unavailable')view.googleRatingPromise=null;
    status.textContent=r.status==='ok'?`★ ${Number(r.rating).toFixed(1)} · 평가 ${Number(r.count).toLocaleString('ko-KR')}개`:({empty:'Google Maps에 등록된 별점이 없어요.',unlinked:'정확한 Google 장소 연결을 확인 중이에요.',monthly_limit:'이번 달 무료 이용 보호 한도에 도달했어요.',hour_limit:'잠시 후 다시 확인해 주세요.',not_ready:'Google 별점 연결 준비 중이에요.'}[r.status]||'불러오지 못했어요. 다시 시도해 주세요.');
    function link(label,url){if(!/^https:\/\//.test(url||''))return;const a=el('a',label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a)}
    if(r.url?.startsWith('https://www.google.com/maps/'))link('Google Maps에서 보기',r.url);
    for(const a of r.attributions||[])if(a.url)link(a.name,a.url);else links.append(el('span',a.name));
    link('Google Maps 평가 정책','https://support.google.com/contributionpolicy/answer/7400114');
-   action.disabled=['ok','empty','monthly_limit','hour_limit'].includes(r.status);
-  }catch{status.textContent='불러오지 못했어요. 다시 시도해 주세요.';action.disabled=false}
- });section.append(el('h3','Google Maps 별점'),status,action,links);body.append(section);
+   action.hidden=['ok','empty','monthly_limit','hour_limit','not_ready','unlinked'].includes(r.status);action.disabled=action.hidden;
+  }catch{view.googleRatingPromise=null;status.textContent='불러오지 못했어요. 다시 시도해 주세요.';action.disabled=false;action.hidden=false}
+ });section.append(el('h3','Google Maps 별점'),status,action,links);body.append(section);action.click();
 }
-
-
-
