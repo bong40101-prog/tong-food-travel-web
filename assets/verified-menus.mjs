@@ -1258,5 +1258,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/import-jp-e3aa94d52062f01a": [
+    {
+      "name": "우나기동(장어 4조각·국·절임 포함)",
+      "price": {
+        "amount": 3100,
+        "source": "https://hitsumabushi.co.jp/store_details/Dai_Nagoya_Building",
+        "label": "다이나고야 빌딩점 공식 메뉴판 게시 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "우나주(장어 6조각·국·절임 포함)",
+      "price": {
+        "amount": 4150,
+        "source": "https://hitsumabushi.co.jp/store_details/Dai_Nagoya_Building",
+        "label": "다이나고야 빌딩점 공식 메뉴판 게시 가격",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
