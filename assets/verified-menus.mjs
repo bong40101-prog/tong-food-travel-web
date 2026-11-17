@@ -898,5 +898,45 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/hashitate-kyoto-station": [
+    {
+      "name": "금눈돔 즈쿠시 세트 (덮밥·니우멘)",
+      "price": {
+        "amount": 3410,
+        "source": "https://tabelog.com/kyoto/A2601/A260101/26006654/dtlmenu/",
+        "label": "매장 운영 공식 메뉴 · 2026-11-05 갱신 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "토로 유바 와사비 간장",
+      "price": {
+        "amount": 770,
+        "source": "https://tabelog.com/kyoto/A2601/A260101/26006654/dtlmenu/",
+        "label": "매장 운영 공식 메뉴 · 2026-11-05 갱신 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/import-jp-c65ec5a24acef516": [
+    {
+      "name": "고산야키 카스테라 세트",
+      "price": {
+        "amount": 1375,
+        "source": "https://sevilla.shooken.com/",
+        "label": "쇼오켄 본점 2층 세비야 공식 메뉴 · 음료 포함 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "레몬 케이크 세트",
+      "price": {
+        "amount": 990,
+        "source": "https://sevilla.shooken.com/",
+        "label": "쇼오켄 본점 2층 세비야 공식 메뉴 · 음료 포함 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
