@@ -478,5 +478,45 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/smart-coffee-kyoto": [
+    {
+      "name": "달걀 샌드위치",
+      "price": {
+        "amount": 850,
+        "source": "https://www.smartcoffee.jp/menu",
+        "label": "공식 카페 메뉴 · 게시 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "수제 푸딩",
+      "price": {
+        "amount": 700,
+        "source": "https://www.smartcoffee.jp/menu",
+        "label": "공식 카페 메뉴 · 게시 가격",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/jp-tabelog-26006416": [
+    {
+      "name": "소고기 안심 커틀릿 샌드위치 (서비스료 10% 별도)",
+      "price": {
+        "amount": 2800,
+        "source": "https://www.chourakukan.co.jp/wp-content/uploads/cafe_menu.pdf",
+        "label": "공식 카페 메뉴 · 세금 포함 · 서비스료 10% 별도 · 음식 주문 17시까지",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "샌드위치 (서비스료 10% 별도)",
+      "price": {
+        "amount": 1700,
+        "source": "https://www.chourakukan.co.jp/wp-content/uploads/cafe_menu.pdf",
+        "label": "공식 카페 메뉴 · 세금 포함 · 서비스료 10% 별도 · 음식 주문 17시까지",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
