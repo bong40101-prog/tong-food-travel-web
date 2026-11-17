@@ -938,5 +938,45 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/kagoshima-sunroyal-trian": [
+    {
+      "name": "오므라이스·튀김 세트 (수프·샐러드·커피 포함)",
+      "price": {
+        "amount": 1793,
+        "source": "https://www.sunroyal.co.jp/blog/menu/trian/trian_dinner-2/",
+        "label": "공식 그랜드 메뉴 · 2026-04-01 이후 가격 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "새우·치킨 도리아",
+      "price": {
+        "amount": 1298,
+        "source": "https://www.sunroyal.co.jp/blog/menu/trian/trian_dinner-2/",
+        "label": "공식 그랜드 메뉴 · 2026-04-01 이후 가격 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/kinton-kyoto": [
+    {
+      "name": "샤토브리앙 돈카츠 정식",
+      "price": {
+        "amount": 2800,
+        "source": "https://tabelog.com/kyoto/A2601/A260201/26043600/dtlmenu/",
+        "label": "매장 운영 공식 메뉴 · 2026-08-07 갱신 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "수제 멘치카츠 정식",
+      "price": {
+        "amount": 1200,
+        "source": "https://tabelog.com/kyoto/A2601/A260201/26043600/dtlmenu/",
+        "label": "매장 운영 공식 메뉴 · 2026-08-07 갱신 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
