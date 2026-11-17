@@ -658,5 +658,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/kyoto-eirakuya-main-tearoom": [
+    {
+      "name": "라쿠 말차 파르페",
+      "price": {
+        "amount": 1600,
+        "source": "https://www.eirakuya.co.jp/oshinagaki/",
+        "label": "공식 본점 찻집 게시 메뉴 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "시라타마 밤 젠자이 (센차 포함)",
+      "price": {
+        "amount": 1450,
+        "source": "https://www.eirakuya.co.jp/oshinagaki/",
+        "label": "공식 본점 찻집 게시 메뉴 가격",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
