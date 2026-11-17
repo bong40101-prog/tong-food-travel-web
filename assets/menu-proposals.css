@@ -1,0 +1,7 @@
+.rating-dialog label {display:grid;gap:6px;margin:12px 0;font-weight:600}
+.rating-dialog input,.rating-dialog textarea {box-sizing:border-box;width:100%;padding:10px;border:1px solid #dedccf;border-radius:10px;background:#fffef9;color:#203e34;font:inherit}
+.rating-dialog textarea {min-height:88px;resize:vertical}
+.rating-dialog section {padding:12px 0;border-bottom:1px solid #dedccf}
+.rating-dialog button {margin:4px 6px 4px 0}
+.menu-proposal-button {margin-top:8px;font-size:12px;padding:6px 10px}
+
