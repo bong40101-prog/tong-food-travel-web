@@ -838,5 +838,65 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/furaibo-sakae": [
+    {
+      "name": "타잔야키 (어린 닭 반 마리)",
+      "price": {
+        "amount": 1452,
+        "source": "https://akr3253915670.owst.jp/foods",
+        "label": "사카에점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "다시마키 달걀말이",
+      "price": {
+        "amount": 495,
+        "source": "https://akr3253915670.owst.jp/foods",
+        "label": "사카에점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/unagi-hirokawa-arashiyama": [
+    {
+      "name": "우자쿠 (장어·오이 초무침, 세금 별도)",
+      "price": {
+        "amount": 1000,
+        "source": "https://unagi-hirokawa.jp/menu.html",
+        "label": "아라시야마 히로카와 공식 메뉴 · 세금 별도 원문 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "호소 우마키 (장어 달걀말이, 세금 별도)",
+      "price": {
+        "amount": 1600,
+        "source": "https://unagi-hirokawa.jp/menu.html",
+        "label": "아라시야마 히로카와 공식 메뉴 · 세금 별도 원문 가격",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/import-jp-39882e11668fa76a": [
+    {
+      "name": "마리나라 피자 (약 27cm)",
+      "price": {
+        "amount": 550,
+        "source": "https://solopizza.jp/menu.html",
+        "label": "오스 본점 공식 메뉴 · 매장 식사 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "콰트로 포르마지 피자 (약 27cm)",
+      "price": {
+        "amount": 1380,
+        "source": "https://solopizza.jp/menu.html",
+        "label": "오스 본점 공식 메뉴 · 매장 식사 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
