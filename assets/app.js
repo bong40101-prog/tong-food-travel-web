@@ -2,7 +2,7 @@ import { verifiedMenus } from './verified-menus.mjs?v=20261117-bilingual';
 import { attachAdditionalMenus } from './menu-layout.mjs?v=20261117-bilingual';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
-import { attachRating } from './ratings.mjs?v=20261117-menus';
+import { attachRating } from './ratings.mjs?v=20261117-auto-rating';
 import { attachMenuProposal } from './menu-proposals.mjs?v=20261117-menus';
 import { openSavePlace } from './save-place.mjs?v=20261117-menus';
 import { locationLabel } from './location-label.mjs';
