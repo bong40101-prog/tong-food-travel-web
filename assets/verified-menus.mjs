@@ -1654,6 +1654,54 @@ export const verifiedMenus = {
       "localName": "プレミアムコース・大人1名100分22時以降入店10%加算",
       "localNameType": "translation"
     }
+  ],
+  "JP/red-rock-kobe-main": [
+    {
+      "name": "스테이크 덮밥 기본",
+      "localName": "ステーキ丼 ノーマル",
+      "localNameType": "source",
+      "price": {
+        "amount": 1980,
+        "source": "https://k666727.gorp.jp/",
+        "label": "본점 공식 매장 페이지 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "프리미엄 함박스테이크",
+      "localName": "プレミアムハンバーグ",
+      "localNameType": "source",
+      "price": {
+        "amount": 1320,
+        "source": "https://k666727.gorp.jp/",
+        "label": "본점 공식 매장 페이지 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/omen-shijo-pontocho": [
+    {
+      "name": "오멘 우동·소고기 시구레 밥 세트",
+      "localName": "おめんと牛しぐれご飯セット",
+      "localNameType": "source",
+      "price": {
+        "amount": 2460,
+        "source": "https://omen.co.jp/pages/menus",
+        "label": "시조 폰토초점 공식 2026년 11월 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "오멘 우동·튀김 세트",
+      "localName": "おめんと天ぷらセット",
+      "localNameType": "source",
+      "price": {
+        "amount": 2460,
+        "source": "https://omen.co.jp/pages/menus",
+        "label": "시조 폰토초점 공식 2026년 11월 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
 export const representativeMenuNames = {
@@ -2001,5 +2049,21 @@ export const representativeMenuNames = {
     "name": "저녁 야키니쿠 무한리필 스탠더드 코스",
     "localName": "ディナー焼肉食べ放題スタンダードコース",
     "localNameType": "translation"
+  },
+  "JP/red-rock-kobe-main": {
+    "name": "로스트비프 덮밥 기본",
+    "localName": "ローストビーフ丼 ノーマル",
+    "localNameType": "source"
+  },
+  "JP/omen-shijo-pontocho": {
+    "name": "오멘 우동",
+    "localName": "おめん（温・冷）",
+    "localNameType": "source",
+    "price": {
+      "amount": 1580,
+      "source": "https://omen.co.jp/pages/menus",
+      "label": "시조 폰토초점 공식 2026년 11월 메뉴 · 세금 포함",
+      "date": "2026-11-17"
+    }
   }
 };
