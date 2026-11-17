@@ -598,5 +598,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/import-jp-72b728118722c752": [
+    {
+      "name": "가고시마 흑돼지 안심 돈카츠 정식 (수량 한정)",
+      "price": {
+        "amount": 2940,
+        "source": "https://www.yabaton.com/s3/store/store/000/000/000/000/000/000/02/menu_file.FK7TIF4mNi8K1GvuKABYPTqNww4EFVYJVj5849ki.pdf",
+        "label": "야바초 본점 공식 메뉴 · 정식 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "철판 립로스 돈카츠 정식",
+      "price": {
+        "amount": 2100,
+        "source": "https://www.yabaton.com/s3/store/store/000/000/000/000/000/000/02/menu_file.FK7TIF4mNi8K1GvuKABYPTqNww4EFVYJVj5849ki.pdf",
+        "label": "야바초 본점 공식 메뉴 · 정식 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
