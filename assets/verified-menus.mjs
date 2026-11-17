@@ -1358,5 +1358,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/kyoto-chifaja-shijo-kawaramachi": [
+    {
+      "name": "엑설런트 무한리필(성인 1인·100분·22시 이후 입장 10% 추가)",
+      "price": {
+        "amount": 5038,
+        "source": "https://chifaja.com/dinner/shijyo",
+        "label": "시조 가와라마치점 공식 저녁 메뉴 · 세금 포함 · 100분(종료 20분 전 주문 마감)",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "프리미엄 무한리필(성인 1인·100분·22시 이후 입장 10% 추가)",
+      "price": {
+        "amount": 6138,
+        "source": "https://chifaja.com/dinner/shijyo",
+        "label": "시조 가와라마치점 공식 저녁 메뉴 · 세금 포함 · 100분(종료 20분 전 주문 마감)",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
