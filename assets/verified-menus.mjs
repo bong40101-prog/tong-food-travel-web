@@ -758,5 +758,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/import-jp-475c95da9eeead7a": [
+    {
+      "name": "새우튀김·안심카츠 정식 (새우 2마리·안심 2개)",
+      "price": {
+        "amount": 2420,
+        "source": "https://hayashi-sangyo.jp/menu/",
+        "label": "공식 매장 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "치킨 치즈카츠 정식",
+      "price": {
+        "amount": 1870,
+        "source": "https://hayashi-sangyo.jp/menu/",
+        "label": "공식 매장 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
