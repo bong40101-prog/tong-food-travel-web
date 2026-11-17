@@ -798,5 +798,45 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/ciao-nagoya-station": [
+    {
+      "name": "컨트리 앙카케 스파게티 (R 보통)",
+      "price": {
+        "amount": 990,
+        "source": "https://www.ciao-nagoya.com/menu-%E3%83%81%E3%83%A3%E3%82%AA/",
+        "label": "공식 현재 메뉴 · R 보통 크기 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "아메리칸 앙카케 스파게티 (R 보통)",
+      "price": {
+        "amount": 1080,
+        "source": "https://www.ciao-nagoya.com/menu-%E3%83%81%E3%83%A3%E3%82%AA/",
+        "label": "공식 현재 메뉴 · R 보통 크기 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/jp-tabelog-33000046": [
+    {
+      "name": "새우·채소 튀김 모둠 (새우 2개·채소 3종)",
+      "price": {
+        "amount": 500,
+        "source": "https://www.marubu.com/menu/nakamise.html",
+        "label": "나카점 공식 메뉴판 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "채소 튀김 모둠",
+      "price": {
+        "amount": 300,
+        "source": "https://www.marubu.com/menu/nakamise.html",
+        "label": "나카점 공식 메뉴판 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
