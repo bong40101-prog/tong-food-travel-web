@@ -358,5 +358,85 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/myojinmaru-hirome-market": [
+    {
+      "name": "마늘 소금 타타키 덮밥 (미소국 포함)",
+      "price": {
+        "amount": 1000,
+        "source": "https://shop.myojinmaru.jp/wp-content/uploads/2024/03/01_menu.pdf",
+        "label": "히로메시장점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "가다랑어 뱃살 구이 (수량 한정)",
+      "price": {
+        "amount": 500,
+        "source": "https://shop.myojinmaru.jp/wp-content/uploads/2024/03/01_menu.pdf",
+        "label": "히로메시장점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/horai-551-namba-main": [
+    {
+      "name": "쓰촨 마파두부",
+      "price": {
+        "amount": 1350,
+        "source": "https://www.551horai.co.jp/wp/wp-content/uploads/2026/08/%E6%9C%AC%E5%BA%97202609.pdf",
+        "label": "본점 레스토랑 식사 가격 · 세금 포함 · 2026-09 시행",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "닭 가라아게",
+      "price": {
+        "amount": 1300,
+        "source": "https://www.551horai.co.jp/wp/wp-content/uploads/2026/08/%E6%9C%AC%E5%BA%97202609.pdf",
+        "label": "본점 레스토랑 식사 가격 · 세금 포함 · 2026-09 시행",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/import-jp-6b7382578cd1b6c9": [
+    {
+      "name": "슈마이 2개 (매장 식사)",
+      "price": {
+        "amount": 260,
+        "source": "https://www.551horai.co.jp/wp/wp-content/uploads/2026/08/%E9%96%A2%E7%A9%BA202609.pdf",
+        "label": "간사이공항점 매장 식사 가격 · 세금 포함 · 2026-09 시행",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "새우 슈마이 4개 (매장 식사)",
+      "price": {
+        "amount": 360,
+        "source": "https://www.551horai.co.jp/wp/wp-content/uploads/2026/08/%E9%96%A2%E7%A9%BA202609.pdf",
+        "label": "간사이공항점 매장 식사 가격 · 세금 포함 · 2026-09 시행",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/hamamura-kyoto-station": [
+    {
+      "name": "군만두 5개",
+      "price": {
+        "amount": 352,
+        "source": "https://r.gnavi.co.jp/c940100/menu2/",
+        "label": "매장 공식 사이트 연결 메뉴 · 게시 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "춘권 2개",
+      "price": {
+        "amount": 330,
+        "source": "https://r.gnavi.co.jp/c940100/menu3/",
+        "label": "매장 공식 사이트 연결 메뉴 · 게시 가격",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
