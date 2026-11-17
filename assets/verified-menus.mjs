@@ -1158,5 +1158,65 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/shizuka-nara-park": [
+    {
+      "name": "새우 가마메시 (단품)",
+      "price": {
+        "amount": 1540,
+        "source": "https://kamameshi-shizuka.jp/photo/album/970054",
+        "label": "공원점 공식 메뉴 · 단품 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "닭고기 가마메시 (단품)",
+      "price": {
+        "amount": 1350,
+        "source": "https://kamameshi-shizuka.jp/photo/album/970054",
+        "label": "공원점 공식 메뉴 · 단품 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/kiwamiya-tokyo-station": [
+    {
+      "name": "함바그 M 160g (단품)",
+      "price": {
+        "amount": 1705,
+        "source": "https://kiwamiya.com/brand/",
+        "label": "도쿄역점 공식 메뉴 · 단품 · 밥 세트 별도 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "함바그 L 200g (단품)",
+      "price": {
+        "amount": 2068,
+        "source": "https://kiwamiya.com/brand/",
+        "label": "도쿄역점 공식 메뉴 · 단품 · 밥 세트 별도 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/import-jp-c33d01d900125691": [
+    {
+      "name": "함바그 S 120g (단품)",
+      "price": {
+        "amount": 1188,
+        "source": "https://kiwamiya.com/brand/",
+        "label": "하카타점 공식 메뉴 · 숯불·철판 선택 · 단품 · 밥 세트 별도 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "함바그 M 160g (단품)",
+      "price": {
+        "amount": 1518,
+        "source": "https://kiwamiya.com/brand/",
+        "label": "하카타점 공식 메뉴 · 숯불·철판 선택 · 단품 · 밥 세트 별도 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
