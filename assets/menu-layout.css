@@ -1,7 +1,8 @@
-.menu-line { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2px 12px; padding:1px 0; border-block:0; }
+.menu-line { grid-template-columns: minmax(0,1fr) auto; align-items:end; gap: 2px 8px; padding:1px 0; border-block:0; }
 .menu-line .menu-label { display:block; margin-bottom:4px; }
-.menu-line .menu-name { display:block; overflow-wrap:anywhere; }
-.menu-line .price-block { padding-top:22px; text-align:right; }
+.menu-line > div:first-child { min-width:0; }
+.menu-line .menu-name { display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; cursor:pointer; }
+.menu-line .price-block { padding-top:0; text-align:right; white-space:nowrap; }
 .menu-line .price { display:inline; font-size:14px; }
 .menu-line .won-price { display:inline; margin:0 0 0 4px; font-size:12px; line-height:1.6; }
 .menu-line .price-source { display:none; }
