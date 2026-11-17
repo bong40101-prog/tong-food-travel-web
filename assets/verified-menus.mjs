@@ -978,5 +978,85 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/jp-tabelog-26042990": [
+    {
+      "name": "기온 기쿠카와 히츠마부시",
+      "price": {
+        "amount": 4980,
+        "source": "https://unagi-kikukawa-fushimiinari.owst.jp/foods",
+        "label": "후시미이나리점 공식 메뉴 · 세금 포함 · 연말연시 특별 할증 별도",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "장어 달걀말이 (교다시 우마키)",
+      "price": {
+        "amount": 1800,
+        "source": "https://unagi-kikukawa-fushimiinari.owst.jp/foods",
+        "label": "후시미이나리점 공식 메뉴 · 세금 포함 · 연말연시 특별 할증 별도",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/shunsai-imari": [
+    {
+      "name": "다시마키 달걀말이 (저녁)",
+      "price": {
+        "amount": 650,
+        "source": "https://www.kyoto-imari.com/night/index.html",
+        "label": "공식 저녁 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "교가모 오리 로스 (저녁)",
+      "price": {
+        "amount": 1400,
+        "source": "https://www.kyoto-imari.com/night/index.html",
+        "label": "공식 저녁 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/nikushin-nishikiyamachi": [
+    {
+      "name": "고베규 특상 갈비",
+      "price": {
+        "amount": 1649,
+        "source": "https://tabelog.com/kyoto/A2601/A260201/26035568/dtlmenu/",
+        "label": "매장 운영 공식 메뉴 · 2026-08-04 갱신 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "레몬 냉면",
+      "price": {
+        "amount": 989,
+        "source": "https://tabelog.com/kyoto/A2601/A260201/26035568/dtlmenu/",
+        "label": "매장 운영 공식 메뉴 · 2026-08-04 갱신 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/toyotei-kintetsu": [
+    {
+      "name": "도요테이 카레라이스 (점심 단품)",
+      "price": {
+        "amount": 1580,
+        "source": "https://www.touyoutei.co.jp/post-130/",
+        "label": "긴테쓰점 공식 점심 메뉴 11:00~17:00 · 단품 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "오므라이스 (점심 단품)",
+      "price": {
+        "amount": 1450,
+        "source": "https://www.touyoutei.co.jp/post-130/",
+        "label": "긴테쓰점 공식 점심 메뉴 11:00~17:00 · 단품 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
