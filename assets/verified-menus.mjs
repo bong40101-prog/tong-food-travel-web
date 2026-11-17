@@ -578,5 +578,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/tsurumaru-takamatsu": [
+    {
+      "name": "튀김 우동",
+      "price": {
+        "amount": 1050,
+        "source": "https://teuchiudon-tsurumaru.com/menu/",
+        "label": "공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "고기 붓카케 우동",
+      "price": {
+        "amount": 1000,
+        "source": "https://teuchiudon-tsurumaru.com/menu/",
+        "label": "공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
