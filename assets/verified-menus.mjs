@@ -518,5 +518,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/uji-nakamura-tokichi-main": [
+    {
+      "name": "마루토 말차 파르페",
+      "price": {
+        "amount": 2480,
+        "source": "https://tokichi.jp/blogs/menu/honten",
+        "label": "우지 본점 공식 메뉴 · 2026-10-21 메뉴판 게시 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "말차 소프트크림과 작은 생차 젤리",
+      "price": {
+        "amount": 1800,
+        "source": "https://tokichi.jp/blogs/menu/honten",
+        "label": "우지 본점 공식 메뉴 · 2026-10-21 메뉴판 게시 가격",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
