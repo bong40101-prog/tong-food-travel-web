@@ -20,4 +20,24 @@ export function attachAdditionalMenus(card, place, formatPrice, attachWon) {
     prices.append(local); attachWon(prices, {price: menu.price, country: place.country});
     row.append(description, prices); previous.after(row); previous = row;
   });
+  card.querySelectorAll('.menu-name').forEach(name => {
+    name.title = name.textContent;
+    name.tabIndex = 0;
+    name.setAttribute('role', 'button');
+    name.setAttribute('aria-label', `${name.textContent} 전체 이름 보기`);
+    const showName = event => {
+      event.preventDefault(); event.stopPropagation();
+      const dialog = document.createElement('dialog');
+      const text = document.createElement('p'); text.textContent = name.textContent;
+      const close = document.createElement('button'); close.textContent = '닫기';
+      close.onclick = () => dialog.close();
+      dialog.append(text, close); document.body.append(dialog);
+      dialog.addEventListener('close', () => dialog.remove(), {once:true});
+      dialog.showModal();
+    };
+    name.addEventListener('click', showName);
+    name.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') showName(event);
+    });
+  });
 }
