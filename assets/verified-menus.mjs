@@ -778,5 +778,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/bakuro-ichidai-nagoya-west": [
+    {
+      "name": "히다규 니기리 5종 모둠",
+      "price": {
+        "amount": 2068,
+        "source": "https://bakuroichidai.jp/shop/shabusukiya-nagoyawest/menu/recommend/",
+        "label": "샤부스키야 나고야 WEST점 공식 메뉴 · 세금 포함 · 코스·세트는 2인 이상, 추가 메뉴는 코스·세트 주문 고객 한정",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "안심카츠 샌드위치",
+      "price": {
+        "amount": 1738,
+        "source": "https://bakuroichidai.jp/shop/shabusukiya-nagoyawest/menu/recommend/",
+        "label": "샤부스키야 나고야 WEST점 공식 메뉴 · 세금 포함 · 코스·세트는 2인 이상, 추가 메뉴는 코스·세트 주문 고객 한정",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
