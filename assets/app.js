@@ -2,7 +2,9 @@ import { verifiedMenus } from './verified-menus.mjs?v=20261117-bilingual';
 import { attachAdditionalMenus } from './menu-layout.mjs?v=20261117-bilingual';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
-import { attachRating } from './ratings.mjs?v=20261116-rated-first';
+import { attachRating } from './ratings.mjs?v=20261117-menus';
+import { attachMenuProposal } from './menu-proposals.mjs?v=20261117-menus';
+import { openSavePlace } from './save-place.mjs?v=20261117-menus';
 import { locationLabel } from './location-label.mjs';
 import { choices, foodName, ids, GroupedCatalog } from './category-groups.mjs?v=20261112-store-menu';
 const groupedCatalog = new GroupedCatalog();
@@ -42,7 +44,7 @@ function favoriteKey(place) {
 function updateFavoriteButton(button) {
   const saved = favorites.has(button.dataset.favoriteKey);
   button.setAttribute('aria-pressed', String(saved));
-  button.title = saved ? '즐겨찾기 해제' : '즐겨찾기 저장';
+  button.title = saved ? '저장됨 · 여행 폴더 관리' : '저장 · 여행 폴더 선택';
 }
 
 async function toggleFavorite(place, button) {
@@ -126,7 +128,7 @@ function renderCard(place) {
   const favorite = $('.favorite-button', card);
   favorite.dataset.favoriteKey = favoriteKey(place);
   favorite.setAttribute('aria-label', `${place.name} 즐겨찾기`);
-  favorite.addEventListener('click', () => toggleFavorite(place, favorite));
+  favorite.addEventListener('click', () => openSavePlace(place,()=>{favorites=readFavorites();updateFavoriteButton(favorite)}));
   updateFavoriteButton(favorite);
   const photo = $('.food-photo', card);
   const credit = $('.photo-credit', card);
@@ -223,6 +225,7 @@ function renderCard(place) {
   }
   $('.map-link', card).href = mapUrl(place);
   attachRating(card,place);
+  attachMenuProposal(card,place,formatPrice,attachWon);
   return card;
 }
 
@@ -456,3 +459,4 @@ refreshRates();
 
 
 const openStaySearch=mountStayNearby(renderCard,()=>state.country);
+
