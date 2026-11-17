@@ -1058,5 +1058,65 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/jp-tabelog-26032591": [
+    {
+      "name": "베이컨 포테이토 샐러드",
+      "price": {
+        "amount": 495,
+        "source": "https://aiyosanjyoutominokoujiten.owst.jp/",
+        "label": "산조 도미노코지점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "모차렐라 치즈 꼬치 1개",
+      "price": {
+        "amount": 187,
+        "source": "https://aiyosanjyoutominokoujiten.owst.jp/",
+        "label": "산조 도미노코지점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/rokkaku-kitchen-109": [
+    {
+      "name": "모둠 튀김 정식",
+      "price": {
+        "amount": 1750,
+        "source": "https://6kaku-k.com/",
+        "label": "공식 점심·저녁 정식 메뉴 · 밥·된장국·반찬 2종 포함 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "치킨카츠 정식",
+      "price": {
+        "amount": 1450,
+        "source": "https://6kaku-k.com/",
+        "label": "공식 점심·저녁 정식 메뉴 · 밥·된장국·반찬 2종 포함 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/jp-tabelog-26040475": [
+    {
+      "name": "에비 세븐 (새우 롤)",
+      "price": {
+        "amount": 1078,
+        "source": "https://www.yodobashi-kyoto.com/restaurant2/restaurant_sasi.html",
+        "label": "교토 요도바시 공식 매장 안내 게시 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "장어카츠 샌드위치",
+      "price": {
+        "amount": 1078,
+        "source": "https://www.yodobashi-kyoto.com/restaurant2/restaurant_sasi.html",
+        "label": "교토 요도바시 공식 매장 안내 게시 가격",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
