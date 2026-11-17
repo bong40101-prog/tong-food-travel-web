@@ -46,8 +46,21 @@ export function toggleAccountFavorite(place){
  const data=read(key('saved')),item='place:'+id,saved=!Object.hasOwn(data,item);
  if(saved)data[item]={...place,savedAt:Date.now()};else delete data[item];
  write(key('saved'),data);
- const pending=read(key('pending'));pending[item]={key:item,deleted:!saved,value:saved?data[item]:null,operation:crypto.randomUUID()};write(key('pending'),pending);
+ const pending=read(key('pending'));pending[item]={key:item,deleted:!saved,value:saved?data[item]:null,operation:crypto.randomUUID()};
+ if(!saved)for(const [folder,value] of Object.entries(data))if(folder.startsWith('folder:')&&value.places?.[id]){delete value.places[id];pending[folder]={key:folder,deleted:false,value,operation:crypto.randomUUID()}};
+ write(key('saved'),data);write(key('pending'),pending);
  syncFavorites().catch(()=>{});return saved;
+}
+export function savedFolders(){return account()?Object.entries(read(key('saved'))).filter(([k])=>k.startsWith('folder:')).map(([key,value])=>({key,value})):[]}
+export function assignSavedFolder(place,folderKey,newName){
+ if(!account())throw Error('login');
+ const id=place.country.id+'/'+place.id;
+ if(!favoriteKeys().has(guestPrefix+id))toggleAccountFavorite(place);
+ const data=read(key('saved')),pending=read(key('pending'));
+ if(newName){folderKey='folder:'+crypto.randomUUID();data[folderKey]={name:newName.trim().slice(0,100),memo:'',places:{}}}
+ const folder=data[folderKey];if(!folder)throw Error('folder');folder.places ||= {};
+ if(folder.places[id])delete folder.places[id];else folder.places[id]=true;
+ pending[folderKey]={key:folderKey,deleted:false,value:folder,operation:crypto.randomUUID()};write(key('saved'),data);write(key('pending'),pending);changed();syncFavorites().catch(()=>{});
 }
 export async function syncFavorites(){
  if(!account()||syncing)return;syncing=true;const owner=account();
@@ -68,3 +81,5 @@ export async function syncFavorites(){
 }
 window.addEventListener('online',()=>resume().catch(()=>{}));
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)resume().catch(()=>{})});
+
+
