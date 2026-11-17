@@ -618,5 +618,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/daruma-shinsekai-main": [
+    {
+      "name": "도테야키 (소힘줄 조림)",
+      "price": {
+        "amount": 440,
+        "source": "https://www.kushikatu-daruma.com/location/shinsekai",
+        "label": "공식 총본점 메뉴 · 세금 포함 · 음료 1인 1잔 별도 주문(초등학생 이하 제외)",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "신세카이 세트 (꼬치 9개·도테야키)",
+      "price": {
+        "amount": 1793,
+        "source": "https://www.kushikatu-daruma.com/location/shinsekai",
+        "label": "공식 총본점 메뉴 · 세금 포함 · 음료 1인 1잔 별도 주문(초등학생 이하 제외)",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
