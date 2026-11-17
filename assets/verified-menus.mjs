@@ -458,5 +458,25 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/shinshin-hakata-deitos": [
+    {
+      "name": "명란 볶음 라멘",
+      "price": {
+        "amount": 990,
+        "source": "https://www.hakata-shinshin.com/menu_deitos03",
+        "label": "하카타 데이토스점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "야키메시 볶음밥",
+      "price": {
+        "amount": 780,
+        "source": "https://www.hakata-shinshin.com/menu_deitos03",
+        "label": "하카타 데이토스점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
