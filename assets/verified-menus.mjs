@@ -538,5 +538,45 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/nakamura-udon": [
+    {
+      "name": "가케 우동 (소·1玉)",
+      "price": {
+        "amount": 290,
+        "source": "https://www.nakamura-udon.com/menu",
+        "label": "공식 메뉴 · 소 1玉 · 게시 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "붓카케 우동 (소·1玉)",
+      "price": {
+        "amount": 370,
+        "source": "https://www.nakamura-udon.com/menu",
+        "label": "공식 메뉴 · 소 1玉 · 게시 가격",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/yamagoe-udon": [
+    {
+      "name": "가마타마야마 우동 (달걀·마·1玉)",
+      "price": {
+        "amount": 450,
+        "source": "https://yamagoeudon.com/menu/1884/",
+        "label": "공식 메뉴 · 1玉 · 2026-01-06 가격 개정 반영",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "가마아게 츠케 우동 (1玉)",
+      "price": {
+        "amount": 350,
+        "source": "https://yamagoeudon.com/menu/1884/",
+        "label": "공식 메뉴 · 1玉 · 2026-01-06 가격 개정 반영",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
