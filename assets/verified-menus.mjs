@@ -1278,5 +1278,65 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/ganso-hakata-mentaiju": [
+    {
+      "name": "멘타이 니코미 츠케멘",
+      "price": {
+        "amount": 1980,
+        "source": "https://www.mentaiju.com/menu",
+        "label": "니시나카스점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "멘타이스이(명란 두부 맑은국)",
+      "price": {
+        "amount": 858,
+        "source": "https://www.mentaiju.com/menu",
+        "label": "니시나카스점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/yamamoto-umeda-est": [
+    {
+      "name": "해산물 디럭스 네기야키(오징어·새우·가리비)",
+      "price": {
+        "amount": 1730,
+        "source": "https://www.negiyaki-yamamoto.com/tenpo/index_3.html",
+        "label": "우메다 EST점 공식 메뉴 게시 가격",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "돼지고기 오코노미야키",
+      "price": {
+        "amount": 1050,
+        "source": "https://www.negiyaki-yamamoto.com/tenpo/index_3.html",
+        "label": "우메다 EST점 공식 메뉴 게시 가격",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/imai-dotonbori": [
+    {
+      "name": "나베야키 우동",
+      "price": {
+        "amount": 1850,
+        "source": "https://www.d-imai.com/shops/honten/",
+        "label": "도톤보리 본점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "오야코동(맑은국 포함)",
+      "price": {
+        "amount": 1500,
+        "source": "https://www.d-imai.com/shops/honten/",
+        "label": "도톤보리 본점 공식 메뉴 · 세금 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
