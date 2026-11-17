@@ -1118,5 +1118,45 @@ export const verifiedMenus = {
         "date": "2026-11-17"
       }
     }
+  ],
+  "JP/import-jp-5b6cb12e19931950": [
+    {
+      "name": "수제 두부 정식 (11~4월 찻집 메뉴)",
+      "price": {
+        "amount": 2750,
+        "source": "https://hirobun.co.jp/cuisine/",
+        "label": "공식 히로분 찻집 메뉴 · 11~4월 · 현금 결제 · 세금·서비스료 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "은어·교토 유바 뉴멘 (11~4월 찻집 메뉴)",
+      "price": {
+        "amount": 1980,
+        "source": "https://hirobun.co.jp/cuisine/",
+        "label": "공식 히로분 찻집 메뉴 · 11~4월 · 현금 결제 · 세금·서비스료 포함",
+        "date": "2026-11-17"
+      }
+    }
+  ],
+  "JP/mishimatei-main": [
+    {
+      "name": "오일야키 점심 코스",
+      "price": {
+        "amount": 8591,
+        "source": "https://www.mishima-tei.co.jp/cuisine/honten.html",
+        "label": "본점 공식 점심 코스 · 1인 가격 · 세금·서비스료 포함",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "name": "미즈타키 샤부샤부 점심 코스",
+      "price": {
+        "amount": 8591,
+        "source": "https://www.mishima-tei.co.jp/cuisine/honten.html",
+        "label": "본점 공식 점심 코스 · 1인 가격 · 세금·서비스료 포함",
+        "date": "2026-11-17"
+      }
+    }
   ]
 };
