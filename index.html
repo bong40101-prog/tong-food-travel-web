@@ -31,6 +31,15 @@
 <link rel="stylesheet" href="./assets/stay-nearby.css?v=20261113-scope3">
 <link rel="stylesheet" href="./assets/menu-layout.css?v=20261117-singleline">
 <link rel="stylesheet" href="./assets/menu-proposals.css?v=20261117-menus">
+<style id="developer-blog-posts-style">
+.blog-section-label{font-size:12px;font-weight:800;margin:20px 0 6px;color:var(--ink)}
+.blog-section-label span{float:right;font-size:11px;font-weight:400;color:var(--muted)}
+.blog-posts:empty::before{content:"게시물을 불러오는 중…";display:block;font-size:12px;color:var(--muted);padding:10px 0}
+.blog-post{display:block;font-size:12px;line-height:1.6;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);overflow-wrap:anywhere}
+.blog-post:hover .blog-post-title{text-decoration:underline}
+.blog-post-title{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.blog-post-date{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#places">장소 목록으로 건너뛰기</a>
@@ -123,6 +132,8 @@
           <h2 id="blog-title">통도락여행 개발자 블로그</h2>
           <p>통도락여행이 도움이 되셨다면 블로그 방문과 공감 한 번 부탁드립니다! ❤️</p>
           <a class="side-link" href="https://blog.naver.com/mkj2449" target="_blank" rel="noopener noreferrer">블로그 방문하기 <span aria-hidden="true">↗</span></a>
+          <div class="blog-section-label">최근 게시물 <span>최신 3개</span></div>
+          <div id="developer-blog-posts" class="blog-posts"></div>
         </section>
         <section data-promotion class="pickle-panel" aria-labelledby="pickle-title">
           <p class="side-kicker">🤖 AI ASSISTANT</p>
@@ -212,5 +223,8 @@
   <script type="module" src="./assets/feedback.js?v=20261110-api-fallback"></script>
   <script type="module" src="./assets/visitors.js?v=20261110-api-fallback"></script>
 <script type="module" src="./assets/benefits.mjs?v=20261112-header-login"></script>
+<script>
+(async()=>{const host=document.getElementById('developer-blog-posts');if(!host)return;try{const r=await fetch('https://korea-futures-cloudflare.pages.dev/blog-posts.json',{cache:'no-store',credentials:'omit'});if(!r.ok)throw 0;const posts=await r.json();if(!Array.isArray(posts))throw 0;const frag=document.createDocumentFragment();for(const p of posts.slice(0,3)){if(typeof p.title!=='string'||typeof p.url!=='string'||!/^https:\/\/(?:m\.)?blog\.naver\.com\/mkj2449\//.test(p.url))continue;const a=document.createElement('a');a.className='blog-post';a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';const t=document.createElement('span');t.className='blog-post-title';t.textContent=p.title;a.appendChild(t);const d=new Date(p.pubDate);if(p.pubDate&&!Number.isNaN(d.getTime())){const s=document.createElement('span');s.className='blog-post-date';s.textContent=d.toLocaleDateString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit'});a.appendChild(s)}frag.appendChild(a)}if(!frag.childNodes.length)throw 0;host.replaceChildren(frag)}catch(e){host.previousElementSibling.hidden=true;host.hidden=true}})();
+</script>
 </body>
 </html>
