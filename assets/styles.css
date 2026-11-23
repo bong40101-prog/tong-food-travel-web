@@ -207,3 +207,11 @@ button { color: inherit; }
 /* Compact descriptor beside the wordmark. */
 .brand-tagline { margin-left: 6px; padding-left: 12px; border-left: 1px solid var(--line); color: var(--green); font-size: 13px; font-weight: 700; letter-spacing: -.035em; }
 @media (max-width: 480px) { .brand-tagline { margin-left: 2px; padding-left: 8px; font-size: 11px; } }
+
+.language-picker{display:flex;align-items:center;gap:6px;white-space:nowrap;font-size:12px}.language-picker select{padding:10px;border:1px solid #e5e1d5;border-radius:10px;background:#fffdf8;color:#1b4437}html[lang=ja]{font-family:"Noto Sans JP",Meiryo,sans-serif}
+
+@media(min-width:1060px){.header-inner{grid-template-columns:auto minmax(220px,1fr) auto auto;gap:16px}.brand-tagline{display:none}}
+html[lang=ja] .sidebar,html[lang=ja] .site-links a[href*="tong-sky-data"],html[lang=ja] .site-links a[href*="korea-futures-cloudflare"]{display:none!important}
+html[lang=ja] .content-layout{grid-template-columns:minmax(0,1fr)}
+html[lang=ja] .brand>span:not(.brand-tagline){max-width:200px;font-size:15px}
+@media(max-width:1059px){.language-picker{grid-column:1;grid-row:3}.site-links{grid-column:2;grid-row:3}}

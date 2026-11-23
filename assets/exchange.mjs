@@ -31,4 +31,5 @@ export async function refreshRates() {
     try { localStorage.setItem(key,JSON.stringify(rows)); } catch {}
   } catch { failed = true; }
   document.querySelectorAll('.won-price').forEach(update);
+  window.dispatchEvent(new Event('tong-fx-updated'));
 }

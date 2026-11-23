@@ -1,3 +1,4 @@
+import {localizeCard} from './language.mjs';
 import { verifiedMenus } from './verified-menus.mjs?v=20261117-bilingual';
 import { attachAdditionalMenus } from './menu-layout.mjs?v=20261117-bilingual';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
@@ -226,6 +227,7 @@ function renderCard(place) {
   $('.map-link', card).href = mapUrl(place);
   attachRating(card,place);
   attachMenuProposal(card,place,formatPrice,attachWon);
+  localizeCard(card,place);
   return card;
 }
 
