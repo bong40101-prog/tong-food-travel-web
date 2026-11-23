@@ -1,9 +1,9 @@
-import {localizeCard} from './language.mjs?v=20261124-kr33';
+import {localizeCard} from './language.mjs?v=20261124-full';
 import { verifiedMenus } from './verified-menus.mjs?v=20261117-bilingual';
-import { attachAdditionalMenus } from './menu-layout.mjs?v=20261117-bilingual';
+import { attachAdditionalMenus } from './menu-layout.mjs?v=20261124-ja';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
-import { attachRating } from './ratings.mjs?v=20261117-auto-rating';
+import { attachRating } from './ratings.mjs?v=20261124-ja';
 import { attachMenuProposal } from './menu-proposals.mjs?v=20261117-menus';
 import { openSavePlace } from './save-place.mjs?v=20261117-menus';
 import { locationLabel } from './location-label.mjs';

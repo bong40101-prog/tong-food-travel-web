@@ -28,6 +28,7 @@ export function attachAdditionalMenus(card, place, formatPrice, attachWon) {
     const row = document.createElement('div'); row.className = 'menu-line additional-menu';
     const description = document.createElement('div');
     const fallback=verifiedMenus[`${place.country?.id}/${place.id}`]?.find(item=>item.name===menu.name);
+    row.dataset.menuName=menu.name;row.dataset.menuLocalName=menu.localName||fallback?.localName||'';row.dataset.menuAmount=Number.isFinite(menu.price?.amount)?String(menu.price.amount):'NaN';
     const name = document.createElement('strong'); name.className = 'menu-name'; name.textContent = bilingualMenuName(menu.name,menu.localName||fallback?.localName);
     description.append(name);
     const prices = document.createElement('div'); prices.className = 'price-block';
