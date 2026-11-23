@@ -36,7 +36,7 @@ function translateUI(root=document.body) {
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
   while(walker.nextNode()) {
     const node=walker.currentNode;
-    if(node.parentElement?.closest('script,style'))continue;
+    if(node.parentElement?.closest('script,style,.video-sources,.rating-dialog,.feedback-dialog'))continue;
     let saved=originals.get(node);
     if(!saved || (node.nodeValue!==saved.ko && node.nodeValue!==saved.ja)) {
       const trimmed=node.nodeValue.trim(), translated=jaText(trimmed);if(translated===trimmed)continue;
