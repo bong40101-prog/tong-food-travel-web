@@ -1,9 +1,19 @@
 import {conversion} from './exchange.mjs?v=20261112-price-order';
-const data=await fetch(new URL('./ja-pilot.json?v=20261124',import.meta.url)).then(r=>{if(!r.ok)throw Error('translations');return r.json();}).catch(()=>({ui:{},places:{}}));
+const data=await fetch(new URL('./ja-pilot.json?v=20261124-navigation',import.meta.url)).then(r=>{if(!r.ok)throw Error('translations');return r.json();}).catch(()=>({ui:{},places:{}}));
 let language='ko';
 try {language=localStorage.getItem('tongdorak:language')==='ja'?'ja':'ko';} catch {}
 export const japanese=()=>language==='ja';
-export const t=value=>japanese()?(data.ui[value]||value):value;
+export function jaText(value) {
+  if(data.ui[value])return data.ui[value];
+  let m=value.match(/^(.+) 맛집과 여행지$/);if(m)return `${jaText(m[1])}のグルメ・観光スポット`;
+  m=value.match(/^(.+) 검색 결과$/);if(m)return `${jaText(m[1])}の検索結果`;
+  m=value.match(/^장소 ([\d,]+)곳$/);if(m)return `${m[1]}件`;
+  m=value.match(/^([\d,]+)곳을 더 표시했어요\.$/);if(m)return `${m[1]}件を追加表示しました。`;
+  if(value.includes(' / '))return value.split(' / ').map(jaText).join(' / ');
+  if(value.includes(' · '))return value.split(' · ').map(jaText).join(' · ');
+  return value;
+}
+export const t=value=>japanese()?jaText(value):value;
 export function placeField(place,key) {
   if(!japanese())return place[key]||'';
   const translated=data.places[place.id]?.[key];if(translated)return translated;
@@ -27,8 +37,8 @@ function translateUI(root=document.body) {
     if(node.parentElement?.closest('script,style'))continue;
     let saved=originals.get(node);
     if(!saved || (node.nodeValue!==saved.ko && node.nodeValue!==saved.ja)) {
-      const trimmed=node.nodeValue.trim();if(!data.ui[trimmed])continue;
-      saved={ko:node.nodeValue,ja:node.nodeValue.replace(trimmed,data.ui[trimmed])};originals.set(node,saved);
+      const trimmed=node.nodeValue.trim(), translated=jaText(trimmed);if(translated===trimmed)continue;
+      saved={ko:node.nodeValue,ja:node.nodeValue.replace(trimmed,translated)};originals.set(node,saved);
     }
     const value=japanese()?saved.ja:saved.ko;if(node.nodeValue!==value)node.nodeValue=value;
   }
