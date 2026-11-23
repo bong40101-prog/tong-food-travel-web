@@ -1,5 +1,5 @@
 import {compareRatings} from './rating-order.mjs';
-import {placeField} from './language.mjs?v=20261124-complete';
+import {placeField} from './language.mjs?v=20261124-complete2';
 import {account,accountCall,isAdmin} from './account-store.mjs';
 const API='https://tongdorak-benefits.bong40101.workers.dev';
 const nodes=new Map();let scheduled=false,opened=null;

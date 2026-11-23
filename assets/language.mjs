@@ -1,7 +1,7 @@
 import {conversion} from './exchange.mjs?v=20261112-price-order';
 let data={ui:{},places:{}},patterns=[],loading;
 async function loadTranslations(){
-  if(!loading)loading=fetch(new URL('./ja-pilot.json?v=20261124-complete',import.meta.url)).then(r=>{if(!r.ok)throw Error('translations');return r.json();}).then(value=>{data=value;patterns=(data.patterns||[]).map(p=>({...p,re:new RegExp(p.pattern)}));}).catch(error=>{loading=null;throw error;});
+  if(!loading)loading=fetch(new URL('./ja-pilot.json?v=20261124-complete2',import.meta.url)).then(r=>{if(!r.ok)throw Error('translations');return r.json();}).then(value=>{data=value;patterns=(data.patterns||[]).map(p=>({...p,re:new RegExp(p.pattern)}));}).catch(error=>{loading=null;throw error;});
   return loading;
 }
 let language='ko';
@@ -90,19 +90,25 @@ function translateUI(root=document.body) {
 const bound=new Set();
 export function localizeCard(card,place) {
   card.dataset.localeContent='';
+  const accessibility=[['.food-photo','alt'],['.favorite-button','aria-label'],['.rating-summary','aria-label']].map(([selector,attr])=>{const el=card.querySelector(selector);return el?{el,attr,value:el.getAttribute(attr)}:null;}).filter(Boolean);
   const snapshots=[...card.querySelectorAll('h3,.local-name,.location span,.category,.menu-name,.menu-label,.price,.note,.place-source')].map(el=>({el,text:el.textContent,hidden:el.hidden,title:el.getAttribute('title'),aria:el.getAttribute('aria-label')}));
   const update=()=>{
     snapshots.forEach(({el,text,hidden,title,aria})=>{el.textContent=text;el.hidden=hidden;for(const [key,value] of [['title',title],['aria-label',aria]]){if(value===null)el.removeAttribute(key);else el.setAttribute(key,value);}});
     card.querySelectorAll('.localized-address').forEach(e=>e.remove());
     card.querySelectorAll('.yen-price').forEach(e=>e.remove());
     card.querySelectorAll('.won-price').forEach(e=>e.hidden=japanese());
+    accessibility.forEach(({el,attr,value})=>{if(value===null)el.removeAttribute(attr);else el.setAttribute(attr,value);});
     if(!japanese())return;
     const set=(selector,text)=>{const el=card.querySelector(selector);if(el)el.textContent=text;};
     set('h3',placeField(place,'name'));
     const local=card.querySelector('.local-name');if(local)local.hidden=true;
     set('.location span',[...new Set([t(place.country.name),placeField(place,'city'),placeField(place,'area')].filter(Boolean))].join(' · '));
     set('.category',t(place.storeType?.name||place.categoryName||'해산물'));
-    set('.menu-label','おすすめメニュー');set('.menu-name',placeField(place,'menu'));
+    set('.menu-label',place.category==='attraction'?'見学情報':'おすすめメニュー');set('.menu-name',placeField(place,'menu'));
+    const displayName=placeField(place,'name');
+    const photo=card.querySelector('.food-photo');if(photo && photo.alt)photo.alt=displayName+'の写真';
+    card.querySelector('.favorite-button')?.setAttribute('aria-label',displayName+'を保存');
+    card.querySelector('.rating-summary')?.setAttribute('aria-label',displayName+'の平均評価と評価人数');
     const menu=card.querySelector('.menu-name');if(menu){menu.title=menu.textContent;menu.setAttribute('aria-label',menu.textContent);}
     const address=placeField(place,'address');
     if(address && address!==place.address){const line=document.createElement('p');line.className='localized-address';line.textContent=address;line.style.cssText='font-size:12px;color:#5e6d63;margin:8px 0;line-height:1.5';card.querySelector('.local-name')?.after(line);}

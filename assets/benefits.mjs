@@ -1,6 +1,6 @@
 import { account, accountCall as serverCall, signIn, signOut, resume, eraseAccount } from './account-store.mjs';
-import { setupCommunity } from './community.mjs?v=20261124-ja-complete';
-import {japanese,t} from './language.mjs?v=20261124-complete';
+import { setupCommunity } from './community.mjs?v=20261124-ja-complete2';
+import {japanese,t} from './language.mjs?v=20261124-complete2';
 const API='https://tongdorak-benefits.bong40101.workers.dev';
 const CLIENT='180927082101-ufclnset1vqd2maq488mvqm4jlpj5d1c.apps.googleusercontent.com';
 let token='';

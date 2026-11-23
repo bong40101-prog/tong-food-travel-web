@@ -1,9 +1,9 @@
-import {localizeCard,catalogQuery} from './language.mjs?v=20261124-complete';
+import {localizeCard,catalogQuery} from './language.mjs?v=20261124-complete2';
 import { verifiedMenus } from './verified-menus.mjs?v=20261117-bilingual';
-import { attachAdditionalMenus } from './menu-layout.mjs?v=20261124-ja-complete';
+import { attachAdditionalMenus } from './menu-layout.mjs?v=20261124-ja-complete2';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
-import { attachRating } from './ratings.mjs?v=20261124-ja-complete';
+import { attachRating } from './ratings.mjs?v=20261124-ja-complete2';
 import { attachMenuProposal } from './menu-proposals.mjs?v=20261117-menus';
 import { openSavePlace } from './save-place.mjs?v=20261117-menus';
 import { locationLabel } from './location-label.mjs';
@@ -156,7 +156,9 @@ function renderCard(place) {
     photo.src = thumbnail.url;
     photo.alt = thumbnail.alt;
     credit.href = thumbnail.source;
-    credit.textContent = `유튜브 썸네일 · ${thumbnail.channel}`;
+    const creditLabel=document.createElement('span');creditLabel.textContent='유튜브 썸네일';
+    const creditChannel=document.createElement('span');creditChannel.textContent=thumbnail.channel;creditChannel.dataset.i18nPreserve='';
+    credit.replaceChildren(creditLabel,document.createTextNode(' · '),creditChannel);
     credit.target = '_blank';
     credit.rel = 'noopener noreferrer';
   } else {
