@@ -1,4 +1,5 @@
 import {compareRatings} from './rating-order.mjs';
+import {placeField} from './language.mjs?v=20261124-complete';
 import {account,accountCall,isAdmin} from './account-store.mjs';
 const API='https://tongdorak-benefits.bong40101.workers.dev';
 const nodes=new Map();let scheduled=false,opened=null;
@@ -11,7 +12,7 @@ export const ratingLabel=r=>r?.count?`⭐ ${Number(r.average).toFixed(1)} · 평
 function button(text,fn){const b=el('button',text);b.type='button';b.addEventListener('click',fn);return b}
 async function publicCall(path,body){const r=await fetch(API+path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('평점을 불러오지 못했어요. 다시 시도해 주세요.');return r.json()}
 async function summaries(){scheduled=false;for(const [k,n]of nodes)if(!n.isConnected)nodes.delete(k);const keys=[...nodes.keys()];for(let i=0;i<keys.length;i+=100){const group=keys.slice(i,i+100);try{const d=await publicCall('/rating-summaries',{places:group});for(const k of group){const n=nodes.get(k);if(n){n.textContent=ratingLabel(d.ratings[k])+(d.ratings[k]?.count?` · 현장 ${d.ratings[k].onsiteCount||0}개`:'');cardRatings.set(n.closest('.card'),d.ratings[k]||null)}}}catch{for(const k of group){const n=nodes.get(k);if(n)n.textContent='평점 확인 · 다시 시도'}}}reorderRatedCards()}
-export function attachRating(card,place){cardOrder.set(card,nextOrder++);const key=`${place.country.id}/${place.id}`;const b=button('평점 불러오는 중…',()=>openRating(key,place.name));b.className='rating-summary';b.setAttribute('aria-label',`${place.name} 평균 별점 및 평가 인원 확인`);card.querySelector('h3').after(b);nodes.set(key,b);if(!scheduled){scheduled=true;setTimeout(summaries,0)}}
+export function attachRating(card,place){cardOrder.set(card,nextOrder++);const key=`${place.country.id}/${place.id}`;const b=button('평점 불러오는 중…',()=>openRating(key,placeField(place,'name')));b.className='rating-summary';b.setAttribute('aria-label',`${place.name} 평균 별점 및 평가 인원 확인`);card.querySelector('h3').after(b);nodes.set(key,b);if(!scheduled){scheduled=true;setTimeout(summaries,0)}}
 function modal(title){const d=el('dialog',null,'rating-dialog');const head=el('header');head.append(el('h2',title),button('닫기',()=>d.close()));const body=el('div');d.append(head,body);document.body.append(d);d.addEventListener('close',()=>{if(opened?.dialog===d)opened=null;d.remove()});d.showModal();return {dialog:d,body}}
 async function openRating(key,name){if(opened)opened.dialog.close();const view=modal(name+' · 별점');opened={...view,key};await renderRating()}
 async function renderRating(){const view=opened;if(!view)return;view.body.replaceChildren(el('p','평점을 불러오는 중…'));try{const data=await publicCall('/reviews?place='+encodeURIComponent(view.key));if(opened!==view)return;

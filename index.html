@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#173e32">
   <title>유튜버 맛집 지도 - 유튜브 추천 맛집·여행지 | 통도락여행</title>
   <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/styles.css?v=20261124-ja-kr33">
-  <script type="module" src="./assets/app.js?v=20261124-ja-full"></script>
+  <link rel="stylesheet" href="./assets/styles.css?v=20261124-ja-complete">
+  <script type="module" src="./assets/app.js?v=20261124-ja-complete"></script>
   <meta name="description" content="유튜버 맛집 지도 통도락여행. 유튜브에 나온 해외 맛집을 지도에서 채널별·지역별로 찾고 대표 메뉴와 위치를 한눈에 확인하세요.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://food.tongapp.co.kr/">
@@ -223,7 +223,7 @@
   </dialog>
   <script type="module" src="./assets/feedback.js?v=20261110-api-fallback"></script>
   <script type="module" src="./assets/visitors.js?v=20261110-api-fallback"></script>
-<script type="module" src="./assets/benefits.mjs?v=20261112-header-login"></script>
+<script type="module" src="./assets/benefits.mjs?v=20261124-ja-complete"></script>
 <script>
 (async()=>{const host=document.getElementById('developer-blog-posts');if(!host)return;try{const r=await fetch('https://korea-futures-cloudflare.pages.dev/blog-posts.json',{cache:'no-store',credentials:'omit'});if(!r.ok)throw 0;const posts=await r.json();if(!Array.isArray(posts))throw 0;const frag=document.createDocumentFragment();for(const p of posts.slice(0,3)){if(typeof p.title!=='string'||typeof p.url!=='string'||!/^https:\/\/(?:m\.)?blog\.naver\.com\/mkj2449\//.test(p.url))continue;const a=document.createElement('a');a.className='blog-post';a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';const t=document.createElement('span');t.className='blog-post-title';t.textContent=p.title;a.appendChild(t);const d=new Date(p.pubDate);if(p.pubDate&&!Number.isNaN(d.getTime())){const s=document.createElement('span');s.className='blog-post-date';s.textContent=d.toLocaleDateString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit'});a.appendChild(s)}frag.appendChild(a)}if(!frag.childNodes.length)throw 0;host.replaceChildren(frag)}catch(e){host.previousElementSibling.hidden=true;host.hidden=true}})();
 </script>

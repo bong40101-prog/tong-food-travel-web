@@ -215,3 +215,20 @@ html[lang=ja] .sidebar,html[lang=ja] .site-links a[href*="tong-sky-data"],html[l
 html[lang=ja] .content-layout{grid-template-columns:minmax(0,1fr)}
 html[lang=ja] .brand>span:not(.brand-tagline){max-width:200px;font-size:15px}
 @media(max-width:1059px){.language-picker{grid-column:1;grid-row:3}.site-links{grid-column:2;grid-row:3}}
+@media(max-width:1059px){
+  .header-inner{grid-template-columns:minmax(0,1fr) auto;gap:10px;min-width:0}
+  .header-inner .brand{grid-column:1/-1;grid-row:1;min-width:0}
+  .header-inner .search{grid-column:1/-1;grid-row:2;width:100%;min-width:0}
+  .header-inner .site-links{min-width:0;flex-wrap:wrap}
+  .header-inner .search input{flex:1 1 0;width:0}
+}
+@media(max-width:600px){
+  .header-inner .brand-tagline{display:none}
+  .search{gap:6px;padding-left:10px}
+  .search .icon{flex-shrink:0}
+  .scope.scope{flex-wrap:wrap;overflow-x:visible}
+  .scope .scope-title{flex-basis:100%}
+  .scope .scope-select,.scope .city-select{flex:1 1 calc(50% - 8px);min-width:0}
+  .scope .scope-select select,.scope .city-select select{flex:1;min-width:0;width:100%;max-width:100%}
+  .scope :is(label,select){min-width:0;max-width:100%}
+}

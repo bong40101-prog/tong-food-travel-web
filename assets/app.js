@@ -1,9 +1,9 @@
-import {localizeCard} from './language.mjs?v=20261124-full';
+import {localizeCard,catalogQuery} from './language.mjs?v=20261124-complete';
 import { verifiedMenus } from './verified-menus.mjs?v=20261117-bilingual';
-import { attachAdditionalMenus } from './menu-layout.mjs?v=20261124-ja';
+import { attachAdditionalMenus } from './menu-layout.mjs?v=20261124-ja-complete';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
 import { account, favoriteKeys, toggleAccountFavorite } from './account-store.mjs';
-import { attachRating } from './ratings.mjs?v=20261124-ja';
+import { attachRating } from './ratings.mjs?v=20261124-ja-complete';
 import { attachMenuProposal } from './menu-proposals.mjs?v=20261117-menus';
 import { openSavePlace } from './save-place.mjs?v=20261117-menus';
 import { locationLabel } from './location-label.mjs';
@@ -214,6 +214,7 @@ function renderCard(place) {
     const info = document.createElement('span');
     const channel = document.createElement('strong');
     channel.textContent = video.channel;
+    channel.dataset.i18nPreserve = "";
     const reason = document.createElement('small');
     reason.textContent = video.verification === 'user-supplied' ? '제공 자료의 영상 · 장면 미검증' : video.relation === 'recommended' ? '영상에서 추천' : '영상에 나온 장소';
     info.append(channel, reason);
@@ -274,7 +275,7 @@ function warnSearchLimit(seconds) {
 }
 
 async function fetchPage(page, query, signal) {
- const input={continent:state.continent,country:state.country,query,fullList:true,
+ const input={continent:state.continent,country:state.country,query:catalogQuery(query,state.country),fullList:true,
   region:state.region,city:state.city,category:state.category,favorites:state.favoritesOnly?[...favorites].map(key=>key.slice(favoritePrefix.length)):null};
  async function fetcher(payload){
   const response=await requestFoodApi('tongfood-catalog',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},signal,body:JSON.stringify(payload)});

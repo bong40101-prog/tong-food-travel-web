@@ -1,6 +1,7 @@
 import {account,isAdmin,accountCall} from './account-store.mjs';
 const API='https://tongdorak-benefits.bong40101.workers.dev';
 function element(tag,text){const e=document.createElement(tag);if(text)e.textContent=text;return e;}
+function preserve(e){e.dataset.i18nPreserve='';return e;}
 function button(text,action){const b=element('button',text);b.type='button';b.onclick=action;return b;}
 export function setupCommunity(host){
  const root=element('section');root.className='tong-community';host.append(root);
@@ -20,16 +21,16 @@ export function setupCommunity(host){
    if(generation!==request)return;status.remove();
    if(mode==='reports'||isAdmin())dialog.append(button(mode==='notices'?'공지 작성':'새 제보·요청',()=>edit()));
    const rows=data[mode];if(!rows.length)dialog.append(element('p','등록된 내용이 없어요.'));
-   for(const row of rows)dialog.append(button(row.title+(row.status?' · '+row.status:''),()=>detail(row)));
+   for(const row of rows)dialog.append(preserve(button(row.title+(row.status?' · '+row.status:''),()=>detail(row))));
    if(data.nextPage)dialog.append(button('이전 접수 더 보기',()=>list(data.nextPage)));
    if(page>1)dialog.append(button('처음으로',()=>list()));
   }catch(e){status.textContent=e.message;}
  }
  function detail(row){
   clearInterval(timer);request++;
-  dialog.replaceChildren(button('← 목록',()=>{list();poll()}),element('h2',row.title));
+  dialog.replaceChildren(button('← 목록',()=>{list();poll()}),preserve(element('h2',row.title)));
   if(mode==='reports')dialog.append(element('p',row.email+' · '+row.status));
-  dialog.append(element('p',row.content));if(row.reply)dialog.append(element('p','운영자 답변\n'+row.reply));
+  dialog.append(preserve(element('p',row.content)));if(row.reply)dialog.append(preserve(element('p','운영자 답변\n'+row.reply)));
   if(isAdmin())dialog.append(button(mode==='notices'?'공지 수정':'답변·상태 변경',()=>edit(row)));
  }
  function edit(row){

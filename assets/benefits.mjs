@@ -1,5 +1,6 @@
 import { account, accountCall as serverCall, signIn, signOut, resume, eraseAccount } from './account-store.mjs';
-import { setupCommunity } from './community.mjs';
+import { setupCommunity } from './community.mjs?v=20261124-ja-complete';
+import {japanese,t} from './language.mjs?v=20261124-complete';
 const API='https://tongdorak-benefits.bong40101.workers.dev';
 const CLIENT='180927082101-ufclnset1vqd2maq488mvqm4jlpj5d1c.apps.googleusercontent.com';
 let token='';
@@ -20,9 +21,11 @@ async function signedIn(result){
 if($('benefits-google')){
  $('benefits-logout').addEventListener('click',async()=>{if(busy)return;await signOut();clear();window.google?.accounts.id.disableAutoSelect();notice('로그아웃했습니다. 같은 계정으로 로그인하면 혜택이 복구됩니다.');});
  $('benefits-add').addEventListener('submit',async event=>{event.preventDefault();if(busy)return;busy=true;try{await call('/admin/members','POST',{email:$('benefits-email').value.trim()});await members();notice('등록했습니다. 대상자는 다시 로그인하면 혜택이 적용됩니다.');}catch(e){notice(e.message);}finally{busy=false;}});
- $('benefits-delete').addEventListener('click',async()=>{if(busy || !confirm('계정 연결·혜택·계정에 저장된 찜과 폴더·제보를 삭제할까요? 비로그인 저장은 유지됩니다.'))return;busy=true;try{await eraseAccount();clear();notice('계정 연결과 혜택 정보를 삭제했습니다.');}catch(e){notice(e.message);}finally{busy=false;}});
+ $('benefits-delete').addEventListener('click',async()=>{if(busy || !confirm(t('계정 연결·혜택·계정에 저장된 찜과 폴더·제보를 삭제할까요? 비로그인 저장은 유지됩니다.')))return;busy=true;try{await eraseAccount();clear();notice('계정 연결과 혜택 정보를 삭제했습니다.');}catch(e){notice(e.message);}finally{busy=false;}});
  const script=document.createElement('script');script.src='https://accounts.google.com/gsi/client';script.async=true;
- script.onload=()=>{google.accounts.id.initialize({client_id:CLIENT,callback:signedIn,auto_select:false});google.accounts.id.renderButton($('benefits-google'),{theme:'outline',size:'large',text:'signin_with',locale:'ko'});};
+ const renderLogin=()=>window.google?.accounts?.id.renderButton($('benefits-google'),{theme:'outline',size:'large',text:'signin_with',locale:japanese()?'ja':'ko'});
+ script.onload=()=>{if(!window.google?.accounts?.id)return;google.accounts.id.initialize({client_id:CLIENT,callback:signedIn,auto_select:false});renderLogin();};
+ window.addEventListener('tong-language-changed',renderLogin);
  script.onerror=()=>notice('Google 로그인을 불러오지 못했습니다. 네트워크를 확인해 주세요.');document.head.append(script);
 }
 
