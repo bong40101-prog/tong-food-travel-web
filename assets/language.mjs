@@ -1,5 +1,5 @@
 import {conversion} from './exchange.mjs?v=20261112-price-order';
-const data=await fetch(new URL('./ja-pilot.json?v=20261124-navigation',import.meta.url)).then(r=>{if(!r.ok)throw Error('translations');return r.json();}).catch(()=>({ui:{},places:{}}));
+const data=await fetch(new URL('./ja-pilot.json?v=20261124-kr33',import.meta.url)).then(r=>{if(!r.ok)throw Error('translations');return r.json();}).catch(()=>({ui:{},places:{}}));
 let language='ko';
 try {language=localStorage.getItem('tongdorak:language')==='ja'?'ja':'ko';} catch {}
 export const japanese=()=>language==='ja';
@@ -16,7 +16,9 @@ export function jaText(value) {
 export const t=value=>japanese()?jaText(value):value;
 export function placeField(place,key) {
   if(!japanese())return place[key]||'';
-  const translated=data.places[place.id]?.[key];if(translated)return translated;
+  const entry=data.places[place.id];
+  const translated=entry?.[key];
+  if(translated!==undefined && (!entry._country || entry._country===place.country?.id) && (!entry._source || entry._source[key]===(place[key]||'')))return translated;
   const local=key==='name'?place.localName:key==='menu'?place.menuLocalName:null;
   if(place.country?.id==='JP' && local && !/[가-힣]/.test(local))return local;
   return t(place[key]||'');
@@ -49,6 +51,7 @@ export function localizeCard(card,place) {
   const snapshots=[...card.querySelectorAll('h3,.local-name,.location span,.category,.menu-name,.menu-label,.price,.note,.place-source')].map(el=>({el,text:el.textContent,hidden:el.hidden}));
   const update=()=>{
     snapshots.forEach(({el,text,hidden})=>{el.textContent=text;el.hidden=hidden;});
+    card.querySelectorAll('.localized-address').forEach(e=>e.remove());
     card.querySelectorAll('.yen-price').forEach(e=>e.remove());
     card.querySelectorAll('.won-price').forEach(e=>e.hidden=japanese());
     if(!japanese())return;
@@ -58,8 +61,11 @@ export function localizeCard(card,place) {
     set('.location span',[t(place.country.name),placeField(place,'city'),placeField(place,'area')].filter(Boolean).join(' · '));
     set('.category',t(place.storeType?.name||place.categoryName||'해산물'));
     set('.menu-label','おすすめメニュー');set('.menu-name',placeField(place,'menu'));
+    const menu=card.querySelector('.menu-name');if(menu){menu.title=menu.textContent;menu.setAttribute('aria-label',menu.textContent);}
+    const address=placeField(place,'address');
+    if(address && address!==place.address){const line=document.createElement('p');line.className='localized-address';line.textContent=address;line.style.cssText='font-size:12px;color:#5e6d63;margin:8px 0;line-height:1.5';card.querySelector('.local-name')?.after(line);}
     set('.price',yenPrice(place.price?.amount,place.country.currency));
-    const note=card.querySelector('.note');if(note && place.note)note.textContent='原文の案内：'+place.note;
+    const note=card.querySelector('.note');if(note && place.note)note.textContent=placeField(place,'note');
     snapshots.filter(s=>!s.el.matches('h3,.local-name,.location span,.category,.menu-name,.price,.note')).forEach(({el,text})=>el.textContent=t(text));
   };
   bound.add({card,update});update();

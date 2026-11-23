@@ -1,4 +1,4 @@
-import {localizeCard} from './language.mjs?v=20261124-navigation';
+import {localizeCard} from './language.mjs?v=20261124-kr33';
 import { verifiedMenus } from './verified-menus.mjs?v=20261117-bilingual';
 import { attachAdditionalMenus } from './menu-layout.mjs?v=20261117-bilingual';
 import {mountStayNearby} from './stay-nearby.mjs?v=20261113-scope3';
